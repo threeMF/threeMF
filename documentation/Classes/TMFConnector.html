@@ -1,0 +1,1447 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TMFConnector Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15886208-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">threeMF </a></h1>
+				<a id="developerHome" href="../index.html">Martin Gratzer</a>
+			</div>
+
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TMFConnector Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/localPeer">&nbsp;&nbsp;&nbsp;&nbsp;localPeer</option>
+	
+	<option value="//api/name/peers">&nbsp;&nbsp;&nbsp;&nbsp;peers</option>
+	
+	<option value="//api/name/publishedCommandNames">&nbsp;&nbsp;&nbsp;&nbsp;publishedCommandNames</option>
+	
+	
+
+	
+
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/disconnect:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- disconnect:completion:</option>
+	
+	<option value="//api/name/disconnect:fromPeer:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- disconnect:fromPeer:completion:</option>
+	
+	<option value="//api/name/initWithCallBackQueue:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithCallBackQueue:</option>
+	
+	<option value="//api/name/publishCommand:">&nbsp;&nbsp;&nbsp;&nbsp;- publishCommand:</option>
+	
+	<option value="//api/name/publishCommands:">&nbsp;&nbsp;&nbsp;&nbsp;- publishCommands:</option>
+	
+	<option value="//api/name/sendCommand:arguments:destination:response:">&nbsp;&nbsp;&nbsp;&nbsp;- sendCommand:arguments:destination:response:</option>
+	
+	<option value="//api/name/startDiscoveryWithCapabilities:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- startDiscoveryWithCapabilities:delegate:</option>
+	
+	<option value="//api/name/stopDiscoveryWithCapabilities:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- stopDiscoveryWithCapabilities:delegate:</option>
+	
+	<option value="//api/name/subscribe:configuration:peer:receive:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- subscribe:configuration:peer:receive:completion:</option>
+	
+	<option value="//api/name/subscribe:peer:receive:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- subscribe:peer:receive:completion:</option>
+	
+	<option value="//api/name/unpublishCommand:">&nbsp;&nbsp;&nbsp;&nbsp;- unpublishCommand:</option>
+	
+	<option value="//api/name/unsubscribe:fromPeer:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- unsubscribe:fromPeer:completion:</option>
+	
+	<option value="//api/name/unsubscribeFromPeer:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- unsubscribeFromPeer:completion:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Discovery">Discovery</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Publish Subscribe">Publish Subscribe</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Request Response">Request Response</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localPeer">localPeer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/peers">peers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publishedCommandNames">publishedCommandNames</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disconnect:completion:">disconnect:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disconnect:fromPeer:completion:">disconnect:fromPeer:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithCallBackQueue:">initWithCallBackQueue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publishCommand:">publishCommand:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publishCommands:">publishCommands:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendCommand:arguments:destination:response:">sendCommand:arguments:destination:response:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startDiscoveryWithCapabilities:delegate:">startDiscoveryWithCapabilities:delegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopDiscoveryWithCapabilities:delegate:">stopDiscoveryWithCapabilities:delegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscribe:configuration:peer:receive:completion:">subscribe:configuration:peer:receive:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscribe:peer:receive:completion:">subscribe:peer:receive:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unpublishCommand:">unpublishCommand:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsubscribe:fromPeer:completion:">unsubscribe:fromPeer:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsubscribeFromPeer:completion:">unsubscribeFromPeer:completion:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TMFConnector Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TMFConnector Class Reference</h1>
+					</div>
+				</div>
+				<div id="container">
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/TMFConfigurationDelegate.html">TMFConfigurationDelegate</a></td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TMFConnector.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This is the central facade class for 3MF. An instance is required to enable
+discovery and command management.</p>
+
+<h2>3MF System Service</h2>
+
+<p><a href="../Classes/TMFDiscovery.html">TMFDiscovery</a> gets started with the TMFConnector instance and stopped with it&rsquo;s deallocation. If the application turns into the background on iOS all discovery components get stopped and started on resume again. Because we can not decide if the app will ever become active again, this also implies, that all subscriptions get removed locally and on remote <a href="#//api/name/peers">peers</a>. All peer applications get informed about this change (clean up and prepare to reconnect!).</p>
+
+<h2>Publish Subscribe</h2>
+
+<p><strong>Publish Subscribe</strong> (P+S) commands on the other hand get triggered by the <strong>publisher</strong> whenever a defined event occurs. Other <a href="#//api/name/peers">peers</a> can <strong>subscribe</strong> to P+S commands and get a command specific payload <strong>push</strong>ed. An example would be a mobile phone with motion sensors providing a command sending real time accelerometer data. This information could e.g. be used to control a mouse pointer on a desktop computer.</p>
+
+<h3>Setup (Peer A + Peer B)</h3>
+
+<pre><code>self.tmf = [TMFConnector new];
+</code></pre>
+
+<h3>Publishing (Peer A)</h3>
+
+<pre><code>self.kvCmd = [TMFKeyValueCommand new]; // P+S command
+[self.tmf publishCommand:self.kvCmd];
+</code></pre>
+
+<h3>Discovery (Peer B)</h3>
+
+<pre><code>[self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
+</code></pre>
+
+<h3>Subscription (Peer B)</h3>
+
+<pre><code>[self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){
+    // do awesome things
+    NSLog(@"%@: %@", arguments.key, arguments.value);
+}
+completion:^(NSError *error){
+    if(error) { // handle error
+        NSLog(@"%@", error);
+    }
+}];
+</code></pre>
+
+<h3>Push (Peer A)</h3>
+
+<pre><code>TMFKeyValueCommandArguments *kvArguments = [TMFKeyValueCommandArguments new];
+kvArguments.key = @"msg";
+kvArguments.value = @"Hello World!";
+[self.kvCmd sendWithArguments:kvArguments];
+</code></pre>
+
+<h2>Request Response</h2>
+
+<p><strong>Response Request</strong> (R+R) commands are common remote procedures delivering a <strong>response</strong> for a list of defined parameters on <strong>request</strong>. An example would be a computer asking a mobile phone for its current GPS location.</p>
+
+<h3>Setup (Peer A + Peer B)</h3>
+
+<pre><code>self.tmf = [TMFConnector new];
+</code></pre>
+
+<h3>Publishing (Peer A)</h3>
+
+<pre><code>self.announceCmd = [[CADAnnounceCommand alloc] initWithRequestReceivedBlock:^(CADAnnounceCommandArguments *arguments, TMFPeer *peer, responseBlock_t responseBlock){
+    // do awesome things
+    return result;
+}];
+
+[self.tmf publishCommand:self.announceCmd];
+</code></pre>
+
+<h3>Requesting (Peer B)</h3>
+
+<pre><code>CADAnnounceCommandArguments *args = [CADAnnounceCommandArguments new];
+args.name = @"Zaphod";
+
+[self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer response:^(id response, NSError *error) {
+    // do something with your response
+}];
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publishedCommandNames">&nbsp;&nbsp;publishedCommandNames</a></code>
+		<span class="tooltip"><p>A list containing the names of all published services the current instance supports.
+If no commands are published the resulting collection will be empty.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localPeer">&nbsp;&nbsp;localPeer</a></code>
+		<span class="tooltip"><p>A peer instance representing the local peer on it&rsquo;s system channel.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/peers">&nbsp;&nbsp;peers</a></code>
+		<span class="tooltip"><p>List of all currently visible peers the serviceType service with any capabilities.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+		<span class="tooltip"><p>Delegate for connector state changes.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithCallBackQueue:">&ndash;&nbsp;initWithCallBackQueue:</a></code>
+		<span class="tooltip"><p>Creates a new instance of threeMF</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+
+						<a title="Discovery" name="task_Discovery"></a>
+						<h3 class="subsubtitle task-title">Discovery</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publishCommand:">&ndash;&nbsp;publishCommand:</a></code>
+		<span class="tooltip"><p>Publishes a command for public access on it&rsquo;s corresponding channel.
+The command will get registered with the internal dispatcher and all delegates and references
+will be set up for publishing. In addition the txtRectord of each
+published NSNetService will get updated in order to notify other <a href="#//api/name/peers">peers</a> about the state change.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publishCommands:">&ndash;&nbsp;publishCommands:</a></code>
+		<span class="tooltip"><p>Publishes a set of commands for public access on it&rsquo;s corresponding channel.
+These commands will get registered with the internal dispatcher and all delegates and references
+will be set up for publishing. In addition the txtRectord of each
+published NSNetService will get updated in order to notify other <a href="#//api/name/peers">peers</a> about the state change.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unpublishCommand:">&ndash;&nbsp;unpublishCommand:</a></code>
+		<span class="tooltip"><p>Removes a command from public access on it&rsquo;s corresponding channel.
+The command will get removed from the internal dispatcher. In addition the txtRectord of each
+published NSNetService will get updated in order to notify other <a href="#//api/name/peers">peers</a> about the state change.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startDiscoveryWithCapabilities:delegate:">&ndash;&nbsp;startDiscoveryWithCapabilities:delegate:</a></code>
+		<span class="tooltip"><p>Starts discovery of <a href="#//api/name/peers">peers</a> capable of a given set of commands for the given <a href="#//api/name/delegate">delegate</a>. Delegates will get retained.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopDiscoveryWithCapabilities:delegate:">&ndash;&nbsp;stopDiscoveryWithCapabilities:delegate:</a></code>
+		<span class="tooltip"><p>Stops the discovery of <a href="#//api/name/peers">peers</a> capable of the given set of commands for the given <a href="#//api/name/delegate">delegate</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+
+						<a title="Publish Subscribe" name="task_Publish Subscribe"></a>
+						<h3 class="subsubtitle task-title">Publish Subscribe</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/subscribe:peer:receive:completion:">&ndash;&nbsp;subscribe:peer:receive:completion:</a></code>
+		<span class="tooltip"><p>Subscribes to a publish subscribe command at a given remote peer and sets up receiving data.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/subscribe:configuration:peer:receive:completion:">&ndash;&nbsp;subscribe:configuration:peer:receive:completion:</a></code>
+		<span class="tooltip"><p>Subscribes to a publish subscribe command at a given remote peer and sets up receiving data.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsubscribe:fromPeer:completion:">&ndash;&nbsp;unsubscribe:fromPeer:completion:</a></code>
+		<span class="tooltip"><p>Unsubscribes from a publish subscribe command at a given peer.
+Subscribers call this message if they are not interested int a specific command anymore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsubscribeFromPeer:completion:">&ndash;&nbsp;unsubscribeFromPeer:completion:</a></code>
+		<span class="tooltip"><p>Unsubscribes from all publish subscribe commands at a given peer.
+Subscribers call this message if they are not interested in any commands from a peer anymore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disconnect:fromPeer:completion:">&ndash;&nbsp;disconnect:fromPeer:completion:</a></code>
+		<span class="tooltip"><p>Disconnects a connected peer from a given command.
+Command provider call this message to remove a subscriber from a specific command.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disconnect:completion:">&ndash;&nbsp;disconnect:completion:</a></code>
+		<span class="tooltip"><p>Disconnects a connected peer from all commands
+Command provider call this message to remove a subscriber from all commands.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+
+						<a title="Request Response" name="task_Request Response"></a>
+						<h3 class="subsubtitle task-title">Request Response</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendCommand:arguments:destination:response:">&ndash;&nbsp;sendCommand:arguments:destination:response:</a></code>
+		<span class="tooltip"><p>Sends a set of command arguments for a given request response command, the response block gets executed when the result
+got received or an error occurred.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delegate for connector state changes.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) NSObject&lt;TMFConnectorDelegate&gt; *delegate</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localPeer" title="localPeer"></a>
+	<h3 class="subsubtitle method-title">localPeer</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A peer instance representing the local peer on it&rsquo;s system channel.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) TMFPeer *localPeer</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/peers" title="peers"></a>
+	<h3 class="subsubtitle method-title">peers</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>List of all currently visible peers the serviceType service with any capabilities.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *peers</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publishedCommandNames" title="publishedCommandNames"></a>
+	<h3 class="subsubtitle method-title">publishedCommandNames</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A list containing the names of all published services the current instance supports.
+If no commands are published the resulting collection will be empty.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSArray *publishedCommandNames</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+
+					
+
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/disconnect:completion:" title="disconnect:completion:"></a>
+	<h3 class="subsubtitle method-title">disconnect:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disconnects a connected peer from all commands
+Command provider call this message to remove a subscriber from all commands.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disconnect:(TMFPeer *)<em>peer</em> completion:(tmfCompletionBlock_t)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The remote peer to disconnect from.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disconnect:fromPeer:completion:" title="disconnect:fromPeer:completion:"></a>
+	<h3 class="subsubtitle method-title">disconnect:fromPeer:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disconnects a connected peer from a given command.
+Command provider call this message to remove a subscriber from a specific command.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disconnect:(Class)<em>commandClass</em> fromPeer:(TMFPeer *)<em>peer</em> completion:(tmfCompletionBlock_t)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandClass</em></dt>
+			<dd><p>The <a href="../Classes/TMFPublishSubscribeCommand.html">TMFPublishSubscribeCommand</a> to disconnect from.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The remote peer to disconnect from the given command.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A completion block which gets triggered after the disconnect has been confirmed or failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithCallBackQueue:" title="initWithCallBackQueue:"></a>
+	<h3 class="subsubtitle method-title">initWithCallBackQueue:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new instance of threeMF</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithCallBackQueue:(dispatch_queue_t)<em>callBackQueue</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callBackQueue</em></dt>
+			<dd><p>is the dispatch queue used to make any callbacks going out of the framework.</p>
+
+<pre><code>    If no queue is give the main queue will be the default value
+</code></pre></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance of threeMF</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publishCommand:" title="publishCommand:"></a>
+	<h3 class="subsubtitle method-title">publishCommand:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Publishes a command for public access on it&rsquo;s corresponding channel.
+The command will get registered with the internal dispatcher and all delegates and references
+will be set up for publishing. In addition the txtRectord of each
+published NSNetService will get updated in order to notify other <a href="#//api/name/peers">peers</a> about the state change.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)publishCommand:(TMFCommand *)<em>command</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>command</em></dt>
+			<dd><p>The command which should get published for the current peer.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publishCommands:" title="publishCommands:"></a>
+	<h3 class="subsubtitle method-title">publishCommands:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Publishes a set of commands for public access on it&rsquo;s corresponding channel.
+These commands will get registered with the internal dispatcher and all delegates and references
+will be set up for publishing. In addition the txtRectord of each
+published NSNetService will get updated in order to notify other <a href="#//api/name/peers">peers</a> about the state change.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)publishCommands:(NSArray *)<em>commands</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commands</em></dt>
+			<dd><p>A list of commands which should get published for the current peer.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendCommand:arguments:destination:response:" title="sendCommand:arguments:destination:response:"></a>
+	<h3 class="subsubtitle method-title">sendCommand:arguments:destination:response:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends a set of command arguments for a given request response command, the response block gets executed when the result
+got received or an error occurred.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendCommand:(Class)<em>commandClass</em> arguments:(TMFArguments *)<em>arguments</em> destination:(TMFPeer *)<em>peer</em> response:(responseBlock_t)<em>response</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandClass</em></dt>
+			<dd><p><a href="../Classes/TMFPublishSubscribeCommand.html">TMFPublishSubscribeCommand</a> to send.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>arguments</em></dt>
+			<dd><p>The corresponding arguments to send.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The destination peer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>response</em></dt>
+			<dd><p>a response which gets triggered after a response is received.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startDiscoveryWithCapabilities:delegate:" title="startDiscoveryWithCapabilities:delegate:"></a>
+	<h3 class="subsubtitle method-title">startDiscoveryWithCapabilities:delegate:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts discovery of <a href="#//api/name/peers">peers</a> capable of a given set of commands for the given <a href="#//api/name/delegate">delegate</a>. Delegates will get retained.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startDiscoveryWithCapabilities:(NSArray *)<em>listOfCommands</em> delegate:(NSObject&lt;TMFConnectorDelegate&gt; *)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listOfCommands</em></dt>
+			<dd><p>a list of command names representing the minimal set of services each discovered <a href="#//api/name/peers">peers</a> must support.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>the <a href="#//api/name/delegate">delegate</a> being notified on discovery state changes like new domains or <a href="#//api/name/peers">peers</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopDiscoveryWithCapabilities:delegate:" title="stopDiscoveryWithCapabilities:delegate:"></a>
+	<h3 class="subsubtitle method-title">stopDiscoveryWithCapabilities:delegate:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops the discovery of <a href="#//api/name/peers">peers</a> capable of the given set of commands for the given <a href="#//api/name/delegate">delegate</a>.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopDiscoveryWithCapabilities:(NSArray *)<em>listOfCommands</em> delegate:(NSObject&lt;TMFConnectorDelegate&gt; *)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listOfCommands</em></dt>
+			<dd><p>a list of command names representing the minimal set of services each discovered <a href="#//api/name/peers">peers</a> must support.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>the <a href="#//api/name/delegate">delegate</a> being notified on discovery state changes like new domains or <a href="#//api/name/peers">peers</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/subscribe:configuration:peer:receive:completion:" title="subscribe:configuration:peer:receive:completion:"></a>
+	<h3 class="subsubtitle method-title">subscribe:configuration:peer:receive:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Subscribes to a publish subscribe command at a given remote peer and sets up receiving data.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)subscribe:(Class)<em>commandClass</em> configuration:(TMFConfiguration *)<em>configuration</em> peer:(TMFPeer *)<em>peer</em> receive:(pubSubArgumentsReceivedBlock_t)<em>receive</em> completion:(tmfCompletionBlock_t)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandClass</em></dt>
+			<dd><p>The <a href="../Classes/TMFPublishSubscribeCommand.html">TMFPublishSubscribeCommand</a> class to subscribe.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>configuration</em></dt>
+			<dd><p>a configuration instance containing setup parameters for the remote command</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>the remote peer providing the command</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>receive</em></dt>
+			<dd><p>a receive block which gets trigged whenever the specific peer is publishing data for the subscribed service</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/subscribe:peer:receive:completion:" title="subscribe:peer:receive:completion:"></a>
+	<h3 class="subsubtitle method-title">subscribe:peer:receive:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Subscribes to a publish subscribe command at a given remote peer and sets up receiving data.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)subscribe:(Class)<em>commandClass</em> peer:(TMFPeer *)<em>peer</em> receive:(pubSubArgumentsReceivedBlock_t)<em>receive</em> completion:(tmfCompletionBlock_t)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandClass</em></dt>
+			<dd><p>The <a href="../Classes/TMFPublishSubscribeCommand.html">TMFPublishSubscribeCommand</a> class to subscribe.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>the remote peer providing the command</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>receive</em></dt>
+			<dd><p>a receive block which gets trigged whenever the specific peer is publishing data for the subscribed service</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unpublishCommand:" title="unpublishCommand:"></a>
+	<h3 class="subsubtitle method-title">unpublishCommand:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes a command from public access on it&rsquo;s corresponding channel.
+The command will get removed from the internal dispatcher. In addition the txtRectord of each
+published NSNetService will get updated in order to notify other <a href="#//api/name/peers">peers</a> about the state change.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unpublishCommand:(TMFCommand *)<em>command</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>command</em></dt>
+			<dd><p>the command which should get removed.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsubscribe:fromPeer:completion:" title="unsubscribe:fromPeer:completion:"></a>
+	<h3 class="subsubtitle method-title">unsubscribe:fromPeer:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unsubscribes from a publish subscribe command at a given peer.
+Subscribers call this message if they are not interested int a specific command anymore.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unsubscribe:(Class)<em>commandClass</em> fromPeer:(TMFPeer *)<em>peer</em> completion:(tmfCompletionBlock_t)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandClass</em></dt>
+			<dd><p>The <a href="../Classes/TMFPublishSubscribeCommand.html">TMFPublishSubscribeCommand</a> to unsubscribe from.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>the remote peer providing the command</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsubscribeFromPeer:completion:" title="unsubscribeFromPeer:completion:"></a>
+	<h3 class="subsubtitle method-title">unsubscribeFromPeer:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unsubscribes from all publish subscribe commands at a given peer.
+Subscribers call this message if they are not interested in any commands from a peer anymore.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unsubscribeFromPeer:(TMFPeer *)<em>peer</em> completion:(tmfCompletionBlock_t)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The remote peer to unsubscribe from.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFConnector.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+
+					window.name = "";
+				}
+				return false;
+			}
+
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+
+				var tocList = document.getElementById('toc');
+
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+
+			window.onload = init;
+
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+
+		</script>
+	</body>
+</html>

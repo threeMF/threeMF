@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TMFAnnounceCommand Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15886208-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">threeMF </a></h1>
+				<a id="developerHome" href="../index.html">Martin Gratzer</a>
+			</div>
+
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TMFAnnounceCommand Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	
+
+	
+	
+
+	
+
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TMFAnnounceCommand Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TMFAnnounceCommand Class Reference</h1>
+					</div>
+				</div>
+				<div id="container">
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/TMFRequestResponseCommand.html">TMFRequestResponseCommand</a> : <a href="../Classes/TMFCommand.html">TMFCommand</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TMFAnnounceCommand.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Abstract system command class used to announce capabilities to other peers.
+Use subclasses of this command to announce a specific service for reverse discovery.
+This is a special case when the provider of a service is also the one discovering other services.
+The announce command helps the discoverer to find peers capable of subscribing to services the discoverer is providing.
+The corresponding arguments class is <a href="../Classes/TMFAnnounceCommandArguments.html">TMFAnnounceCommandArguments</a>.</p>
+
+<ul>
+<li>unique name: no name given! abstract class.</li>
+<li>system command</li>
+</ul>
+
+
+<h2>Usage</h2>
+
+<p>This command is used to announce interest in subscribing to commands. The AirDraw and MultiAirCam samples use this
+pattern. In AirDraw the iOS device is provider for gyroscope information to visualize a pointer on the canvas.
+The canvas is subscriber but it also announces it&rsquo;s interest in subscribing to gyroscope data for drawing.
+The iOS client is responsible to find a canvas to draw on (the user selects the canvas) and therefore it needs to search for something.
+In this case it searches for a specific announce command to tell the canvas that it should subscribe to it&rsquo;s drawing
+commands.</p>
+
+<h3>Announcing</h3>
+
+<pre><code> _announceCmd = [[CADAnnounceCommand alloc] initWithRequestReceivedBlock:^(CADAnnounceCommandArguments *arguments, TMFPeer *peer, responseBlock_t responseBlock){
+        if(arguments) {
+            if(peer) {
+                if(responseBlock) {
+                    responseBlock(@(YES), nil);
+                }
+                // create a client to display
+                CADClient *client = [self clientWithPeer:peer create:YES];
+                client.name = arguments.name;
+                client.color = arguments.color;
+                [_view updateClient:client];
+
+                // subscribe to the client
+                [self subscribeMeta:peer];
+                [self subscribeKeyValue:peer];
+                [self subscribeGyro:peer];
+            }
+            else {
+                NSLog(@"Received invalid CADAnnounceCommandArguments %@", arguments);
+                if(responseBlock) {
+                    responseBlock(@(NO), nil);
+                }
+            }
+        }
+        else {
+            NSLog(@"Received nil CADAnnounceCommandArguments");
+            if(responseBlock) {
+                responseBlock(@(NO), nil);
+            }
+        }
+ }];
+ [_tmf publishCommand:_announceCmd];
+</code></pre>
+
+<h3>Sending announce request</h3>
+
+<pre><code> CADAnnounceCommandArguments *args = [CADAnnounceCommandArguments new];
+ args.name = self.nameLabel.text;
+ args.color = _color;
+
+ [_tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer
+    response:^(id response, NSError *error){
+        if(error) {
+            NSLog(@"%@", [error localizedDescription]);
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:[error localizedDescription] delegate:nil
+                cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                otherButtonTitles:nil] show];
+        }
+        else {
+            [self closeServiceBrowser];
+            self.host = peer;
+            [self broadcastMetaInfo];
+        }
+ }];
+</code></pre><div class="warning"><p><strong>Warning:</strong> It is crucial to give each TMFAnnounceCommand subclass a unique name!</p></div>
+					</div>
+					
+					
+
+					
+					
+					
+
+					
+					
+
+					
+
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+
+					window.name = "";
+				}
+				return false;
+			}
+
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+
+				var tocList = document.getElementById('toc');
+
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+
+			window.onload = init;
+
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+
+		</script>
+	</body>
+</html>

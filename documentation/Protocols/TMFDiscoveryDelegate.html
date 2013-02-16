@@ -1,0 +1,682 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TMFDiscoveryDelegate Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15886208-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">threeMF </a></h1>
+				<a id="developerHome" href="../index.html">Martin Gratzer</a>
+			</div>
+
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TMFDiscoveryDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/discovery:didAddPeer:">&nbsp;&nbsp;&nbsp;&nbsp;- discovery:didAddPeer:</option>
+	
+	<option value="//api/name/discovery:didNotSearchWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- discovery:didNotSearchWithError:</option>
+	
+	<option value="//api/name/discovery:didUpdatePeer:">&nbsp;&nbsp;&nbsp;&nbsp;- discovery:didUpdatePeer:</option>
+	
+	<option value="//api/name/discovery:willRemovePeer:">&nbsp;&nbsp;&nbsp;&nbsp;- discovery:willRemovePeer:</option>
+	
+	<option value="//api/name/discoveryDidStart:">&nbsp;&nbsp;&nbsp;&nbsp;- discoveryDidStart:</option>
+	
+	<option value="//api/name/discoveryDidStop:">&nbsp;&nbsp;&nbsp;&nbsp;- discoveryDidStop:</option>
+	
+	<option value="//api/name/protocolIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;- protocolIdentifier</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discovery:didAddPeer:">discovery:didAddPeer:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discovery:didNotSearchWithError:">discovery:didNotSearchWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discovery:didUpdatePeer:">discovery:didUpdatePeer:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discovery:willRemovePeer:">discovery:willRemovePeer:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discoveryDidStart:">discoveryDidStart:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/discoveryDidStop:">discoveryDidStop:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/protocolIdentifier">protocolIdentifier</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TMFDiscoveryDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TMFDiscoveryDelegate Protocol Reference</h1>
+					</div>
+				</div>
+				<div id="container">
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TMFDiscoveryDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Delegate protocol for <a href="../Classes/TMFDiscovery.html">TMFDiscovery</a> objects.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/protocolIdentifier">&ndash;&nbsp;protocolIdentifier</a></code>
+		<span class="tooltip"><p>Defines the main channels communication protocol for compatibility checks.
+All peers have to communicate with the same protocol and coder version.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discoveryDidStart:">&ndash;&nbsp;discoveryDidStart:</a></code>
+		<span class="tooltip"><p>Gets called after all discovery components did start.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discoveryDidStop:">&ndash;&nbsp;discoveryDidStop:</a></code>
+		<span class="tooltip"><p>Gets called after all discovery components did stop.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discovery:didAddPeer:">&ndash;&nbsp;discovery:didAddPeer:</a></code>
+		<span class="tooltip"><p>Gets called when a peer satisfying the required capabilities is found.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discovery:willRemovePeer:">&ndash;&nbsp;discovery:willRemovePeer:</a></code>
+		<span class="tooltip"><p>Gets called when a host is offline and not gone online again for 2 minutes.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discovery:didUpdatePeer:">&ndash;&nbsp;discovery:didUpdatePeer:</a></code>
+		<span class="tooltip"><p>Gets called when a host gets updated.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/discovery:didNotSearchWithError:">&ndash;&nbsp;discovery:didNotSearchWithError:</a></code>
+		<span class="tooltip"><p>Gets called if the discovery could not start.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
+
+					
+
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/discovery:didAddPeer:" title="discovery:didAddPeer:"></a>
+	<h3 class="subsubtitle method-title">discovery:didAddPeer:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets called when a peer satisfying the required capabilities is found.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)discovery:(TMFDiscovery *)<em>discovery</em> didAddPeer:(TMFPeer *)<em>peer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>discovery</em></dt>
+			<dd><p>The discovery object finding the peer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The peer discovered by the discovery object.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFDiscoveryDelegate.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discovery:didNotSearchWithError:" title="discovery:didNotSearchWithError:"></a>
+	<h3 class="subsubtitle method-title">discovery:didNotSearchWithError:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets called if the discovery could not start.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)discovery:(TMFDiscovery *)<em>discovery</em> didNotSearchWithError:(NSDictionary *)<em>errorDict</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>discovery</em></dt>
+			<dd><p>The discovery object finding the peer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorDict</em></dt>
+			<dd><p>The dictionary containing a reason.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFDiscoveryDelegate.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discovery:didUpdatePeer:" title="discovery:didUpdatePeer:"></a>
+	<h3 class="subsubtitle method-title">discovery:didUpdatePeer:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets called when a host gets updated.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)discovery:(TMFDiscovery *)<em>discovery</em> didUpdatePeer:(TMFPeer *)<em>peer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>discovery</em></dt>
+			<dd><p>The discovery object finding the peer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The peer discovered by the discovery object.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFDiscoveryDelegate.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discovery:willRemovePeer:" title="discovery:willRemovePeer:"></a>
+	<h3 class="subsubtitle method-title">discovery:willRemovePeer:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets called when a host is offline and not gone online again for 2 minutes.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)discovery:(TMFDiscovery *)<em>discovery</em> willRemovePeer:(TMFPeer *)<em>peer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>discovery</em></dt>
+			<dd><p>The discovery object finding the peer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The peer discovered by the discovery object.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFDiscoveryDelegate.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discoveryDidStart:" title="discoveryDidStart:"></a>
+	<h3 class="subsubtitle method-title">discoveryDidStart:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets called after all discovery components did start.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)discoveryDidStart:(TMFDiscovery *)<em>discovery</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>discovery</em></dt>
+			<dd><p>The discovery object finding the peer.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFDiscoveryDelegate.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/discoveryDidStop:" title="discoveryDidStop:"></a>
+	<h3 class="subsubtitle method-title">discoveryDidStop:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets called after all discovery components did stop.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)discoveryDidStop:(TMFDiscovery *)<em>discovery</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>discovery</em></dt>
+			<dd><p>The discovery object finding the peer.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFDiscoveryDelegate.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/protocolIdentifier" title="protocolIdentifier"></a>
+	<h3 class="subsubtitle method-title">protocolIdentifier</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines the main channels communication protocol for compatibility checks.
+All peers have to communicate with the same protocol and coder version.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)protocolIdentifier</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFDiscoveryDelegate.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+
+					window.name = "";
+				}
+				return false;
+			}
+
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+
+				var tocList = document.getElementById('toc');
+
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+
+			window.onload = init;
+
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+
+		</script>
+	</body>
+</html>

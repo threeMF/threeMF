@@ -1,0 +1,1232 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TMFPeer Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15886208-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">threeMF </a></h1>
+				<a id="developerHome" href="../index.html">Martin Gratzer</a>
+			</div>
+
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TMFPeer Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/UUID">&nbsp;&nbsp;&nbsp;&nbsp;UUID</option>
+	
+	<option value="//api/name/addresses">&nbsp;&nbsp;&nbsp;&nbsp;addresses</option>
+	
+	<option value="//api/name/capabilities">&nbsp;&nbsp;&nbsp;&nbsp;capabilities</option>
+	
+	<option value="//api/name/didChangeCapabilitiesOnLastUpdate">&nbsp;&nbsp;&nbsp;&nbsp;didChangeCapabilitiesOnLastUpdate</option>
+	
+	<option value="//api/name/domain">&nbsp;&nbsp;&nbsp;&nbsp;domain</option>
+	
+	<option value="//api/name/hostName">&nbsp;&nbsp;&nbsp;&nbsp;hostName</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/previousCapabilities">&nbsp;&nbsp;&nbsp;&nbsp;previousCapabilities</option>
+	
+	<option value="//api/name/protocolIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;protocolIdentifier</option>
+	
+	
+
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/UUIDFromTXTRecordData:">&nbsp;&nbsp;&nbsp;&nbsp;+ UUIDFromTXTRecordData:</option>
+	
+	<option value="//api/name/stringFromAddressData:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromAddressData:</option>
+	
+	
+
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/hasAddress:">&nbsp;&nbsp;&nbsp;&nbsp;- hasAddress:</option>
+	
+	<option value="//api/name/hasService:">&nbsp;&nbsp;&nbsp;&nbsp;- hasService:</option>
+	
+	<option value="//api/name/initWithNetService:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithNetService:</option>
+	
+	<option value="//api/name/portForCommandName:">&nbsp;&nbsp;&nbsp;&nbsp;- portForCommandName:</option>
+	
+	<option value="//api/name/setPort:commandName:">&nbsp;&nbsp;&nbsp;&nbsp;- setPort:commandName:</option>
+	
+	<option value="//api/name/updateWithTXTRecordData:">&nbsp;&nbsp;&nbsp;&nbsp;- updateWithTXTRecordData:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/UUID">UUID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addresses">addresses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/capabilities">capabilities</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didChangeCapabilitiesOnLastUpdate">didChangeCapabilitiesOnLastUpdate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/domain">domain</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hostName">hostName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/previousCapabilities">previousCapabilities</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/protocolIdentifier">protocolIdentifier</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/UUIDFromTXTRecordData:">UUIDFromTXTRecordData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromAddressData:">stringFromAddressData:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasAddress:">hasAddress:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasService:">hasService:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithNetService:">initWithNetService:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/portForCommandName:">portForCommandName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPort:commandName:">setPort:commandName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateWithTXTRecordData:">updateWithTXTRecordData:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TMFPeer Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TMFPeer Class Reference</h1>
+					</div>
+				</div>
+				<div id="container">
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCopying</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TMFPeer.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class represents a 3MF network peer. Each peer is based on a resolved NSNetService instance and identified by it&rsquo;s unique <a href="#//api/name/UUID">UUID</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/UUID">&nbsp;&nbsp;UUID</a></code>
+		<span class="tooltip"><p>The UUID identifying the peer.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/protocolIdentifier">&nbsp;&nbsp;protocolIdentifier</a></code>
+		<span class="tooltip"><p>The identifier for the protocol used by this peer.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<span class="tooltip"><p>The name of the peer.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hostName">&nbsp;&nbsp;hostName</a></code>
+		<span class="tooltip"><p>The host<a href="#//api/name/name">name</a> of the peer.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/domain">&nbsp;&nbsp;domain</a></code>
+		<span class="tooltip"><p>The domain the peer was discovered in.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addresses">&nbsp;&nbsp;addresses</a></code>
+		<span class="tooltip"><p>All known AF_INET and AF_INET6 addresses of the host. This list may also include unreachable addresses.
+The address may be a sockaddr_in or sockaddr_in6 and may include a port (otherwise the port is 0).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/capabilities">&nbsp;&nbsp;capabilities</a></code>
+		<span class="tooltip"><p>A list of command names the peer has published.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/previousCapabilities">&nbsp;&nbsp;previousCapabilities</a></code>
+		<span class="tooltip"><p>A list of command names the peer had published before the previous change.
+If this array is empty, the <a href="#//api/name/capabilities">capabilities</a> have not changed from the last update.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didChangeCapabilitiesOnLastUpdate">&nbsp;&nbsp;didChangeCapabilitiesOnLastUpdate</a></code>
+		<span class="tooltip"><p>A convenience flag expressing if the last update operation included a capability change.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithNetService:">&ndash;&nbsp;initWithNetService:</a></code>
+		<span class="tooltip"><p>Creates a new TMFPeer instance based on a resolved NSNetService</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPort:commandName:">&ndash;&nbsp;setPort:commandName:</a></code>
+		<span class="tooltip"><p>Sets the port used for a specific command.
+The ports are defined by the command&rsquo;s corresponding <a href="../Classes/TMFChannel.html">TMFChannel</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/portForCommandName:">&ndash;&nbsp;portForCommandName:</a></code>
+		<span class="tooltip"><p>Gets the port used for a specific command.
+The ports are defined by the command&rsquo;s corresponding <a href="../Classes/TMFChannel.html">TMFChannel</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateWithTXTRecordData:">&ndash;&nbsp;updateWithTXTRecordData:</a></code>
+		<span class="tooltip"><p>Updates the peers meta information based on [NSNetService TXTRecordData]</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasAddress:">&ndash;&nbsp;hasAddress:</a></code>
+		<span class="tooltip"><p>The sockaddr_in or sockaddr_in6 address the peer should have</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasService:">&ndash;&nbsp;hasService:</a></code>
+		<span class="tooltip"><p>The NSNetService the peer may be based on.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/UUIDFromTXTRecordData:">+&nbsp;UUIDFromTXTRecordData:</a></code>
+		<span class="tooltip"><p>Extracts a peer&rsquo;s UUID from a NSNetService&rsquo;s [NSNetService TXTRecordData]</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringFromAddressData:">+&nbsp;stringFromAddressData:</a></code>
+		<span class="tooltip"><p>Translates sockaddr_in or sockaddr_in6 <a href="#//api/name/addresses">addresses</a> to NSString.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/UUID" title="UUID"></a>
+	<h3 class="subsubtitle method-title">UUID</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The UUID identifying the peer.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *UUID</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> This UUID currently changes with every new 3MF session. Persisting the UUID for each installation can be discussed but currently I&rsquo;m not seeing any need for it.</p></div>
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addresses" title="addresses"></a>
+	<h3 class="subsubtitle method-title">addresses</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>All known AF_INET and AF_INET6 addresses of the host. This list may also include unreachable addresses.
+The address may be a sockaddr_in or sockaddr_in6 and may include a port (otherwise the port is 0).</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSArray *addresses</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/capabilities" title="capabilities"></a>
+	<h3 class="subsubtitle method-title">capabilities</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A list of command names the peer has published.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSArray *capabilities</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didChangeCapabilitiesOnLastUpdate" title="didChangeCapabilitiesOnLastUpdate"></a>
+	<h3 class="subsubtitle method-title">didChangeCapabilitiesOnLastUpdate</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A convenience flag expressing if the last update operation included a capability change.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL didChangeCapabilitiesOnLastUpdate</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/domain" title="domain"></a>
+	<h3 class="subsubtitle method-title">domain</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The domain the peer was discovered in.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *domain</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hostName" title="hostName"></a>
+	<h3 class="subsubtitle method-title">hostName</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The host<a href="#//api/name/name">name</a> of the peer.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *hostName</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The name of the peer.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *name</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/previousCapabilities" title="previousCapabilities"></a>
+	<h3 class="subsubtitle method-title">previousCapabilities</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A list of command names the peer had published before the previous change.
+If this array is empty, the <a href="#//api/name/capabilities">capabilities</a> have not changed from the last update.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *previousCapabilities</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/protocolIdentifier" title="protocolIdentifier"></a>
+	<h3 class="subsubtitle method-title">protocolIdentifier</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The identifier for the protocol used by this peer.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *protocolIdentifier</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/UUIDFromTXTRecordData:" title="UUIDFromTXTRecordData:"></a>
+	<h3 class="subsubtitle method-title">UUIDFromTXTRecordData:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Extracts a peer&rsquo;s UUID from a NSNetService&rsquo;s [NSNetService TXTRecordData]</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)UUIDFromTXTRecordData:(NSData *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>a NSNetService&rsquo;s [NSNetService TXTRecordData]</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The extracted <a href="#//api/name/UUID">UUID</a>. Nil if no <a href="#//api/name/UUID">UUID</a> is found.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringFromAddressData:" title="stringFromAddressData:"></a>
+	<h3 class="subsubtitle method-title">stringFromAddressData:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Translates sockaddr_in or sockaddr_in6 <a href="#//api/name/addresses">addresses</a> to NSString.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromAddressData:(NSData *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>The sockaddr_in or sockaddr_in6 data</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The string representation of the given address.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/hasAddress:" title="hasAddress:"></a>
+	<h3 class="subsubtitle method-title">hasAddress:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The sockaddr_in or sockaddr_in6 address the peer should have</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)hasAddress:(NSData *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>The sockaddr_in or sockaddr_in6 address the peer should have</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the peer has the specified address. Otherwise NO.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasService:" title="hasService:"></a>
+	<h3 class="subsubtitle method-title">hasService:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The NSNetService the peer may be based on.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)hasService:(NSNetService *)<em>service</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>service</em></dt>
+			<dd><p>The NSNetService the peer may be based on.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the internal NSNetService is the same as the provided one. Otherwise NO.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithNetService:" title="initWithNetService:"></a>
+	<h3 class="subsubtitle method-title">initWithNetService:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new TMFPeer instance based on a resolved NSNetService</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithNetService:(NSNetService *)<em>netService</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>netService</em></dt>
+			<dd><p>The resolved NSNetService of a discovered peer</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new peer instance</p>
+	</div>
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> The NSNetService must be resolved!</p></div>
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/portForCommandName:" title="portForCommandName:"></a>
+	<h3 class="subsubtitle method-title">portForCommandName:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the port used for a specific command.
+The ports are defined by the command&rsquo;s corresponding <a href="../Classes/TMFChannel.html">TMFChannel</a>.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)portForCommandName:(NSString *)<em>commandName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandName</em></dt>
+			<dd><p>The unique command name provided by <a href="../Classes/TMFCommand.html#//api/name/name">[TMFCommand name]</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The port for the given command</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPort:commandName:" title="setPort:commandName:"></a>
+	<h3 class="subsubtitle method-title">setPort:commandName:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the port used for a specific command.
+The ports are defined by the command&rsquo;s corresponding <a href="../Classes/TMFChannel.html">TMFChannel</a>.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPort:(NSUInteger)<em>port</em> commandName:(NSString *)<em>commandName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>port</em></dt>
+			<dd><p>The port used for the given command.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandName</em></dt>
+			<dd><p>The unique command name provided by <a href="../Classes/TMFCommand.html#//api/name/name">[TMFCommand name]</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateWithTXTRecordData:" title="updateWithTXTRecordData:"></a>
+	<h3 class="subsubtitle method-title">updateWithTXTRecordData:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Updates the peers meta information based on [NSNetService TXTRecordData]</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateWithTXTRecordData:(NSData *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>The new data provided by the NSNetService [NSNetService TXTRecordData]</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPeer.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+
+					window.name = "";
+				}
+				return false;
+			}
+
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+
+				var tocList = document.getElementById('toc');
+
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+
+			window.onload = init;
+
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+
+		</script>
+	</body>
+</html>

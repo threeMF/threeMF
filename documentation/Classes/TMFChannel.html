@@ -1,0 +1,862 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TMFChannel Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15886208-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">threeMF </a></h1>
+				<a id="developerHome" href="../index.html">Martin Gratzer</a>
+			</div>
+
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TMFChannel Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/port">&nbsp;&nbsp;&nbsp;&nbsp;port</option>
+	
+	<option value="//api/name/protocol">&nbsp;&nbsp;&nbsp;&nbsp;protocol</option>
+	
+	<option value="//api/name/running">&nbsp;&nbsp;&nbsp;&nbsp;running</option>
+	
+	
+
+	
+
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithPort:protocol:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithPort:protocol:delegate:</option>
+	
+	<option value="//api/name/initWithProtocol:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithProtocol:delegate:</option>
+	
+	<option value="//api/name/removePeer:">&nbsp;&nbsp;&nbsp;&nbsp;- removePeer:</option>
+	
+	<option value="//api/name/send:arguments:destination:responseBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- send:arguments:destination:responseBlock:</option>
+	
+	<option value="//api/name/start:">&nbsp;&nbsp;&nbsp;&nbsp;- start:</option>
+	
+	<option value="//api/name/stop:">&nbsp;&nbsp;&nbsp;&nbsp;- stop:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/port">port</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/protocol">protocol</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/running">running</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithPort:protocol:delegate:">initWithPort:protocol:delegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithProtocol:delegate:">initWithProtocol:delegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removePeer:">removePeer:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/send:arguments:destination:responseBlock:">send:arguments:destination:responseBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start:">start:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stop:">stop:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TMFChannel Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TMFChannel Class Reference</h1>
+					</div>
+				</div>
+				<div id="container">
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TMFChannel.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Abstract class representing a network channel.
+A concrete channel communicates using a specific network technology (TCP sockets, HTTP rest API, &hellip;).
+Each peer has at least one channel but can have multiple for different types of commands.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+		<span class="tooltip"><p>The object that acts as the delegate of the receiving channel.
+The delegate must adopt the <a href="../Protocols/TMFChannelDelegate.html">TMFChannelDelegate</a> <a href="#//api/name/protocol">protocol</a>. The delegate is not retained.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/protocol">&nbsp;&nbsp;protocol</a></code>
+		<span class="tooltip"><p>Protocol for message en- and decoding.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/port">&nbsp;&nbsp;port</a></code>
+		<span class="tooltip"><p>The socket port this channel is <a href="#//api/name/running">running</a> on.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/running">&nbsp;&nbsp;running</a></code>
+		<span class="tooltip"><p>Running state of this channel.
+YES if the channel is started and running.
+NO if the channel did never start, stop or quit because of an error.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithProtocol:delegate:">&ndash;&nbsp;initWithProtocol:delegate:</a></code>
+		<span class="tooltip"><p>Creates a new instance.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithPort:protocol:delegate:">&ndash;&nbsp;initWithPort:protocol:delegate:</a></code>
+		<span class="tooltip"><p>Creates a new instance.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/start:">&ndash;&nbsp;start:</a></code>
+		<span class="tooltip"><p>Starts the channel</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stop:">&ndash;&nbsp;stop:</a></code>
+		<span class="tooltip"><p>Stops the channel</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/send:arguments:destination:responseBlock:">&ndash;&nbsp;send:arguments:destination:responseBlock:</a></code>
+		<span class="tooltip"><p>Sends a command with arguments via the channel.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removePeer:">&ndash;&nbsp;removePeer:</a></code>
+		<span class="tooltip"><p>Removes all connections and sockets for a given peer.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The object that acts as the delegate of the receiving channel.
+The delegate must adopt the <a href="../Protocols/TMFChannelDelegate.html">TMFChannelDelegate</a> <a href="#//api/name/protocol">protocol</a>. The delegate is not retained.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) NSObject&lt;TMFChannelDelegate&gt; *delegate</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/port" title="port"></a>
+	<h3 class="subsubtitle method-title">port</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The socket port this channel is <a href="#//api/name/running">running</a> on.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger port</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/protocol" title="protocol"></a>
+	<h3 class="subsubtitle method-title">protocol</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Protocol for message en- and decoding.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) TMFProtocol *protocol</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/running" title="running"></a>
+	<h3 class="subsubtitle method-title">running</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Running state of this channel.
+YES if the channel is started and running.
+NO if the channel did never start, stop or quit because of an error.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isRunning) BOOL running</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+
+					
+
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithPort:protocol:delegate:" title="initWithPort:protocol:delegate:"></a>
+	<h3 class="subsubtitle method-title">initWithPort:protocol:delegate:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new instance.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithPort:(NSUInteger)<em>port</em> protocol:(TMFProtocol *)<em>protocol</em> delegate:(NSObject&lt;TMFChannelDelegate&gt; *)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>port</em></dt>
+			<dd><p>The <a href="#//api/name/port">port</a> the channel should be forced to start on</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>protocol</em></dt>
+			<dd><p>The <a href="#//api/name/protocol">protocol</a> for en- and decoding network messages.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>The <a href="#//api/name/delegate">delegate</a> adopting the <a href="../Protocols/TMFChannelDelegate.html">TMFChannelDelegate</a> <a href="#//api/name/protocol">protocol</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithProtocol:delegate:" title="initWithProtocol:delegate:"></a>
+	<h3 class="subsubtitle method-title">initWithProtocol:delegate:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new instance.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithProtocol:(TMFProtocol *)<em>protocol</em> delegate:(NSObject&lt;TMFChannelDelegate&gt; *)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>protocol</em></dt>
+			<dd><p>The <a href="#//api/name/protocol">protocol</a> for en- and decoding network messages.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>The <a href="#//api/name/delegate">delegate</a> adopting the <a href="../Protocols/TMFChannelDelegate.html">TMFChannelDelegate</a> <a href="#//api/name/protocol">protocol</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance</p>
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removePeer:" title="removePeer:"></a>
+	<h3 class="subsubtitle method-title">removePeer:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all connections and sockets for a given peer.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removePeer:(TMFPeer *)<em>peer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>Peer which should get removed.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/send:arguments:destination:responseBlock:" title="send:arguments:destination:responseBlock:"></a>
+	<h3 class="subsubtitle method-title">send:arguments:destination:responseBlock:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends a command with arguments via the channel.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)send:(TMFCommand *)<em>command</em> arguments:(TMFArguments *)<em>arguments</em> destination:(TMFPeer *)<em>peer</em> responseBlock:(responseBlock_t)<em>responseBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>command</em></dt>
+			<dd><p>command to send</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>arguments</em></dt>
+			<dd><p>arguments to send</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>destination peer</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>responseBlock</em></dt>
+			<dd><p>response callback block to call for responses. This parameter gets ignored for <a href="../Classes/TMFPublishSubscribeCommand.html">TMFPublishSubscribeCommand</a></p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/start:" title="start:"></a>
+	<h3 class="subsubtitle method-title">start:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts the channel</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)start:(startCompletionBlock_t)<em>completionBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>callback block getting called after startup is done</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stop:" title="stop:"></a>
+	<h3 class="subsubtitle method-title">stop:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops the channel</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stop:(stopCompletionBlock_t)<em>completionBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>callback block getting called after startup is done</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFChannel.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+
+					window.name = "";
+				}
+				return false;
+			}
+
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+
+				var tocList = document.getElementById('toc');
+
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+
+			window.onload = init;
+
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+
+		</script>
+	</body>
+</html>

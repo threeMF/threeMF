@@ -1,0 +1,1113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TMFPublishSubscribeCommand Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15886208-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">threeMF </a></h1>
+				<a id="developerHome" href="../index.html">Martin Gratzer</a>
+			</div>
+
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TMFPublishSubscribeCommand Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/configuration">&nbsp;&nbsp;&nbsp;&nbsp;configuration</option>
+	
+	<option value="//api/name/port">&nbsp;&nbsp;&nbsp;&nbsp;port</option>
+	
+	<option value="//api/name/restartOnConfigurationUpdate">&nbsp;&nbsp;&nbsp;&nbsp;restartOnConfigurationUpdate</option>
+	
+	<option value="//api/name/running">&nbsp;&nbsp;&nbsp;&nbsp;running</option>
+	
+	<option value="//api/name/subscribers">&nbsp;&nbsp;&nbsp;&nbsp;subscribers</option>
+	
+	
+
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/defaultConfiguration">&nbsp;&nbsp;&nbsp;&nbsp;+ defaultConfiguration</option>
+	
+	<option value="//api/name/isMulticast">&nbsp;&nbsp;&nbsp;&nbsp;+ isMulticast</option>
+	
+	<option value="//api/name/isRealTime">&nbsp;&nbsp;&nbsp;&nbsp;+ isRealTime</option>
+	
+	<option value="//api/name/isReliable">&nbsp;&nbsp;&nbsp;&nbsp;+ isReliable</option>
+	
+	
+
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addSubscriber:">&nbsp;&nbsp;&nbsp;&nbsp;- addSubscriber:</option>
+	
+	<option value="//api/name/removeSubscriber:">&nbsp;&nbsp;&nbsp;&nbsp;- removeSubscriber:</option>
+	
+	<option value="//api/name/sendWithArguments:">&nbsp;&nbsp;&nbsp;&nbsp;- sendWithArguments:</option>
+	
+	<option value="//api/name/start:">&nbsp;&nbsp;&nbsp;&nbsp;- start:</option>
+	
+	<option value="//api/name/stop:">&nbsp;&nbsp;&nbsp;&nbsp;- stop:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/configuration">configuration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/port">port</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/restartOnConfigurationUpdate">restartOnConfigurationUpdate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/running">running</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscribers">subscribers</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultConfiguration">defaultConfiguration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isMulticast">isMulticast</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isRealTime">isRealTime</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isReliable">isReliable</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addSubscriber:">addSubscriber:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeSubscriber:">removeSubscriber:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendWithArguments:">sendWithArguments:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start:">start:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stop:">stop:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TMFPublishSubscribeCommand Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TMFPublishSubscribeCommand Class Reference</h1>
+					</div>
+				</div>
+				<div id="container">
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/TMFCommand.html">TMFCommand</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TMFPublishSubscribeCommand.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This abstract class describes a command following the publish subscribe pattern.</p>
+
+<p><strong>Publish Subscribe</strong> (P+S) commands get triggered by the <strong>publisher</strong> whenever a defined event occurs. Other peers can <strong>subscribe</strong> to P+S commands and get a command specific payload <strong>push</strong>ed. An example would be a mobile phone with motion sensors providing a command sending real time accelerometer data. This information could e.g. be used to control a mouse pointer on a desktop computer.</p>
+
+<h2>Usage</h2>
+
+<h3>Setup (Peer A + Peer B)</h3>
+
+<pre><code> self.tmf = [TMFConnector new];
+</code></pre>
+
+<h3>Publishing (Peer A)</h3>
+
+<pre><code> self.kvCmd = [TMFKeyValueCommand new]; // P+S command
+ [self.tmf publishCommand:self.kvCmd];
+</code></pre>
+
+<h3>Discovery (Peer B)</h3>
+
+<pre><code> [self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
+</code></pre>
+
+<h3>Subscription (Peer B)</h3>
+
+<pre><code> [self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){
+ // do awesome things
+ NSLog(@"%@: %@", arguments.key, arguments.value);
+ }];
+</code></pre>
+
+<h3>Push (Peer A)</h3>
+
+<pre><code> TMFKeyValueCommandArguments *kvArguments = [TMFKeyValueCommandArguments new];
+ kvArguments.key = @"msg";
+ kvArguments.value = @"Hello World!";
+ [self.kvCmd sendWithArguments:kvArguments];
+</code></pre>
+
+<h2>Custom Publish Subscribe Command</h2>
+
+<p>Publish subscribe commands can be <strong>internally</strong> or <strong>externally</strong> triggered. Internally triggered commands (e.g. TMFMotionCommand, TMFLocationCommand) are aware when and how to send arguments. A service is setup internally which sends payload to all subscribers on a use case dependent event (e.g. accelerometer data is available). The command just needs to be published, start and stop get called with the first and last subscriber &ndash; everything is handled by 3MF.
+Externally triggered commands (e.g. TMFImageCommand, TMFKeyValueCommand) get executed by the application using 3MF, the command is not aware of the trigger. TMFArguments need to be created and send at the application level.</p>
+
+<ol>
+<li>Subclass
+
+<ul>
+<li>Override <a href="../Classes/TMFCommand.html#//api/name/name">[TMFCommand name]</a> with a short unique string identifier NSStringFromClass() is default.</li>
+<li>Override <a href="#//api/name/isReliable">[TMFPublishSubscribeCommand isReliable]</a> and return YES to use TCP instead of UDP</li>
+<li>Override <a href="#//api/name/isRealTime">[TMFPublishSubscribeCommand isRealTime]</a> and return YES to disable Nagle&rsquo;s algorithm for TCP</li>
+<li>Override <a href="#//api/name/isMulticast">[TMFPublishSubscribeCommand isMulticast]</a> and return YES if you want to use UDP multicast instead of UDP unicast.</li>
+<li>Override <a href="#//api/name/defaultConfiguration">[TMFPublishSubscribeCommand defaultConfiguration]</a> if you want a default configuration.</li>
+</ul>
+</li>
+<li>Command startup / shutdown
+
+<ul>
+<li>Override <a href="#//api/name/start:">[TMFPublishSubscribeCommand start:]</a> to setup the service (if needed, can also be triggered from &ldquo;outside&rdquo;)</li>
+<li>Override <a href="#//api/name/stop:">[TMFPublishSubscribeCommand stop:]</a> to stop the service (if needed, can also be triggered from &ldquo;outside&rdquo;)</li>
+</ul>
+</li>
+<li>Create a <a href="../Classes/TMFArguments.html">TMFArguments</a> subclass
+
+<ul>
+<li>Provide all payload parameters as strong read write properties (they get serialized automatically)
+4 Create a <a href="../Classes/TMFConfiguration.html">TMFConfiguration</a> subclass (if needed)</li>
+<li>Provide all <a href="#//api/name/configuration">configuration</a> parameters as strong read write properties (they get serialized automatically)</li>
+</ul>
+</li>
+<li>Publish the command</li>
+</ol>
+<div class="warning"><p><strong>Warning:</strong> This class is abstract, don&rsquo;t use it directly. Create a a subclass to implement your own custom command.</p></div>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/running">&nbsp;&nbsp;running</a></code>
+		<span class="tooltip"><p>Indicates if the command&rsquo;s service is running</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/port">&nbsp;&nbsp;port</a></code>
+		<span class="tooltip"><p>Port of the commands channel.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/configuration">&nbsp;&nbsp;configuration</a></code>
+		<span class="tooltip"><p>Configuration the command is <a href="#//api/name/running">running</a> with.
+At the moment there can be only one configuration of all <a href="#//api/name/subscribers">subscribers</a>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/restartOnConfigurationUpdate">&nbsp;&nbsp;restartOnConfigurationUpdate</a></code>
+		<span class="tooltip"><p>Defines if a command should restart after configurations got updated
+default value is NO, override this method in your command class if you want to change it.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/subscribers">&nbsp;&nbsp;subscribers</a></code>
+		<span class="tooltip"><p>The list of all active subscribers receiving this command.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isMulticast">+&nbsp;isMulticast</a></code>
+		<span class="tooltip"><p>Defines if a command is using UDP multi-cast for data transmission.
+Default value is NO.
+Override this method in your command class if you want to change it.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isReliable">+&nbsp;isReliable</a></code>
+		<span class="tooltip"><p>Defines if a command has to be acknowledged by the receiver in order to be successful.
+The default value is NO, override this method in your command class if you want to change it.
+Commands configured as reliable will get delivered on a TCP channel, otherwise via UDP (by default).
+This behavior can be changed by providing a custom channel in the command&rsquo;s subclass.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isRealTime">+&nbsp;isRealTime</a></code>
+		<span class="tooltip"><p>Defines if the command&rsquo;s arguments are used in an real time context (like sending gyroscope data or mouse positions)
+default value is NO, override this method in your command class if you want to change it.
+Setting this value to YES or NO in combination with unreliable commands will have no effect.
+Setting this value to YES for reliable commands will set the TCP_NODELAY flag for TCP sockets and
+disable Nagle&rsquo;s algorithm <a href="http://www.unixguide.net/network/socketfaq/2.16.shtml">http://www.unixguide.net/network/socketfaq/2.16.shtml</a></p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultConfiguration">+&nbsp;defaultConfiguration</a></code>
+		<span class="tooltip"><p>The standard <a href="#//api/name/configuration">configuration</a> for the command which will be used if no <a href="#//api/name/configuration">configuration</a> is transmitted on subscription.
+The default value is nil.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendWithArguments:">&ndash;&nbsp;sendWithArguments:</a></code>
+		<span class="tooltip"><p>Broadcasts the given arguments to all listening peers</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addSubscriber:">&ndash;&nbsp;addSubscriber:</a></code>
+		<span class="tooltip"><p>Adds a subscriber, each subscriber will get data on send</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeSubscriber:">&ndash;&nbsp;removeSubscriber:</a></code>
+		<span class="tooltip"><p>Removes a subscriber, each subscriber will get data on send</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/start:">&ndash;&nbsp;start:</a></code>
+		<span class="tooltip"><p>Starts the command&rsquo;s service / worker.
+The default implementation is just calling the completion block.
+You need to override this method if your command runs internally triggered.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stop:">&ndash;&nbsp;stop:</a></code>
+		<span class="tooltip"><p>Stops the command&rsquo;s service / worker and notifies all <a href="#//api/name/subscribers">subscribers</a>
+The default implementation is just calling the completion block.
+You need to override this method if your command runs internally triggered.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/configuration" title="configuration"></a>
+	<h3 class="subsubtitle method-title">configuration</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Configuration the command is <a href="#//api/name/running">running</a> with.
+At the moment there can be only one configuration of all <a href="#//api/name/subscribers">subscribers</a>.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) TMFConfiguration *configuration</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/port" title="port"></a>
+	<h3 class="subsubtitle method-title">port</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Port of the commands channel.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger port</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/restartOnConfigurationUpdate" title="restartOnConfigurationUpdate"></a>
+	<h3 class="subsubtitle method-title">restartOnConfigurationUpdate</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines if a command should restart after configurations got updated
+default value is NO, override this method in your command class if you want to change it.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=shouldRestartOnConfigurationUpdate) BOOL restartOnConfigurationUpdate</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/running" title="running"></a>
+	<h3 class="subsubtitle method-title">running</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if the command&rsquo;s service is running</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isRunning) BOOL running</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/subscribers" title="subscribers"></a>
+	<h3 class="subsubtitle method-title">subscribers</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The list of all active subscribers receiving this command.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSArray *subscribers</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultConfiguration" title="defaultConfiguration"></a>
+	<h3 class="subsubtitle method-title">defaultConfiguration</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The standard <a href="#//api/name/configuration">configuration</a> for the command which will be used if no <a href="#//api/name/configuration">configuration</a> is transmitted on subscription.
+The default value is nil.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (TMFConfiguration *)defaultConfiguration</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isMulticast" title="isMulticast"></a>
+	<h3 class="subsubtitle method-title">isMulticast</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines if a command is using UDP multi-cast for data transmission.
+Default value is NO.
+Override this method in your command class if you want to change it.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isMulticast</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isRealTime" title="isRealTime"></a>
+	<h3 class="subsubtitle method-title">isRealTime</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines if the command&rsquo;s arguments are used in an real time context (like sending gyroscope data or mouse positions)
+default value is NO, override this method in your command class if you want to change it.
+Setting this value to YES or NO in combination with unreliable commands will have no effect.
+Setting this value to YES for reliable commands will set the TCP_NODELAY flag for TCP sockets and
+disable Nagle&rsquo;s algorithm <a href="http://www.unixguide.net/network/socketfaq/2.16.shtml">http://www.unixguide.net/network/socketfaq/2.16.shtml</a></p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isRealTime</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="bug"><p><strong>Bug:</strong> This method can be removed, if the TCP channel decides on applying TCP_NDELAY based on a command&rsquo;s arguments size.</p></div>
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isReliable" title="isReliable"></a>
+	<h3 class="subsubtitle method-title">isReliable</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines if a command has to be acknowledged by the receiver in order to be successful.
+The default value is NO, override this method in your command class if you want to change it.
+Commands configured as reliable will get delivered on a TCP channel, otherwise via UDP (by default).
+This behavior can be changed by providing a custom channel in the command&rsquo;s subclass.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isReliable</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addSubscriber:" title="addSubscriber:"></a>
+	<h3 class="subsubtitle method-title">addSubscriber:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a subscriber, each subscriber will get data on send</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addSubscriber:(TMFPeer *)<em>peer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>Thee peer to add to this commands <a href="#//api/name/subscribers">subscribers</a> list.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeSubscriber:" title="removeSubscriber:"></a>
+	<h3 class="subsubtitle method-title">removeSubscriber:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes a subscriber, each subscriber will get data on send</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeSubscriber:(TMFPeer *)<em>peer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>peer</em></dt>
+			<dd><p>The peer to remove from this commands <a href="#//api/name/subscribers">subscribers</a> list.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendWithArguments:" title="sendWithArguments:"></a>
+	<h3 class="subsubtitle method-title">sendWithArguments:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Broadcasts the given arguments to all listening peers</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendWithArguments:(TMFArguments *)<em>arguments</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>arguments</em></dt>
+			<dd><p>The arguments for the command execution</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/start:" title="start:"></a>
+	<h3 class="subsubtitle method-title">start:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts the command&rsquo;s service / worker.
+The default implementation is just calling the completion block.
+You need to override this method if your command runs internally triggered.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)start:(startCompletionBlock_t)<em>completionBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>callback block which gets called after startup</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stop:" title="stop:"></a>
+	<h3 class="subsubtitle method-title">stop:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops the command&rsquo;s service / worker and notifies all <a href="#//api/name/subscribers">subscribers</a>
+The default implementation is just calling the completion block.
+You need to override this method if your command runs internally triggered.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stop:(stopCompletionBlock_t)<em>completionBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>callback block which gets called after startup</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFPublishSubscribeCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+
+					window.name = "";
+				}
+				return false;
+			}
+
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+
+				var tocList = document.getElementById('toc');
+
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+
+			window.onload = init;
+
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+
+		</script>
+	</body>
+</html>

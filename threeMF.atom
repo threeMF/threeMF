@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
+    <id>http://threemf.com/threeMF.atom/20130216205957</id>
+    <title type="text">threeMF Documentation</title>
+    <rights>Copyright © 2013 Martin Gratzer. All rights reserved.</rights>
+    <link rel="self" href="http://threemf.com/threeMF.atom"></link>
+    <docset:publisherName>Martin Gratzer</docset:publisherName>
+    <docset:publisherID>com.threemf.documentation</docset:publisherID>
+    <updated>2013-02-16T20:59:57+01:00</updated>
+    <entry>
+        <id>tag:threemf.com,2013-02-16:com.threemf.threeMF/1.0.0</id>
+        <title type="text">threeMF Documentation</title>
+        <updated>2013-02-16T20:59:57+01:00</updated>
+        <content type="text">threeMF Documentation (v1.0.0)</content>
+        <link rel="enclosure" type="application/octet-stream" href="http://threemf.com/com.threemf.threeMF-1.0.xar" length="387074"></link>
+        <docset:identifier>com.threemf.threeMF</docset:identifier>
+        <docset:version>1.0.0</docset:version>
+        <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>
+    </entry>
+</feed>
