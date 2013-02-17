@@ -44,122 +44,6 @@
 				</div>
 				<div id="container">
 					
-					<div class="section section-overview index-overview">
-						
-						
-						<h1>threeMF</h1>
-
-<p>threeMF (3MF) stands for <em>Mobile MultiModal (Interaction) Framework</em> and it is a <strong>generic</strong> and <strong>extendable</strong> framework for easy <strong>ad-hoc device discovery</strong> and <strong>RPC based communication</strong>.*</p>
-
-<p>This framework allows easy ad-hoc communication between devices without the pain of handling <strong>service discovery and management</strong>, network <strong>socket handling</strong>, <strong>connectivity issues</strong> and <strong>data serialization</strong>. Communication between multiple devices is abstracted with simple patterns and the code complexity to is reduced to a few lines. The framework is very generic and extendable to fit a wide range of use cases.</p>
-
-<h2>How does it work</h2>
-
-<p>3MF creates a P2P network which allows to share ad-hoc network services between devices. Remote instances of 3MF get discovered, managed during visibility and removed on disappearance automatically. Each peer can publish <a href="http://en.wikipedia.org/wiki/Remote_procedure_call">remote procedures</a> (they are called commands in the context of 3MF) and execute them at each other. These commands are a semantic description defining <strong>which data</strong> gets shared on <strong>which network channel</strong> (TCP, UDP, &hellip;) following <strong>which pattern</strong> (<a href="https://github.com/mgratzer/threeMF/wiki/ResponseRequest">Response Request</a> or <a href="https://github.com/mgratzer/threeMF/wiki/PublishSubscribe">Publish Subscribe</a>).</p>
-
-<p><strong>Response Request</strong> (RR) commands define remote procedures delivering a <strong>response</strong> for a list of defined parameters on <strong>request</strong>. An example would be a computer asking a mobile phone for its current GPS location.</p>
-
-<p><strong>Publish Subscribe</strong> (PS) commands on the other hand get triggered by the <strong>publisher</strong> whenever a defined event occurs. Other peers can <strong>subscribe</strong> to PS commands and get payload <strong>pushed</strong>. An example would be a mobile phone with motion sensors providing a command for real time accelerometer data. Subscribers could use this data to control a mouse pointer on a computer.</p>
-
-<p>3MF comes with <a href="https://github.com/mgratzer/threeMF/wiki/BuildInCommands">build-in commands</a> &mdash;&ndash; but it&rsquo;s real power lies it&rsquo;s extendability. You are able to customize nearby every part, starting at a set of <a href="https://github.com/mgratzer/threeMF/wiki/CustomCommands">custom commands</a> over to <a href="https://github.com/mgratzer/threeMF/wiki/CustomNewtorkChannels">custom network channels</a> and <a href="https://github.com/mgratzer/threeMF/wiki/CustomProtocols">custom communication protocols</a>.</p>
-
-<p>The framework communicates <strong>ad-hoc</strong>, which means it is sending network messages directly between peers using their local network without a central instance.</p>
-
-<h3>Platform</h3>
-
-<p>3MF is currently implemented in <a href="https://developer.apple.com/cocoa/">Cocoa</a> running on iOS and OSX. The bigger vision is to have a system also spread across other relevant platforms like Android, Windows Phone, &hellip; you name it. Feel free to contact <a href="http://twitter.com/mgratzer">me</a> if you'r interested in porting 3MF, I&rsquo;m glad to provide help if needed.</p>
-
-<h3>Requirements</h3>
-
-<p>The current implementation is using <strong>ARC</strong> and minimum deployment targets are <strong>Mac OSX 10.7</strong> and <strong>iOS 5.0</strong>.</p>
-
-<h2>Publish Subscribe Example</h2>
-
-<p>The following code snippets show how to <strong>publish</strong> a command, <strong>discover</strong> peers providing it, <strong>subscribe</strong> and <strong>push</strong> payload to subscribers. Look at <a href="http://threemf.com/documentation/">http://threemf.com/documentation/</a> for more documentation.</p>
-
-<h3>Scenario</h3>
-
-<p>Peer A will provides a command pushing arbitrary key value pairs to subscribers. Peer B searches for peers serving the command and subscribes. Peer A will than start pushing payload causing Peer B&rsquo;s receive block to execute until the session ends.</p>
-
-<ol>
-<li>Publish the <code>TMFKeyValueCommand</code>. (Peer A)</li>
-<li>Discover peers providing the command. (Peer B)</li>
-<li>Subscribe to the command at discovered peers. (Peer B)</li>
-<li>Push key value pairs to all subscribers. (Peer A)</li>
-</ol>
-
-
-<h3>Step 0: Setup (Peer A and Peer B)</h3>
-
-<pre><code>#import "threeMF.h"
-self.tmf = [TMFConnector new];
-</code></pre>
-
-<h3>Step 1: Provide (Peer A)</h3>
-
-<pre><code>self.kvCmd = [TMFKeyValueCommand new];
-[self.tmf publishCommand:self.kvCmd];
-</code></pre>
-
-<h3>Step 2: Discover (Peer B)</h3>
-
-<pre><code>[self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
-</code></pre>
-
-<h3>Step 3: Subscribe (Peer B)</h3>
-
-<pre><code>- (void)threeMF:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
-        if(type == TMFPeerChangeFound) {
-            [self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){ // do awesome things
-            NSLog(@"%@: %@", arguments.key, arguments.value);
-        } 
-        completion:^(NSError *error){
-             if(error) { // handle error
-                 NSLog(@"%@", error);
-             }
-         }];
-    }
-}
-</code></pre>
-
-<h3>Step 4: Execute (Peer A)</h3>
-
-<pre><code>TMFKeyValueCommandArguments *kvArguments = [TMFKeyValueCommandArguments new];
-kvArguments.key = @"msg";
-kvArguments.value = @"Hello World!";
-[self.kvCmd sendWithArguments:kvArguments];
-</code></pre>
-
-<h2>Adding 3MF to your Xcode project</h2>
-
-<ol>
-<li><p>Add the the framework as a <a href="http://schacon.github.com/git/user-manual.html#submodules">git submodule</a>. Go to the root folder of your project and execute the following commands.</p>
-
-<p> $ git submodule add <a href="https://github.com/mgratzer/threeMF.git">https://github.com/mgratzer/threeMF.git</a> Vendor/threeMF
- $ git submodule update &mdash;init &mdash;recursive</p></li>
-<li><p>Add (simply drag &amp; drop) <code>Vendor/threeMF/threeMF</code> to your Xcode project.</p></li>
-<li><p>Make sure the following frameworks are linked to your project&rsquo;s target: <code>CFNetworking.framework</code>, <code>Security.framework</code>, <code>SystemConfiguration.framework</code>.</p></li>
-<li><p>You need to add <code>CoreMotion.framework</code> and <code>CoreLocation.framework</code> to your -Prefix.pch file, if you want to use the <a href="Classes/TMFLocationCommand.html"><code>TMFLocationCommand</code></a> and <a href="Classes/TMFMotionCommand.html"><code>TMFMotionCommand</code></a>.</p></li>
-</ol>
-
-
-<h2>Author</h2>
-
-<p>Martin Gratzer <a href="http://twitter.com/mgratzer">@mgratzer</a></p>
-
-<h2>Thanks</h2>
-
-<p>3MF uses the great <a href="https://github.com/robbiehanson/CocoaAsyncSocket">CocoaAsyncSocket</a> library for its build-in TCP and UDP network channels and the Base64 encoding part from <a href="https://github.com/sprhawk/ytoolkit">ytoolkit</a> to encode binary data. JSON-RPC is the default communication protocol, but there is also a coding class using the <a href="https://github.com/msgpack/msgpack-objectivec">MsgPack-ObjectiveC</a> for <a href="https://github.com/mgratzer/threeMF/wiki/MsgPack-RPC">MsgPack-RPC</a>.</p>
-
-<h2>License</h2>
-
-<p>threeMF is available under the MIT license. See the LICENSE.txt file for more info.</p>
-
-<p>*The Framework was developed as part of <a href="http://www.mgratzer.com">my</a> master thesis at the <a href="http://www.uni-klu.ac.at/tewi/inf/isys/ias/index.html">Interactive Systems</a> research group of the <a href="http://www.uni-klu.ac.at">University of Klagenfurt</a>.</p>
-						
-						
-					</div>
-					
 
                     
 
@@ -312,7 +196,7 @@ kvArguments.value = @"Hello World!";
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-16)</span><br />
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
