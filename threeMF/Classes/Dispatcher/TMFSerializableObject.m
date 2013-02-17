@@ -37,28 +37,6 @@ NSString * const TMFSerializableObjectClassKey = @"_class";
 #define kBinaryDataPrefix @"3mf_"
 #define kBinaryDataSuffix @"_3mf"
 
-@implementation NSData (Base64)
-- (NSString *)base64String {
-    size_t length = ybase64_encode(self.bytes, self.length, NULL, 0);
-    void *data = malloc(length);
-    ybase64_encode(self.bytes, self.length, data, length);
-    NSString *s = [NSString stringWithUTF8String:data];
-    free(data);
-    return s;
-}
-@end
-
-@implementation NSString (Base64)
-- (NSData *)base64Data {
-    NSData *stringData = [self dataUsingEncoding:NSUTF8StringEncoding];
-    size_t len = ybase64_decode([stringData bytes], [stringData length], NULL, 0);
-    NSMutableData *data = [[NSMutableData alloc] initWithLength:len];
-    ybase64_decode([stringData bytes], [stringData length], data.mutableBytes, data.length);
-    return [data copy];
-}
-@end
-
-
 @implementation TMFSerializableObject
 //............................................................................
 #pragma mark -
@@ -231,7 +209,7 @@ NSString * const TMFSerializableObjectClassKey = @"_class";
 }
 
 + (NSString *)encodeBinaryData:(NSData *)dataToEncode {
-    NSString *enc = [dataToEncode base64String];
+    NSString *enc = [self base64StringFromData:dataToEncode];
     return [NSString stringWithFormat:@"%@%@%@", kBinaryDataPrefix, enc, kBinaryDataSuffix];
 }
 
@@ -240,7 +218,7 @@ NSString * const TMFSerializableObjectClassKey = @"_class";
         NSMutableString *encData = [[NSMutableString alloc] initWithString:encodedData];
         [encData replaceOccurrencesOfString:kBinaryDataPrefix withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [encData length])];
         [encData replaceOccurrencesOfString:kBinaryDataSuffix withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [encData length])];
-        return [encData base64Data];
+        return [self dataFromBase64String:encData];
     }
     else {
         TMFLogError(@"%@ can only decode binary data from %@.", NSStringFromClass([self class]), NSStringFromClass([NSString class]));
@@ -362,6 +340,22 @@ NSString * const TMFSerializableObjectClassKey = @"_class";
 #pragma mark -
 #pragma mark Private
 //............................................................................
++ (NSString *)base64StringFromData:(NSData *)data {
+    size_t length = ybase64_encode(data.bytes, data.length, NULL, 0);
+    void *d = malloc(length);
+    ybase64_encode(data.bytes, data.length, d, length);
+    NSString *s = [NSString stringWithUTF8String:d];
+    free(d);
+    return s;
+}
+
++ (NSData *)dataFromBase64String:(NSString *)string {
+    NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
+    size_t len = ybase64_decode([stringData bytes], [stringData length], NULL, 0);
+    NSMutableData *data = [[NSMutableData alloc] initWithLength:len];
+    ybase64_decode([stringData bytes], [stringData length], data.mutableBytes, data.length);
+    return [data copy];
+}
 
 //............................................................................
 #pragma mark collection traversing
