@@ -121,7 +121,6 @@ static NSLock *__counterLock;
 #pragma mark Override
 //............................................................................
 - (void)send:(TMFCommand *)command arguments:(TMFArguments *)arguments destination:(TMFPeer *)peer responseBlock:(responseBlock_t)responseBlock {
-    NSParameterAssert(arguments!=nil);
     NSParameterAssert(peer!=nil);
     NSParameterAssert(command!=nil);
     BOOL publishSubscribe = [command isKindOfClass:[TMFPublishSubscribeCommand class]];

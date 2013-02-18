@@ -317,7 +317,6 @@
 - (void)sendCommand:(Class)commandClass arguments:(TMFArguments *)arguments destination:(TMFPeer *)peer response:(responseBlock_t)response {
     NSParameterAssert(commandClass!=nil);
     NSParameterAssert([commandClass isSubclassOfClass:[TMFCommand class]]);    
-    NSParameterAssert(arguments!=nil);
     NSParameterAssert(peer!=nil);
     NSParameterAssert(response!=nil);
 

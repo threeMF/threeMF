@@ -298,8 +298,9 @@ static dispatch_queue_t __bonjourQueue;
 - (void)receiveOnChannel:(TMFChannel *)channel commandName:(NSString *)commandName arguments:(NSArray *)arguments address:(NSData *)address response:(responseBlock_t)responseBlock {
 
     void(^receiveBlock)(TMFCommand *, NSArray *, TMFPeer *) = ^(TMFCommand *command, NSArray *argumentsList, TMFPeer *sourcePeer) {
+        BOOL hasArguments = (argumentsList != nil && [argumentsList count] > 0);
         if(command && [command isKindOfClass:[TMFRequestResponseCommand class]]) {
-            TMFArguments *argumentsObject = [[[[command class] argumentsClass] alloc] initWithArgumentList:argumentsList];
+            TMFArguments *argumentsObject = hasArguments ? [[[[command class] argumentsClass] alloc] initWithArgumentList:argumentsList] : nil;
             [((TMFRequestResponseCommand *) command) receivedWithArguments:argumentsObject source:sourcePeer response:responseBlock];
         }
         else {

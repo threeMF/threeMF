@@ -43,7 +43,6 @@
 #pragma mark Public
 //............................................................................
 - (void)sendWithArguments:(TMFArguments *)arguments destination:(TMFPeer *)peer response:(responseBlock_t)responseBlock {
-    NSParameterAssert(arguments!=nil);
     NSAssert(self.delegate != nil, @"Dispatcher needed");
     NSAssert(self.channel != nil, @"Channel needed");
    [self.channel send:self arguments:arguments destination:peer responseBlock:responseBlock];

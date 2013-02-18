@@ -85,6 +85,8 @@
 }
 
 - (void)sendWithArguments:(TMFArguments *)arguments {
+    NSParameterAssert([[self class] argumentsClass] != Nil); // needs to be overriden or exist according to the naming convetion.
+    NSParameterAssert(arguments != nil);
     if([[self class] isMulticast]) {
         [super sendWithArguments:arguments destination:nil response:NULL];
     }
@@ -98,7 +100,7 @@
 - (void)sendWithArguments:(TMFArguments *)arguments destination:(__unused TMFPeer *)peer response:(responseBlock_t)responseBlock {
     [self sendWithArguments:arguments];
     if(responseBlock) {
-        // just in case the caller relys on the response block getting called
+        // just in case the caller rely on the response block getting called
         responseBlock(nil,nil);
     }
 }

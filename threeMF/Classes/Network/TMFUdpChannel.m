@@ -138,7 +138,7 @@
 }
 
 - (void)send:(TMFPublishSubscribeCommand *)command arguments:(TMFArguments *)arguments destination:(TMFPeer *)peer responseBlock:(responseBlock_t)responseBlock {
-    NSParameterAssert(arguments!=nil);
+//    NSParameterAssert(arguments!=nil);
     NSParameterAssert(command!=nil);
     NSParameterAssert([command isKindOfClass:[TMFPublishSubscribeCommand class]]);
     if([[command class] isMulticast]) {

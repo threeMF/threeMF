@@ -86,7 +86,6 @@
 
 - (NSData *)requestDataForCommand:(TMFCommand *)command arguments:(TMFArguments *)arguments {
     NSParameterAssert(command != nil);
-    NSParameterAssert(arguments != nil);
     return [self requestDataForRequest:[TMFRequest requestWithCommandName:command.name arguments:[arguments argumentList] identifier:@(arguments.identifier)]];
 }
 
