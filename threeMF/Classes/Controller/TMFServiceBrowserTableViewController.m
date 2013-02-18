@@ -120,7 +120,7 @@
     [alert show];
 }
 
-- (void)threeMF:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
+- (void)connector:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
     NSUInteger idx = [_peers indexOfObject:peer];
     if(![_peers containsObject:peer] && type == TMFPeerChangeUpdate) {
         type = TMFPeerChangeFound;

@@ -50,7 +50,7 @@ Peer A provide a command pushing arbitrary key value pairs to subscribers. Peer 
 
 #### Step 3: Subscribe (Peer B)
 ``` objective-c
-	- (void)threeMF:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
+	- (void)connector:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
 			if(type == TMFPeerChangeFound) {
 				[self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){ 
 				// do awesome things

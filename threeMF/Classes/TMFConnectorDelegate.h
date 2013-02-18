@@ -47,20 +47,20 @@ typedef enum {
 
 /**
  Gets called if a peer is found, changed or removed after starting discovery with specific capability requirements.
- @param tmf The TMFConnector instance calling the method
+ @param connector The TMFConnector instance calling the method
  @param peer The changed TMFPeer
  @param changeType The type of change. Valid values are TMFPeerChangeFound, TMFPeerChangeRemove and TMFPeerChangeUpdate.
  */
-- (void)threeMF:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)changeType;
+- (void)connector:(TMFConnector *)connector didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)changeType;
 
 /**
  Gets called if any peer is found, changed or removed.
  All peers with the same bonjour service name are reported with this method, no matter what capabilities they have.
- @param tmf The TMFConnector instance calling the method
+ @param connector The TMFConnector instance calling the method
  @param peer The changed TMFPeer
  @param changeType The type of change. Valid values are TMFPeerChangeFound, TMFPeerChangeRemove and TMFPeerChangeUpdate.
  */
-- (void)threeMF:(TMFConnector *)tmf didChangePeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)changeType;
+- (void)connector:(TMFConnector *)connector didChangePeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)changeType;
 
 
 
@@ -68,19 +68,19 @@ typedef enum {
 
 /**
  Gets called if a peer subscribed to a published command
- @param tmf The TMFConnector instance calling the method
+ @param connector The TMFConnector instance calling the method
  @param peer The added subscriber
  @param command The command a subscriber has been added to
  */
-- (void)threeMF:(TMFConnector *)tmf didAddSubscriber:(TMFPeer *)peer toCommand:(TMFPublishSubscribeCommand *)command;
+- (void)connector:(TMFConnector *)connector didAddSubscriber:(TMFPeer *)peer toCommand:(TMFPublishSubscribeCommand *)command;
 
 /**
  Gets called if a peer got ubsusbcribed from a published command
- @param tmf The TMFConnector instance calling the method
+ @param connector The TMFConnector instance calling the method
  @param peer The removed subscriber
  @param command The command a subscriber has been removed from
  */
-- (void)threeMF:(TMFConnector *)tmf didRemoveSubscriber:(TMFPeer *)peer fromCommand:(TMFPublishSubscribeCommand *)command;
+- (void)connector:(TMFConnector *)connector didRemoveSubscriber:(TMFPeer *)peer fromCommand:(TMFPublishSubscribeCommand *)command;
 
 
 
@@ -88,19 +88,19 @@ typedef enum {
 
 /**
  Gets called if a subscription is added
- @param tmf The TMFConnector instance calling the method
+ @param connector The TMFConnector instance calling the method
  @param peer The provider where the subscription has been added to
  @param commandClass The command's class which has been subscribed to
  */
-- (void)threeMF:(TMFConnector *)tmf didAddSubscription:(TMFPeer *)peer forCommand:(Class)commandClass;
+- (void)connector:(TMFConnector *)connector didAddSubscription:(TMFPeer *)peer forCommand:(Class)commandClass;
 
 /**
  Gets called if a subscription is removed
- @param tmf The TMFConnector instance calling the method
+ @param connector The TMFConnector instance calling the method
  @param peer The provider where the subscription has been removed from
  @param commandClass The command's class which has been unsubsribed from
  */
-- (void)threeMF:(TMFConnector *)tmf didRemoveSubscription:(TMFPeer *)peer forCommand:(Class)commandClass;
+- (void)connector:(TMFConnector *)connector didRemoveSubscription:(TMFPeer *)peer forCommand:(Class)commandClass;
 
 
 
@@ -109,9 +109,9 @@ typedef enum {
 /**
  Informs about errors.
  @see TMFError for error codes
- @param tmf The TMFConnector instance calling the method
+ @param connector The TMFConnector instance calling the method
  @param error The error
  */
-- (void)threeMF:(TMFConnector *)tmf didFailWithError:(NSError *)error;
+- (void)connector:(TMFConnector *)connector didFailWithError:(NSError *)error;
 
 @end

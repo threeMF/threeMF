@@ -183,12 +183,12 @@
         [delegates addObject:delegate];
     }
 
-    if([delegate respondsToSelector:@selector(threeMF:didChangeDiscoveringPeer:forChangeType:)]) {
+    if([delegate respondsToSelector:@selector(connector:didChangeDiscoveringPeer:forChangeType:)]) {
         // send already available peers
         for(TMFPeer *peer in _discovery.peers) {
             NSSet *peerCapabilities = [NSSet setWithArray:peer.capabilities];
             if([capabilities isSubsetOfSet:peerCapabilities]) {
-                [delegate threeMF:self didChangeDiscoveringPeer:peer forChangeType:TMFPeerChangeFound];
+                [delegate connector:self didChangeDiscoveringPeer:peer forChangeType:TMFPeerChangeFound];
             }
         }
     }
@@ -350,30 +350,30 @@
         dispatch_async(_callBackQueue, ^{        
             if([object isKindOfClass:[TMFPublishSubscribeCommand class]] && subscribers) {
                 for(TMFPeer *peer in [added allObjects]) {
-                    if([self.delegate respondsToSelector:@selector(threeMF:didAddSubscriber:toCommand:)]) {
-                        [self.delegate threeMF:self didAddSubscriber:peer toCommand:object];
+                    if([self.delegate respondsToSelector:@selector(connector:didAddSubscriber:toCommand:)]) {
+                        [self.delegate connector:self didAddSubscriber:peer toCommand:object];
                     }
                     TMFLogInfo(@"Did add subscriber %@ to command %@.", peer.name, [object name]);
                 }
 
                 for(TMFPeer *peer in [removed allObjects]) {
-                    if([self.delegate respondsToSelector:@selector(threeMF:didRemoveSubscriber:fromCommand:)]) {
-                        [self.delegate threeMF:self didRemoveSubscriber:peer fromCommand:object];
+                    if([self.delegate respondsToSelector:@selector(connector:didRemoveSubscriber:fromCommand:)]) {
+                        [self.delegate connector:self didRemoveSubscriber:peer fromCommand:object];
                     }
                     TMFLogInfo(@"Did remove subscriber %@ from command %@.", peer.name, [object name]);                    
                 }
             }
             else if(_dispatcher == object && subscriptions) {   
                 for(TMFSubscription *subscription in [added allObjects]) {
-                    if([self.delegate respondsToSelector:@selector(threeMF:didAddSubscription:forCommand:)]) {
-                        [self.delegate threeMF:self didAddSubscription:subscription.peer forCommand:subscription.commandClass];
+                    if([self.delegate respondsToSelector:@selector(connector:didAddSubscription:forCommand:)]) {
+                        [self.delegate connector:self didAddSubscription:subscription.peer forCommand:subscription.commandClass];
                     }
                     TMFLogInfo(@"Did add subscription for command %@ at %@.", [subscription.commandClass name], [subscription.peer name]);
                 }
 
                 for(TMFSubscription *subscription in [removed allObjects]) {
-                    if([self.delegate respondsToSelector:@selector(threeMF:didRemoveSubscription:forCommand:)]) {
-                        [self.delegate threeMF:self didRemoveSubscription:subscription.peer forCommand:subscription.commandClass];
+                    if([self.delegate respondsToSelector:@selector(connector:didRemoveSubscription:forCommand:)]) {
+                        [self.delegate connector:self didRemoveSubscription:subscription.peer forCommand:subscription.commandClass];
                     }
                     TMFLogInfo(@"Did remove subscription for command %@ at %@.", [subscription.commandClass name], [subscription.peer name]);
                 }
@@ -385,10 +385,10 @@
 - (void)setDelegate:(NSObject<TMFConnectorDelegate> *)delegate {
     if(_delegate != delegate) {
         // send already available peers
-        if([delegate respondsToSelector:@selector(threeMF:didChangePeer:forChangeType:)]) {
+        if([delegate respondsToSelector:@selector(connector:didChangePeer:forChangeType:)]) {
             [_discoveryLock lock];
             for(TMFPeer *peer in _discovery.peers) {
-                [delegate threeMF:self didChangePeer:peer forChangeType:TMFPeerChangeFound];
+                [delegate connector:self didChangePeer:peer forChangeType:TMFPeerChangeFound];
             }
             [_discoveryLock unlock];
         }
@@ -422,8 +422,8 @@
             TMFLogError(@"System channel started with port 0.");
             [dispatcher stopChannels];
             dispatch_async(_callBackQueue, ^{
-                if([self.delegate respondsToSelector:@selector(threeMF:didFailWithError:)]) {
-                    [self.delegate threeMF:self didFailWithError:[TMFError errorForCode:TMFChannelErrorCode message:@"Could not start communication channels."]];
+                if([self.delegate respondsToSelector:@selector(connector:didFailWithError:)]) {
+                    [self.delegate connector:self didFailWithError:[TMFError errorForCode:TMFChannelErrorCode message:@"Could not start communication channels."]];
                 }
             });
         }
@@ -445,8 +445,8 @@
         else {
             [_discovery stop]; // stop if running
             dispatch_async(_callBackQueue, ^{
-                if([self.delegate respondsToSelector:@selector(threeMF:didFailWithError:)]) {
-                    [self.delegate threeMF:self didFailWithError:[TMFError errorForCode:TMFChannelErrorCode message:@"Could not start communication channels."]];
+                if([self.delegate respondsToSelector:@selector(connector:didFailWithError:)]) {
+                    [self.delegate connector:self didFailWithError:[TMFError errorForCode:TMFChannelErrorCode message:@"Could not start communication channels."]];
                 }
             });
         }
@@ -456,8 +456,8 @@
 - (void)dispatcher:(TMFCommandDispatcher *)dispatcher failedStartingChannel:(__unused TMFChannel *)channel error:(NSError *)error {
     if(dispatcher == _dispatcher) {
         dispatch_async(_callBackQueue, ^{
-            if([self.delegate respondsToSelector:@selector(threeMF:didFailWithError:)]) {
-                [self.delegate threeMF:self didFailWithError:error];
+            if([self.delegate respondsToSelector:@selector(connector:didFailWithError:)]) {
+                [self.delegate connector:self didFailWithError:error];
             }
         });
     }
@@ -620,8 +620,8 @@
         BOOL delegateNotified = NO;
         for(NSNumber *key in [callbacks allKeys]) {
             for(NSObject<TMFConnectorDelegate> *delegate in [callbacks objectForKey:key]) {
-                if([delegate respondsToSelector:@selector(threeMF:didChangeDiscoveringPeer:forChangeType:)]) {
-                    [delegate threeMF:self didChangeDiscoveringPeer:peer forChangeType:(TMFPeerChangeType)[key integerValue]];
+                if([delegate respondsToSelector:@selector(connector:didChangeDiscoveringPeer:forChangeType:)]) {
+                    [delegate connector:self didChangeDiscoveringPeer:peer forChangeType:(TMFPeerChangeType)[key integerValue]];
                     if(!delegateNotified) {
                         delegateNotified = (delegate == self.delegate);
                     }
@@ -629,8 +629,8 @@
             }
         }
 
-        if(!delegateNotified && [self.delegate respondsToSelector:@selector(threeMF:didChangePeer:forChangeType:)]) {
-            [self.delegate threeMF:self didChangePeer:peer forChangeType:type];
+        if(!delegateNotified && [self.delegate respondsToSelector:@selector(connector:didChangePeer:forChangeType:)]) {
+            [self.delegate connector:self didChangePeer:peer forChangeType:type];
         }
     });
 }
