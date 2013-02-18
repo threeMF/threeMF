@@ -4244,7 +4244,7 @@ enum GCDAsyncSocketConfig
 		return;
 	}
 	
-	BOOL hasBytesAvailable;
+	BOOL hasBytesAvailable = NO;
 	unsigned long estimatedBytesAvailable;
 	
 	if ([self usingCFStreamForTLS])
@@ -4258,7 +4258,7 @@ enum GCDAsyncSocketConfig
 			hasBytesAvailable = YES;
 		else
 			hasBytesAvailable = NO;
-		
+
 		#endif
 	}
 	else
