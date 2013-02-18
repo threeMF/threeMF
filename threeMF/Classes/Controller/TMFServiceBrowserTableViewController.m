@@ -72,12 +72,10 @@
 #pragma mark Override
 //............................................................................
 
-//............................................................................
 #pragma mark view lifecycle
-//............................................................................
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];        
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(close)];
 }
 
 //............................................................................
@@ -120,6 +118,9 @@
     [alert show];
 }
 
+//............................................................................
+#pragma mark TMFConnectorDelegate
+//............................................................................
 - (void)connector:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
     NSUInteger idx = [_peers indexOfObject:peer];
     if(![_peers containsObject:peer] && type == TMFPeerChangeUpdate) {
@@ -154,6 +155,9 @@
 #pragma mark -
 #pragma mark Private
 //............................................................................
+- (void)close {
+    [self.presentingViewController dismissModalViewControllerAnimated:YES];
+}
 
 @end
 #endif
