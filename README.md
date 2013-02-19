@@ -10,7 +10,7 @@ The Mobile MultiModal (Interaction) Framework (3MF or threeMF) is a **generic** 
  - [Request Response](https://github.com/mgratzer/threeMF/wiki/ResponseRequest) 
  - [Publish Subscribe](https://github.com/mgratzer/threeMF/wiki/PublishSubscribe)
 
-3MF comes with [build-in commands](https://github.com/mgratzer/threeMF/wiki/BuildInCommands) --- but it's real power lies in it's extendability. You are able to customize nearby every part, starting at [custom commands](https://github.com/mgratzer/threeMF/wiki/CustomCommands) over to [network channels](https://github.com/mgratzer/threeMF/wiki/CustomNewtorkChannels) and [communication protocols](https://github.com/mgratzer/threeMF/wiki/CustomProtocols).
+3MF comes with build-in commands --- but it's real power lies in it's extendability. You are able to customize nearby every part, starting at [custom commands](https://github.com/mgratzer/threeMF/wiki/CustomCommands) over to network channels and communication protocols.
 
 The framework communicates **ad-hoc**, which means it is sending network messages directly between peers using their local network without a central instance.
 
