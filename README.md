@@ -4,10 +4,10 @@ The Mobile MultiModal (Interaction) Framework (3MF or threeMF) is a **generic** 
 3MF allows ad-hoc communication between devices, without the pain of handling **service discovery and management**, network **socket** and **disconnection handling** as well as **data serialization**. Data exchange is abstracted with simple patterns which reduce code complexity to a few lines. To fit a wide range of use cases the framework is very generic and extendable.
 
 ## How does it work
-3MF creates a P2P network to share ad-hoc network services between devices. Discovery of remote 3MF instances, their management during visibility and disappearance is handled automatically. Each peer can publish [remote procedures](http://en.wikipedia.org/wiki/Remote_procedure_call) (they are called commands in the context of 3MF) and execute them at each other. These commands are a semantic description defining **which data** gets shared on **which network channel** (TCP, UDP, ...) following **which pattern**, either [Request Response](https://github.com/mgratzer/threeMF/wiki/ResponseRequest) or [Publish Subscribe](https://github.com/mgratzer/threeMF/wiki/PublishSubscribe).
+3MF creates a P2P network to share ad-hoc network services between devices. Discovery of remote 3MF instances, their management during visibility and disappearance is handled automatically. Each peer can publish [remote procedures](http://en.wikipedia.org/wiki/Remote_procedure_call) (they are called commands in the context of 3MF) and execute them at each other. These commands are a semantic description defining **which data** gets shared on **which network channel** (TCP, UDP, ...) following **which pattern**, either [Request Response](https://github.com/mgratzer/threeMF/wiki/RequestResponse) or [Publish Subscribe](https://github.com/mgratzer/threeMF/wiki/PublishSubscribe).
 
 ### Example Code
- - [Request Response](https://github.com/mgratzer/threeMF/wiki/ResponseRequest) 
+ - [Request Response](https://github.com/mgratzer/threeMF/wiki/RequestResponse) 
  - [Publish Subscribe](https://github.com/mgratzer/threeMF/wiki/PublishSubscribe)
 
 3MF comes with build-in commands --- but it's real power lies in it's extendability. You are able to customize nearby every part, starting at [custom commands](https://github.com/mgratzer/threeMF/wiki/CustomCommands) over to network channels and communication protocols.
