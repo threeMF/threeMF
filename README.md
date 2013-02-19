@@ -4,87 +4,15 @@ The Mobile MultiModal (Interaction) Framework (3MF or threeMF) is a **generic** 
 3MF allows ad-hoc communication between devices, without the pain of handling **service discovery and management**, network **socket** and **disconnection handling** as well as **data serialization**. Data exchange is abstracted with simple patterns which reduce code complexity to a few lines. To fit a wide range of use cases the framework is very generic and extendable.
 
 ## How does it work
-3MF creates a P2P network to share ad-hoc network services between devices. Discovery of remote 3MF instances, their management during visibility and disappearance is handled automatically. Each peer can publish [remote procedures](http://en.wikipedia.org/wiki/Remote_procedure_call) (they are called commands in the context of 3MF) and execute them at each other. These commands are a semantic description defining **which data** gets shared on **which network channel** (TCP, UDP, ...) following **which pattern** ([Response Request](https://github.com/mgratzer/threeMF/wiki/ResponseRequest) or [Publish Subscribe](https://github.com/mgratzer/threeMF/wiki/PublishSubscribe)).
+3MF creates a P2P network to share ad-hoc network services between devices. Discovery of remote 3MF instances, their management during visibility and disappearance is handled automatically. Each peer can publish [remote procedures](http://en.wikipedia.org/wiki/Remote_procedure_call) (they are called commands in the context of 3MF) and execute them at each other. These commands are a semantic description defining **which data** gets shared on **which network channel** (TCP, UDP, ...) following **which pattern**, either [Request Response](https://github.com/mgratzer/threeMF/wiki/ResponseRequest) or [Publish Subscribe](https://github.com/mgratzer/threeMF/wiki/PublishSubscribe).
 
-**Response Request** (RR) commands define remote procedures delivering a **response** for a list of defined parameters on **request**. An example would be a computer asking a mobile phone for it's current GPS location.
-
-![](http://threemf.com/images/request_response.png)
-
-**Publish Subscribe** (PS) commands on the other hand get triggered by the **publisher** whenever a defined event occurs. Other peers can **subscribe** to PS commands and get payload **pushed**. Messages send to subscribers will not create responses, they are just notifications for subscribers. An example would be a mobile phone with motion sensors providing a command for real time accelerometer data sharing.
-
-![](http://threemf.com/images/publish_subscribe.png)
+### Example Code
+ - [Request Response](https://github.com/mgratzer/threeMF/wiki/ResponseRequest) 
+ - [Publish Subscribe](https://github.com/mgratzer/threeMF/wiki/PublishSubscribe)
 
 3MF comes with [build-in commands](https://github.com/mgratzer/threeMF/wiki/BuildInCommands) --- but it's real power lies in it's extendability. You are able to customize nearby every part, starting at [custom commands](https://github.com/mgratzer/threeMF/wiki/CustomCommands) over to [network channels](https://github.com/mgratzer/threeMF/wiki/CustomNewtorkChannels) and [communication protocols](https://github.com/mgratzer/threeMF/wiki/CustomProtocols).
 
 The framework communicates **ad-hoc**, which means it is sending network messages directly between peers using their local network without a central instance.
-
-## Examples
-
-### Publish Subscribe Example
-The following code snippets show how to **publish** a command and **discover** peers providing it, to **subscribe** and finally how payload is **pushed**. 
-
-#### Scenario
-Peer A provide a command pushing arbitrary key value pairs to subscribers. Peer B searches for peers serving the command and subscribes. Peer A will than start pushing payload causing Peer B's receive block to execute until the session ends.
-
-1. Publish the `TMFKeyValueCommand`. (Peer A)
-2. Discover peers providing the command. (Peer B)
-3. Subscribe to the command at discovered peers. (Peer B)
-4. Push key value pairs to all subscribers. (Peer A)
-
-#### Step 0: Setup (Peer A and Peer B)
-``` objective-c
-	#import "threeMF.h"
-	self.tmf = [TMFConnector new];
-```
-
-#### Step 1: Provide (Peer A)
-``` objective-c
-	self.kvCmd = [TMFKeyValueCommand new];
-	[self.tmf publishCommand:self.kvCmd];
-```
-
-#### Step 2: Discover (Peer B)
-``` objective-c
-	[self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
-```
-
-#### Step 3: Subscribe (Peer B)
-``` objective-c
-	- (void)connector:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
-			if(type == TMFPeerChangeFound) {
-				[self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){ 
-				// do awesome things
-				NSLog(@"%@: %@", arguments.key, arguments.value);
-			} 
-			completion:^(NSError *error){
-                 if(error) { // handle error
-                     NSLog(@"%@", error);
-                 }
-             }];
-		}
-	}
-```
-
-#### Step 4: Execute (Peer A)
-``` objective-c
-	TMFKeyValueCommandArguments *kvArguments = [TMFKeyValueCommandArguments new];
-    kvArguments.key = @"msg";
-    kvArguments.value = @"Hello World!";
-    [self.kvCmd sendWithArguments:kvArguments];
-```
-
-### Request Response Example
-Request Response commands are a bit simpler. Setup, providing and discovery are equal to the Publish Subscribe scenario and the subscribe step is not available. The execution differs because the requester executes the command. This sends all parameters (may be optional) to the provider where request get processed followed by a result returned as response (asynchronously).
-``` objective-c
-	CADAnnounceCommandArguments *args = [CADAnnounceCommandArguments new];
-	args.name = self.nameLabel.text;
-	args.color = _color;
-
-	[self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer
-		response:^(id response, NSError *error){
-			// handle response or error
-	}];	
-```
 
 ## Platform
 3MF is currently implemented in [Cocoa](https://developer.apple.com/cocoa/) running on iOS and OSX. The bigger vision is to have a system also spread across other relevant platforms like Android, Windows Phone, ... you name it. Feel free to contact [me](http://twitter.com/mgratzer), if you'r interested in porting 3MF --- I'm glad to provide help if needed.
