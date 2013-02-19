@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Samples/MultiAirCam/MultiAirCam.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Samples/AirDraw/../ScreenForward/ScreenForward.xcodeproj">
    </FileRef>
    <FileRef
