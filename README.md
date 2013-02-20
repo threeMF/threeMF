@@ -24,7 +24,7 @@ The current implementation is using **ARC** with minimum deployment targets of *
 
 You may use   [CocoaPods](http://cocoapods.org) instead of adding the source files directly to your project. Follow the instructions on the CocoaPods site for installation, and specify threeMF in your Podfile with `pod 'threeMF', '0.1'`.
 
-Otherwise you can add threeMF as a [git submodule]((http://schacon.github.com/git/user-manual.html#submodules)) or [download](https://github.com/mgratzer/threeMF/archive/master.zip) the source code and manually copy it to your project.
+Otherwise you can add threeMF as a [git submodule]((http://schacon.github.com/git/user-manual.html#submodules) or [download](https://github.com/mgratzer/threeMF/archive/master.zip) the source code and manually copy it to your project.
 
 1. Add the framework as a git submodule. Go to the root folder of your project and execute the following commands.
 ``` bash
