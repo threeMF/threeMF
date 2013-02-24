@@ -88,13 +88,9 @@
 @property (nonatomic, strong, readonly) NSString *name;
 
 /**
- The channel used to communicate by this command.
- By default this method returns the corresponding channel managed by the TMFDispatcher.
- Override this property to provide a custom channel.
- 
- @see TMFChannel
+ Port of the commands channel.
  */
-@property (nonatomic, strong, readonly) TMFChannel *channel;
+@property (nonatomic, readonly) NSUInteger port;
 
 /** @name Configuration */
 

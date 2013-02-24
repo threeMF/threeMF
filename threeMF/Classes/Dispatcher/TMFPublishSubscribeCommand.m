@@ -80,10 +80,6 @@
     return NO;
 }
 
-- (NSUInteger)port {
-    return self.channel.port;
-}
-
 - (void)sendWithArguments:(TMFArguments *)arguments {
     NSParameterAssert([[self class] argumentsClass] != Nil); // needs to be overriden or exist according to the naming convetion.
     NSParameterAssert(arguments != nil);

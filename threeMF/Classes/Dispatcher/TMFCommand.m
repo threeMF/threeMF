@@ -32,6 +32,10 @@
 #define PREFIX @"TMF"
 #define SUFFIX @"Command"
 
+@interface TMFCommand()
+@property (nonatomic, strong, readonly) TMFChannel *channel;
+@end
+
 @implementation TMFCommand
 //............................................................................
 #pragma mark -
@@ -69,6 +73,10 @@
 //............................................................................
 - (BOOL)isSystemCommand {
     return NO;
+}
+
+- (NSUInteger)port {
+    return self.channel.port;
 }
 
 - (TMFChannel *)channel {

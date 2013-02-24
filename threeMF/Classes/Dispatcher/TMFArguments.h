@@ -28,8 +28,6 @@
 #import <Foundation/Foundation.h>
 #import "TMFSerializableObject.h"
 
-@class TMFPeer;
-
 /**
  A abstract class representing arguments for TMFCommand.
  

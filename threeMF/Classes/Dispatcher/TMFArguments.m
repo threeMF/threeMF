@@ -24,7 +24,6 @@
 //
 
 #import "TMFArguments.h"
-#import "TMFPeer.h"
 #import "TMFLog.h"
 
 @implementation TMFArguments

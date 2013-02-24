@@ -91,11 +91,6 @@ typedef void (^pubSubArgumentsReceivedBlock_t)(id arguments, TMFPeer *peer);
 @property (nonatomic, getter = isRunning) BOOL running;
 
 /**
- Port of the commands channel.
- */
-@property (nonatomic, readonly) NSUInteger port;
-
-/**
  Configuration the command is running with.
  At the moment there can be only one configuration of all subscribers.
  */
