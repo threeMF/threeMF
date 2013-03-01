@@ -143,11 +143,9 @@
  Subscribes to a command at a given remote peer.
  @param commandClass The class of the TMFPublishSubscribeCommand to subscribe to.
  @param peer The peer the command should get subscribed at.
- @param port The port the command is provided at.
- @param multicast YES if the command is delivered using multi cast, NO if not.
  @param receive The receive block being executed with pushed arguments for the subscribed command.
  */
-- (void)subscribe:(Class)commandClass peer:(TMFPeer *)peer port:(NSUInteger)port multicast:(BOOL)multicast receive:(pubSubArgumentsReceivedBlock_t)receive;
+- (void)subscribe:(Class)commandClass peer:(TMFPeer *)peer receive:(pubSubArgumentsReceivedBlock_t)receive;
 
 /**
  Unsubscribes from a command at the given remote peer.

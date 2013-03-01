@@ -239,15 +239,7 @@
                              destination:peer
                                 response:^(NSDictionary *response, NSError *error) {
                                     if(!error) {
-                                        BOOL multicast = [[response objectForKey:@"multicast"] boolValue];
-                                        NSUInteger port = [[response objectForKey:@"port"] unsignedIntegerValue];
-
-                                        if(port != 0) {
-                                            [_dispatcher subscribe:commandClass peer:peer port:port multicast:multicast receive:receive];
-                                        }
-                                        else {
-                                            error = [TMFError errorForCode:TMFSubscribeErrorCode message:[NSString stringWithFormat:@"Could not subscribe to '%@' at peer '%@'", NSStringFromClass(commandClass), peer.name]];
-                                        }
+                                        [_dispatcher subscribe:commandClass peer:peer receive:receive];
                                     }
 
                                     if(completion) {
@@ -647,7 +639,6 @@
     _subscribeCommand = [[TMFSubscribeCommand alloc] initWithRequestReceivedBlock:^(TMFSubscribeCommandArguments *arguments, TMFPeer *source, responseBlock_t responseBlock) {
                                                      TMFLogVerbose(@"Received subscription request for %@ from %@.", arguments.commandName, source);
                                                      if(responseBlock) {
-                                                         NSDictionary *response = nil;
                                                          NSError *error = nil;
                                                          TMFPublishSubscribeCommand *command = [_dispatcher publishedCommandForName:arguments.commandName];
 
@@ -659,15 +650,13 @@
                                                              }
                                                              
                                                              [source setPort:arguments.port commandName:command.name];
-                                                             [command addSubscriber:source];
-                                                             
-                                                             response = @{@"port" : @(command.port) };
+                                                             [command addSubscriber:source];                                                            
                                                          }
                                                          else {
                                                              error = [TMFError errorForCode:TMFInternalErrorCode message:[NSString stringWithFormat:@"Command '%@' not found.", arguments.commandName]];
                                                          }
 
-                                                         responseBlock(response, error);
+                                                         responseBlock(@(error == nil), error);
                                                      }
                                                  }];
 
@@ -682,7 +671,7 @@
         }
 
         if(responseBlock) {
-            responseBlock(nil, nil);
+            responseBlock(@1, nil);
         }    
     }];
 
@@ -695,7 +684,7 @@
         }
 
         if(responseBlock) {
-            responseBlock(nil, nil);
+            responseBlock(@1, nil);
         }
     }];
 

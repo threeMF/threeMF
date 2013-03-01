@@ -167,11 +167,10 @@ static dispatch_queue_t __bonjourQueue;
     return [NSArray arrayWithArray:cmdNames];
 }
 
-- (void)subscribe:(Class)commandClass peer:(TMFPeer *)peer port:(NSUInteger)port multicast:(BOOL)multicast receive:(pubSubArgumentsReceivedBlock_t)receive {
+- (void)subscribe:(Class)commandClass peer:(TMFPeer *)peer receive:(pubSubArgumentsReceivedBlock_t)receive {
     NSParameterAssert(commandClass!=nil);
     NSParameterAssert([commandClass isSubclassOfClass:[TMFCommand class]]);
     NSParameterAssert(peer!=nil);
-    NSParameterAssert(port!=0);
 
     TMFSubscription *subscription = [self findSubscriptionForCommand:[commandClass name] atPeer:peer];
     if(!subscription) {

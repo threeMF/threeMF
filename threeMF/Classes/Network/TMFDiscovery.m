@@ -90,7 +90,7 @@ static TMFPeer *__localPeer;
             }
 
             if(responseBlock) {
-                responseBlock(nil, error);
+                responseBlock(@1, error);
             }
         }];
     }
