@@ -53,11 +53,11 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/channel">&nbsp;&nbsp;&nbsp;&nbsp;channel</option>
-	
 	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
 	
 	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/port">&nbsp;&nbsp;&nbsp;&nbsp;port</option>
 	
 	<option value="//api/name/systemcommand">&nbsp;&nbsp;&nbsp;&nbsp;systemcommand</option>
 	
@@ -107,11 +107,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/channel">channel</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/port">port</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/systemcommand">systemcommand</a></span></li>
 	
@@ -226,10 +226,8 @@ specific command.</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/channel">&nbsp;&nbsp;channel</a></code>
-		<span class="tooltip"><p>The channel used to communicate by this command.
-By default this method returns the corresponding channel managed by the TMFDispatcher.
-Override this property to provide a custom channel.</p></span>
+		<code><a href="#//api/name/port">&nbsp;&nbsp;port</a></code>
+		<span class="tooltip"><p>Port of the commands channel.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -262,8 +260,8 @@ otherwise the following naming convention will be used: <em>CommandClassName</em
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/channelClass">+&nbsp;channelClass</a></code>
-		<span class="tooltip"><p>The <a href="#//api/name/channel">channel</a> class used for the command.
-The default <a href="#//api/name/channel">channel</a> is a reliable TCP <a href="#//api/name/channel">channel</a>.</p></span>
+		<span class="tooltip"><p>The channel class used for the command.
+The default channel is a reliable TCP channel.</p></span>
 	</span>
 	
 	
@@ -294,53 +292,6 @@ The default <a href="#//api/name/channel">channel</a> is a reliable TCP <a href=
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/channel" title="channel"></a>
-	<h3 class="subsubtitle method-title">channel</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The channel used to communicate by this command.
-By default this method returns the corresponding channel managed by the TMFDispatcher.
-Override this property to provide a custom channel.</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) TMFChannel *channel</code></div>
-
-    
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Classes/TMFChannel.html">TMFChannel</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TMFCommand.h</code><br />
-	</div>
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/delegate" title="delegate"></a>
@@ -401,6 +352,42 @@ The delegate must adopt the <a href="../Protocols/TMFCommandDelegate.html">TMFCo
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *name</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TMFCommand.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/port" title="port"></a>
+	<h3 class="subsubtitle method-title">port</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Port of the commands channel.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger port</code></div>
 
     
 	
@@ -533,8 +520,8 @@ otherwise the following naming convention will be used: <em>CommandClassName</em
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The <a href="#//api/name/channel">channel</a> class used for the command.
-The default <a href="#//api/name/channel">channel</a> is a reliable TCP <a href="#//api/name/channel">channel</a>.</p>
+		<p>The channel class used for the command.
+The default channel is a reliable TCP channel.</p>
 	</div>
 	
     
@@ -687,7 +674,7 @@ The class name is used by default but this should be changed to a short string (
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-02-18)</span><br />
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-03-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
