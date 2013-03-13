@@ -31,7 +31,7 @@
 
 /**
  Callback block for TMFRequestResponseCommand responses
- @param response response for the request, may be nil in the case of an error
+ @param response response for the request, may be nil in the case of an error. The response must be a TMFSerializableObject compatible type @see TMFSerializabelObject
  @param error error object if anything went wrong, may be nil
  */
 typedef void (^responseBlock_t)(id response, NSError *error);
