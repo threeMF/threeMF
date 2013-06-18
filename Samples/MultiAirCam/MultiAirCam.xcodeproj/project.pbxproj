@@ -1,0 +1,826 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		020EFF58167668B1007B80DE /* PLCameraFlashIcon_2only_.png in Resources */ = {isa = PBXBuildFile; fileRef = 020EFF52167668B1007B80DE /* PLCameraFlashIcon_2only_.png */; };
+		020EFF59167668B1007B80DE /* PLCameraFlashIcon_2only_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 020EFF53167668B1007B80DE /* PLCameraFlashIcon_2only_@2x.png */; };
+		020EFF5A167668B1007B80DE /* PLCameraButtonIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 020EFF54167668B1007B80DE /* PLCameraButtonIcon.png */; };
+		020EFF5B167668B1007B80DE /* PLCameraButtonIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 020EFF55167668B1007B80DE /* PLCameraButtonIcon@2x.png */; };
+		020EFF5C167668B1007B80DE /* PLCameraToggleIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 020EFF56167668B1007B80DE /* PLCameraToggleIcon@2x.png */; };
+		020EFF5D167668B1007B80DE /* PLCameraToggleIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 020EFF57167668B1007B80DE /* PLCameraToggleIcon.png */; };
+		020EFF6116770957007B80DE /* MACPreviewCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 020EFF6016770957007B80DE /* MACPreviewCommand.m */; };
+		020EFF7E1677207E007B80DE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020EFF7D1677207E007B80DE /* AVFoundation.framework */; };
+		020EFF81167720E0007B80DE /* MACCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 020EFF80167720E0007B80DE /* MACCamera.m */; };
+		020EFF8616772927007B80DE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020EFF8516772926007B80DE /* AssetsLibrary.framework */; };
+		020EFFDA1677DAF3007B80DE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020EFFD91677DAF3007B80DE /* CoreVideo.framework */; };
+		020EFFDC1677E125007B80DE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020EFFDB1677E125007B80DE /* CoreMedia.framework */; };
+		020EFFDE1677E13D007B80DE /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020EFFDD1677E13D007B80DE /* CoreImage.framework */; };
+		022A67131674B14F00FE3959 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022A67121674B14F00FE3959 /* UIKit.framework */; };
+		022A67151674B14F00FE3959 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022A67141674B14F00FE3959 /* Foundation.framework */; };
+		022A67171674B14F00FE3959 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022A67161674B14F00FE3959 /* CoreGraphics.framework */; };
+		022A671D1674B14F00FE3959 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 022A671B1674B14F00FE3959 /* InfoPlist.strings */; };
+		022A671F1674B14F00FE3959 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A671E1674B14F00FE3959 /* main.m */; };
+		022A67231674B14F00FE3959 /* MACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A67221674B14F00FE3959 /* MACAppDelegate.m */; };
+		022A67251674B14F00FE3959 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A67241674B14F00FE3959 /* Default.png */; };
+		022A67271674B14F00FE3959 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A67261674B14F00FE3959 /* Default@2x.png */; };
+		022A67291674B14F00FE3959 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A67281674B14F00FE3959 /* Default-568h@2x.png */; };
+		022A67391674B1C500FE3959 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A67381674B1C500FE3959 /* Icon-72.png */; };
+		022A673B1674B1C900FE3959 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A673A1674B1C900FE3959 /* Icon-72@2x.png */; };
+		022A673D1674B1E500FE3959 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A673C1674B1E500FE3959 /* Icon.png */; };
+		022A673F1674B1E800FE3959 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A673E1674B1E800FE3959 /* Icon@2x.png */; };
+		022A67561674B8E900FE3959 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022A67551674B8E900FE3959 /* CFNetwork.framework */; };
+		022A675A1674B8FC00FE3959 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022A67591674B8FC00FE3959 /* SystemConfiguration.framework */; };
+		022A675B1674B91700FE3959 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022A67571674B8F300FE3959 /* Security.framework */; };
+		022A675E1674BA8200FE3959 /* MACCameraListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A675D1674BA8200FE3959 /* MACCameraListViewController.m */; };
+		022A67611674BA9300FE3959 /* MACCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A67601674BA9300FE3959 /* MACCameraViewController.m */; };
+		022A67641674BB4200FE3959 /* MACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A67631674BB4200FE3959 /* MACViewController.m */; };
+		0262000B168474340069685A /* MACCameraActionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 0262000A168474340069685A /* MACCameraActionCommand.m */; };
+		0262000E168490230069685A /* UIImage+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0262000D168490230069685A /* UIImage+Scaling.m */; };
+		0278FCF71674C327009B8D34 /* MACCameraCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0278FCF61674C327009B8D34 /* MACCameraCollectionViewCell.m */; };
+		02A5FD5516D2A13400CEE67E /* TMFImageCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FCF216D2A13400CEE67E /* TMFImageCommand.m */; };
+		02A5FD5616D2A13400CEE67E /* TMFKeyValueCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FCF416D2A13400CEE67E /* TMFKeyValueCommand.m */; };
+		02A5FD5716D2A13400CEE67E /* TMFLocationCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FCF616D2A13400CEE67E /* TMFLocationCommand.m */; };
+		02A5FD5816D2A13400CEE67E /* TMFMotionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FCF816D2A13400CEE67E /* TMFMotionCommand.m */; };
+		02A5FD5916D2A13400CEE67E /* TMFMultiTouchCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FCFA16D2A13400CEE67E /* TMFMultiTouchCommand.m */; };
+		02A5FD5A16D2A13400CEE67E /* TMFMultiTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FCFC16D2A13400CEE67E /* TMFMultiTouchView.m */; };
+		02A5FD5B16D2A13400CEE67E /* TMFServiceBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FCFF16D2A13400CEE67E /* TMFServiceBrowserTableViewController.m */; };
+		02A5FD5C16D2A13400CEE67E /* TMFAnnounceCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD0216D2A13400CEE67E /* TMFAnnounceCommand.m */; };
+		02A5FD5D16D2A13400CEE67E /* TMFArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD0416D2A13400CEE67E /* TMFArguments.m */; };
+		02A5FD5E16D2A13400CEE67E /* TMFCapabilityCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD0616D2A13400CEE67E /* TMFCapabilityCommand.m */; };
+		02A5FD5F16D2A13400CEE67E /* TMFCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD0816D2A13400CEE67E /* TMFCommand.m */; };
+		02A5FD6016D2A13400CEE67E /* TMFCommandDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD0A16D2A13400CEE67E /* TMFCommandDispatcher.m */; };
+		02A5FD6116D2A13400CEE67E /* TMFConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD0C16D2A13400CEE67E /* TMFConfiguration.m */; };
+		02A5FD6216D2A13400CEE67E /* TMFDisconnectCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD0E16D2A13400CEE67E /* TMFDisconnectCommand.m */; };
+		02A5FD6316D2A13400CEE67E /* TMFHeartBeatCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD1016D2A13400CEE67E /* TMFHeartBeatCommand.m */; };
+		02A5FD6416D2A13400CEE67E /* TMFPublishSubscribeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD1216D2A13400CEE67E /* TMFPublishSubscribeCommand.m */; };
+		02A5FD6516D2A13400CEE67E /* TMFRequestResponseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD1416D2A13400CEE67E /* TMFRequestResponseCommand.m */; };
+		02A5FD6616D2A13400CEE67E /* TMFSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD1716D2A13400CEE67E /* TMFSerializableObject.m */; };
+		02A5FD6716D2A13400CEE67E /* TMFSubscribeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD1916D2A13400CEE67E /* TMFSubscribeCommand.m */; };
+		02A5FD6816D2A13400CEE67E /* TMFUnsubscribeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD1B16D2A13400CEE67E /* TMFUnsubscribeCommand.m */; };
+		02A5FD6916D2A13400CEE67E /* TMFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD1D16D2A13400CEE67E /* TMFView.m */; };
+		02A5FD6A16D2A13400CEE67E /* TMFChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD2116D2A13400CEE67E /* TMFChannel.m */; };
+		02A5FD6B16D2A13400CEE67E /* TMFDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD2416D2A13400CEE67E /* TMFDiscovery.m */; };
+		02A5FD6C16D2A13400CEE67E /* TMFJsonRpcCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD2716D2A13400CEE67E /* TMFJsonRpcCoder.m */; };
+		02A5FD6D16D2A13400CEE67E /* TMFMsgPackRpcCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD2916D2A13400CEE67E /* TMFMsgPackRpcCoder.m */; };
+		02A5FD6E16D2A13400CEE67E /* TMFPeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD2B16D2A13400CEE67E /* TMFPeer.m */; };
+		02A5FD6F16D2A13400CEE67E /* TMFProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD2D16D2A13400CEE67E /* TMFProtocol.m */; };
+		02A5FD7016D2A13400CEE67E /* TMFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3016D2A13400CEE67E /* TMFRequest.m */; };
+		02A5FD7116D2A13400CEE67E /* TMFResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3216D2A13400CEE67E /* TMFResponse.m */; };
+		02A5FD7216D2A13400CEE67E /* TMFResponseCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3416D2A13400CEE67E /* TMFResponseCallback.m */; };
+		02A5FD7316D2A13400CEE67E /* TMFRpcCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3616D2A13400CEE67E /* TMFRpcCoder.m */; };
+		02A5FD7416D2A13400CEE67E /* TMFSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3816D2A13400CEE67E /* TMFSubscription.m */; };
+		02A5FD7516D2A13400CEE67E /* TMFTcpChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3A16D2A13400CEE67E /* TMFTcpChannel.m */; };
+		02A5FD7616D2A13400CEE67E /* TMFTcpChannelConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3C16D2A13400CEE67E /* TMFTcpChannelConnection.m */; };
+		02A5FD7716D2A13400CEE67E /* TMFUdpChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD3E16D2A13400CEE67E /* TMFUdpChannel.m */; };
+		02A5FD7816D2A13400CEE67E /* TMFConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD4116D2A13400CEE67E /* TMFConnector.m */; };
+		02A5FD7916D2A13400CEE67E /* TMFError.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD4516D2A13400CEE67E /* TMFError.m */; };
+		02A5FD7A16D2A13400CEE67E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD4B16D2A13400CEE67E /* GCDAsyncSocket.m */; };
+		02A5FD7B16D2A13400CEE67E /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD4D16D2A13400CEE67E /* GCDAsyncUdpSocket.m */; };
+		02A5FD7F16D2A13400CEE67E /* ybase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 02A5FD5216D2A13400CEE67E /* ybase64.c */; };
+		02AE40B316B130C60057B472 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AE40B216B130C60057B472 /* ImageIO.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		020EFF52167668B1007B80DE /* PLCameraFlashIcon_2only_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraFlashIcon_2only_.png; sourceTree = "<group>"; };
+		020EFF53167668B1007B80DE /* PLCameraFlashIcon_2only_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraFlashIcon_2only_@2x.png"; sourceTree = "<group>"; };
+		020EFF54167668B1007B80DE /* PLCameraButtonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraButtonIcon.png; sourceTree = "<group>"; };
+		020EFF55167668B1007B80DE /* PLCameraButtonIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraButtonIcon@2x.png"; sourceTree = "<group>"; };
+		020EFF56167668B1007B80DE /* PLCameraToggleIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraToggleIcon@2x.png"; sourceTree = "<group>"; };
+		020EFF57167668B1007B80DE /* PLCameraToggleIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraToggleIcon.png; sourceTree = "<group>"; };
+		020EFF5F16770957007B80DE /* MACPreviewCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACPreviewCommand.h; sourceTree = "<group>"; };
+		020EFF6016770957007B80DE /* MACPreviewCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACPreviewCommand.m; sourceTree = "<group>"; };
+		020EFF7D1677207E007B80DE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		020EFF7F167720E0007B80DE /* MACCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACCamera.h; sourceTree = "<group>"; };
+		020EFF80167720E0007B80DE /* MACCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACCamera.m; sourceTree = "<group>"; };
+		020EFF8516772926007B80DE /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		020EFFD91677DAF3007B80DE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		020EFFDB1677E125007B80DE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		020EFFDD1677E13D007B80DE /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		022A670E1674B14F00FE3959 /* MultiAirCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiAirCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		022A67121674B14F00FE3959 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		022A67141674B14F00FE3959 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		022A67161674B14F00FE3959 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		022A671A1674B14F00FE3959 /* MultiAirCam-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiAirCam-Info.plist"; sourceTree = "<group>"; };
+		022A671C1674B14F00FE3959 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		022A671E1674B14F00FE3959 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		022A67201674B14F00FE3959 /* MultiAirCam-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiAirCam-Prefix.pch"; sourceTree = "<group>"; };
+		022A67211674B14F00FE3959 /* MACAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACAppDelegate.h; sourceTree = "<group>"; };
+		022A67221674B14F00FE3959 /* MACAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MACAppDelegate.m; sourceTree = "<group>"; };
+		022A67241674B14F00FE3959 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		022A67261674B14F00FE3959 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		022A67281674B14F00FE3959 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		022A67381674B1C500FE3959 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
+		022A673A1674B1C900FE3959 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "../Icon-72@2x.png"; sourceTree = "<group>"; };
+		022A673C1674B1E500FE3959 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		022A673E1674B1E800FE3959 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		022A67551674B8E900FE3959 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		022A67571674B8F300FE3959 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		022A67591674B8FC00FE3959 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		022A675C1674BA8200FE3959 /* MACCameraListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACCameraListViewController.h; sourceTree = "<group>"; };
+		022A675D1674BA8200FE3959 /* MACCameraListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACCameraListViewController.m; sourceTree = "<group>"; };
+		022A675F1674BA9300FE3959 /* MACCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACCameraViewController.h; sourceTree = "<group>"; };
+		022A67601674BA9300FE3959 /* MACCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACCameraViewController.m; sourceTree = "<group>"; };
+		022A67621674BB4200FE3959 /* MACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACViewController.h; sourceTree = "<group>"; };
+		022A67631674BB4200FE3959 /* MACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACViewController.m; sourceTree = "<group>"; };
+		02620009168474340069685A /* MACCameraActionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACCameraActionCommand.h; sourceTree = "<group>"; };
+		0262000A168474340069685A /* MACCameraActionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACCameraActionCommand.m; sourceTree = "<group>"; };
+		0262000C168490230069685A /* UIImage+Scaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scaling.h"; sourceTree = "<group>"; };
+		0262000D168490230069685A /* UIImage+Scaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scaling.m"; sourceTree = "<group>"; };
+		0278FCF51674C327009B8D34 /* MACCameraCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACCameraCollectionViewCell.h; sourceTree = "<group>"; };
+		0278FCF61674C327009B8D34 /* MACCameraCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACCameraCollectionViewCell.m; sourceTree = "<group>"; };
+		02A5FCF116D2A13400CEE67E /* TMFImageCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFImageCommand.h; sourceTree = "<group>"; };
+		02A5FCF216D2A13400CEE67E /* TMFImageCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFImageCommand.m; sourceTree = "<group>"; };
+		02A5FCF316D2A13400CEE67E /* TMFKeyValueCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFKeyValueCommand.h; sourceTree = "<group>"; };
+		02A5FCF416D2A13400CEE67E /* TMFKeyValueCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFKeyValueCommand.m; sourceTree = "<group>"; };
+		02A5FCF516D2A13400CEE67E /* TMFLocationCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFLocationCommand.h; sourceTree = "<group>"; };
+		02A5FCF616D2A13400CEE67E /* TMFLocationCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFLocationCommand.m; sourceTree = "<group>"; };
+		02A5FCF716D2A13400CEE67E /* TMFMotionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFMotionCommand.h; sourceTree = "<group>"; };
+		02A5FCF816D2A13400CEE67E /* TMFMotionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFMotionCommand.m; sourceTree = "<group>"; };
+		02A5FCF916D2A13400CEE67E /* TMFMultiTouchCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFMultiTouchCommand.h; sourceTree = "<group>"; };
+		02A5FCFA16D2A13400CEE67E /* TMFMultiTouchCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFMultiTouchCommand.m; sourceTree = "<group>"; };
+		02A5FCFB16D2A13400CEE67E /* TMFMultiTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFMultiTouchView.h; sourceTree = "<group>"; };
+		02A5FCFC16D2A13400CEE67E /* TMFMultiTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFMultiTouchView.m; sourceTree = "<group>"; };
+		02A5FCFE16D2A13400CEE67E /* TMFServiceBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFServiceBrowserTableViewController.h; sourceTree = "<group>"; };
+		02A5FCFF16D2A13400CEE67E /* TMFServiceBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFServiceBrowserTableViewController.m; sourceTree = "<group>"; };
+		02A5FD0116D2A13400CEE67E /* TMFAnnounceCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAnnounceCommand.h; sourceTree = "<group>"; };
+		02A5FD0216D2A13400CEE67E /* TMFAnnounceCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFAnnounceCommand.m; sourceTree = "<group>"; };
+		02A5FD0316D2A13400CEE67E /* TMFArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFArguments.h; sourceTree = "<group>"; };
+		02A5FD0416D2A13400CEE67E /* TMFArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFArguments.m; sourceTree = "<group>"; };
+		02A5FD0516D2A13400CEE67E /* TMFCapabilityCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFCapabilityCommand.h; sourceTree = "<group>"; };
+		02A5FD0616D2A13400CEE67E /* TMFCapabilityCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFCapabilityCommand.m; sourceTree = "<group>"; };
+		02A5FD0716D2A13400CEE67E /* TMFCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFCommand.h; sourceTree = "<group>"; };
+		02A5FD0816D2A13400CEE67E /* TMFCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFCommand.m; sourceTree = "<group>"; };
+		02A5FD0916D2A13400CEE67E /* TMFCommandDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFCommandDispatcher.h; sourceTree = "<group>"; };
+		02A5FD0A16D2A13400CEE67E /* TMFCommandDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFCommandDispatcher.m; sourceTree = "<group>"; };
+		02A5FD0B16D2A13400CEE67E /* TMFConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFConfiguration.h; sourceTree = "<group>"; };
+		02A5FD0C16D2A13400CEE67E /* TMFConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFConfiguration.m; sourceTree = "<group>"; };
+		02A5FD0D16D2A13400CEE67E /* TMFDisconnectCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFDisconnectCommand.h; sourceTree = "<group>"; };
+		02A5FD0E16D2A13400CEE67E /* TMFDisconnectCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFDisconnectCommand.m; sourceTree = "<group>"; };
+		02A5FD0F16D2A13400CEE67E /* TMFHeartBeatCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFHeartBeatCommand.h; sourceTree = "<group>"; };
+		02A5FD1016D2A13400CEE67E /* TMFHeartBeatCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFHeartBeatCommand.m; sourceTree = "<group>"; };
+		02A5FD1116D2A13400CEE67E /* TMFPublishSubscribeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFPublishSubscribeCommand.h; sourceTree = "<group>"; };
+		02A5FD1216D2A13400CEE67E /* TMFPublishSubscribeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFPublishSubscribeCommand.m; sourceTree = "<group>"; };
+		02A5FD1316D2A13400CEE67E /* TMFRequestResponseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFRequestResponseCommand.h; sourceTree = "<group>"; };
+		02A5FD1416D2A13400CEE67E /* TMFRequestResponseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFRequestResponseCommand.m; sourceTree = "<group>"; };
+		02A5FD1516D2A13400CEE67E /* TMFSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFSerializable.h; sourceTree = "<group>"; };
+		02A5FD1616D2A13400CEE67E /* TMFSerializableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFSerializableObject.h; sourceTree = "<group>"; };
+		02A5FD1716D2A13400CEE67E /* TMFSerializableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFSerializableObject.m; sourceTree = "<group>"; };
+		02A5FD1816D2A13400CEE67E /* TMFSubscribeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFSubscribeCommand.h; sourceTree = "<group>"; };
+		02A5FD1916D2A13400CEE67E /* TMFSubscribeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFSubscribeCommand.m; sourceTree = "<group>"; };
+		02A5FD1A16D2A13400CEE67E /* TMFUnsubscribeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFUnsubscribeCommand.h; sourceTree = "<group>"; };
+		02A5FD1B16D2A13400CEE67E /* TMFUnsubscribeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFUnsubscribeCommand.m; sourceTree = "<group>"; };
+		02A5FD1C16D2A13400CEE67E /* TMFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFView.h; sourceTree = "<group>"; };
+		02A5FD1D16D2A13400CEE67E /* TMFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFView.m; sourceTree = "<group>"; };
+		02A5FD1E16D2A13400CEE67E /* TMFViewCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFViewCommand.h; sourceTree = "<group>"; };
+		02A5FD2016D2A13400CEE67E /* TMFChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFChannel.h; sourceTree = "<group>"; };
+		02A5FD2116D2A13400CEE67E /* TMFChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFChannel.m; sourceTree = "<group>"; };
+		02A5FD2216D2A13400CEE67E /* TMFChannelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFChannelDelegate.h; sourceTree = "<group>"; };
+		02A5FD2316D2A13400CEE67E /* TMFDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFDiscovery.h; sourceTree = "<group>"; };
+		02A5FD2416D2A13400CEE67E /* TMFDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFDiscovery.m; sourceTree = "<group>"; };
+		02A5FD2516D2A13400CEE67E /* TMFDiscoveryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFDiscoveryDelegate.h; sourceTree = "<group>"; };
+		02A5FD2616D2A13400CEE67E /* TMFJsonRpcCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFJsonRpcCoder.h; sourceTree = "<group>"; };
+		02A5FD2716D2A13400CEE67E /* TMFJsonRpcCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFJsonRpcCoder.m; sourceTree = "<group>"; };
+		02A5FD2816D2A13400CEE67E /* TMFMsgPackRpcCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFMsgPackRpcCoder.h; sourceTree = "<group>"; };
+		02A5FD2916D2A13400CEE67E /* TMFMsgPackRpcCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFMsgPackRpcCoder.m; sourceTree = "<group>"; };
+		02A5FD2A16D2A13400CEE67E /* TMFPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFPeer.h; sourceTree = "<group>"; };
+		02A5FD2B16D2A13400CEE67E /* TMFPeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFPeer.m; sourceTree = "<group>"; };
+		02A5FD2C16D2A13400CEE67E /* TMFProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFProtocol.h; sourceTree = "<group>"; };
+		02A5FD2D16D2A13400CEE67E /* TMFProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFProtocol.m; sourceTree = "<group>"; };
+		02A5FD2E16D2A13400CEE67E /* TMFProtocolCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFProtocolCoder.h; sourceTree = "<group>"; };
+		02A5FD2F16D2A13400CEE67E /* TMFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFRequest.h; sourceTree = "<group>"; };
+		02A5FD3016D2A13400CEE67E /* TMFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFRequest.m; sourceTree = "<group>"; };
+		02A5FD3116D2A13400CEE67E /* TMFResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFResponse.h; sourceTree = "<group>"; };
+		02A5FD3216D2A13400CEE67E /* TMFResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFResponse.m; sourceTree = "<group>"; };
+		02A5FD3316D2A13400CEE67E /* TMFResponseCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFResponseCallback.h; sourceTree = "<group>"; };
+		02A5FD3416D2A13400CEE67E /* TMFResponseCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFResponseCallback.m; sourceTree = "<group>"; };
+		02A5FD3516D2A13400CEE67E /* TMFRpcCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFRpcCoder.h; sourceTree = "<group>"; };
+		02A5FD3616D2A13400CEE67E /* TMFRpcCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFRpcCoder.m; sourceTree = "<group>"; };
+		02A5FD3716D2A13400CEE67E /* TMFSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFSubscription.h; sourceTree = "<group>"; };
+		02A5FD3816D2A13400CEE67E /* TMFSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFSubscription.m; sourceTree = "<group>"; };
+		02A5FD3916D2A13400CEE67E /* TMFTcpChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFTcpChannel.h; sourceTree = "<group>"; };
+		02A5FD3A16D2A13400CEE67E /* TMFTcpChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFTcpChannel.m; sourceTree = "<group>"; };
+		02A5FD3B16D2A13400CEE67E /* TMFTcpChannelConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFTcpChannelConnection.h; sourceTree = "<group>"; };
+		02A5FD3C16D2A13400CEE67E /* TMFTcpChannelConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFTcpChannelConnection.m; sourceTree = "<group>"; };
+		02A5FD3D16D2A13400CEE67E /* TMFUdpChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFUdpChannel.h; sourceTree = "<group>"; };
+		02A5FD3E16D2A13400CEE67E /* TMFUdpChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFUdpChannel.m; sourceTree = "<group>"; };
+		02A5FD3F16D2A13400CEE67E /* TMFConfigurationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFConfigurationDelegate.h; sourceTree = "<group>"; };
+		02A5FD4016D2A13400CEE67E /* TMFConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFConnector.h; sourceTree = "<group>"; };
+		02A5FD4116D2A13400CEE67E /* TMFConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFConnector.m; sourceTree = "<group>"; };
+		02A5FD4216D2A13400CEE67E /* TMFConnectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFConnectorDelegate.h; sourceTree = "<group>"; };
+		02A5FD4316D2A13400CEE67E /* TMFDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFDefine.h; sourceTree = "<group>"; };
+		02A5FD4416D2A13400CEE67E /* TMFError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFError.h; sourceTree = "<group>"; };
+		02A5FD4516D2A13400CEE67E /* TMFError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFError.m; sourceTree = "<group>"; };
+		02A5FD4616D2A13400CEE67E /* TMFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFLog.h; sourceTree = "<group>"; };
+		02A5FD4716D2A13400CEE67E /* threeMF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threeMF.h; sourceTree = "<group>"; };
+		02A5FD4A16D2A13400CEE67E /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		02A5FD4B16D2A13400CEE67E /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		02A5FD4C16D2A13400CEE67E /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		02A5FD4D16D2A13400CEE67E /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		02A5FD4E16D2A13400CEE67E /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		02A5FD5016D2A13400CEE67E /* COPYING.LESSER */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.LESSER; sourceTree = "<group>"; };
+		02A5FD5116D2A13400CEE67E /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		02A5FD5216D2A13400CEE67E /* ybase64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ybase64.c; sourceTree = "<group>"; };
+		02A5FD5316D2A13400CEE67E /* ybase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ybase64.h; sourceTree = "<group>"; };
+		02A5FD5416D2A13400CEE67E /* ydefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ydefines.h; sourceTree = "<group>"; };
+		02AE40B216B130C60057B472 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		022A670B1674B14F00FE3959 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AE40B316B130C60057B472 /* ImageIO.framework in Frameworks */,
+				020EFFDE1677E13D007B80DE /* CoreImage.framework in Frameworks */,
+				020EFFDC1677E125007B80DE /* CoreMedia.framework in Frameworks */,
+				020EFFDA1677DAF3007B80DE /* CoreVideo.framework in Frameworks */,
+				020EFF8616772927007B80DE /* AssetsLibrary.framework in Frameworks */,
+				020EFF7E1677207E007B80DE /* AVFoundation.framework in Frameworks */,
+				022A675A1674B8FC00FE3959 /* SystemConfiguration.framework in Frameworks */,
+				022A67561674B8E900FE3959 /* CFNetwork.framework in Frameworks */,
+				022A67131674B14F00FE3959 /* UIKit.framework in Frameworks */,
+				022A67151674B14F00FE3959 /* Foundation.framework in Frameworks */,
+				022A67171674B14F00FE3959 /* CoreGraphics.framework in Frameworks */,
+				022A675B1674B91700FE3959 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		020EFF5E167669F8007B80DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0278FCF51674C327009B8D34 /* MACCameraCollectionViewCell.h */,
+				0278FCF61674C327009B8D34 /* MACCameraCollectionViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		020EFF871677293E007B80DE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				020EFF7F167720E0007B80DE /* MACCamera.h */,
+				020EFF80167720E0007B80DE /* MACCamera.m */,
+				0262000C168490230069685A /* UIImage+Scaling.h */,
+				0262000D168490230069685A /* UIImage+Scaling.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		022A67031674B14F00FE3959 = {
+			isa = PBXGroup;
+			children = (
+				0240162216B7F78E00B7D1EA /* Vendor */,
+				022A67181674B14F00FE3959 /* MultiAirCam */,
+				022A67111674B14F00FE3959 /* Frameworks */,
+				022A670F1674B14F00FE3959 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		022A670F1674B14F00FE3959 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				022A670E1674B14F00FE3959 /* MultiAirCam.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		022A67111674B14F00FE3959 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02AE40B216B130C60057B472 /* ImageIO.framework */,
+				020EFFDD1677E13D007B80DE /* CoreImage.framework */,
+				020EFFDB1677E125007B80DE /* CoreMedia.framework */,
+				020EFFD91677DAF3007B80DE /* CoreVideo.framework */,
+				020EFF8516772926007B80DE /* AssetsLibrary.framework */,
+				020EFF7D1677207E007B80DE /* AVFoundation.framework */,
+				022A67591674B8FC00FE3959 /* SystemConfiguration.framework */,
+				022A67571674B8F300FE3959 /* Security.framework */,
+				022A67551674B8E900FE3959 /* CFNetwork.framework */,
+				022A67121674B14F00FE3959 /* UIKit.framework */,
+				022A67141674B14F00FE3959 /* Foundation.framework */,
+				022A67161674B14F00FE3959 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		022A67181674B14F00FE3959 /* MultiAirCam */ = {
+			isa = PBXGroup;
+			children = (
+				020EFF871677293E007B80DE /* Classes */,
+				020EFF5E167669F8007B80DE /* Views */,
+				022A67671674BD1900FE3959 /* Base Classes */,
+				022A67661674BD0800FE3959 /* Controller */,
+				022A67651674BCFF00FE3959 /* Commands */,
+				022A67191674B14F00FE3959 /* Supporting Files */,
+				022A67211674B14F00FE3959 /* MACAppDelegate.h */,
+				022A67221674B14F00FE3959 /* MACAppDelegate.m */,
+			);
+			path = MultiAirCam;
+			sourceTree = "<group>";
+		};
+		022A67191674B14F00FE3959 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				020EFF52167668B1007B80DE /* PLCameraFlashIcon_2only_.png */,
+				020EFF53167668B1007B80DE /* PLCameraFlashIcon_2only_@2x.png */,
+				020EFF54167668B1007B80DE /* PLCameraButtonIcon.png */,
+				020EFF55167668B1007B80DE /* PLCameraButtonIcon@2x.png */,
+				020EFF56167668B1007B80DE /* PLCameraToggleIcon@2x.png */,
+				020EFF57167668B1007B80DE /* PLCameraToggleIcon.png */,
+				022A673E1674B1E800FE3959 /* Icon@2x.png */,
+				022A673C1674B1E500FE3959 /* Icon.png */,
+				022A673A1674B1C900FE3959 /* Icon-72@2x.png */,
+				022A67381674B1C500FE3959 /* Icon-72.png */,
+				022A671A1674B14F00FE3959 /* MultiAirCam-Info.plist */,
+				022A671B1674B14F00FE3959 /* InfoPlist.strings */,
+				022A671E1674B14F00FE3959 /* main.m */,
+				022A67201674B14F00FE3959 /* MultiAirCam-Prefix.pch */,
+				022A67241674B14F00FE3959 /* Default.png */,
+				022A67261674B14F00FE3959 /* Default@2x.png */,
+				022A67281674B14F00FE3959 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		022A67651674BCFF00FE3959 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				020EFF5F16770957007B80DE /* MACPreviewCommand.h */,
+				020EFF6016770957007B80DE /* MACPreviewCommand.m */,
+				02620009168474340069685A /* MACCameraActionCommand.h */,
+				0262000A168474340069685A /* MACCameraActionCommand.m */,
+			);
+			name = Commands;
+			sourceTree = "<group>";
+		};
+		022A67661674BD0800FE3959 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				022A675C1674BA8200FE3959 /* MACCameraListViewController.h */,
+				022A675D1674BA8200FE3959 /* MACCameraListViewController.m */,
+				022A675F1674BA9300FE3959 /* MACCameraViewController.h */,
+				022A67601674BA9300FE3959 /* MACCameraViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		022A67671674BD1900FE3959 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				022A67621674BB4200FE3959 /* MACViewController.h */,
+				022A67631674BB4200FE3959 /* MACViewController.m */,
+			);
+			name = "Base Classes";
+			sourceTree = "<group>";
+		};
+		0240162216B7F78E00B7D1EA /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FCEE16D2A13400CEE67E /* threeMF */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		02A5FCEE16D2A13400CEE67E /* threeMF */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FCEF16D2A13400CEE67E /* Classes */,
+				02A5FD4716D2A13400CEE67E /* threeMF.h */,
+				02A5FD4816D2A13400CEE67E /* Vendor */,
+			);
+			name = threeMF;
+			path = ../../threeMF;
+			sourceTree = "<group>";
+		};
+		02A5FCEF16D2A13400CEE67E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FCF016D2A13400CEE67E /* Commands */,
+				02A5FCFD16D2A13400CEE67E /* Controller */,
+				02A5FD0016D2A13400CEE67E /* Dispatcher */,
+				02A5FD1F16D2A13400CEE67E /* Network */,
+				02A5FD3F16D2A13400CEE67E /* TMFConfigurationDelegate.h */,
+				02A5FD4016D2A13400CEE67E /* TMFConnector.h */,
+				02A5FD4116D2A13400CEE67E /* TMFConnector.m */,
+				02A5FD4216D2A13400CEE67E /* TMFConnectorDelegate.h */,
+				02A5FD4316D2A13400CEE67E /* TMFDefine.h */,
+				02A5FD4416D2A13400CEE67E /* TMFError.h */,
+				02A5FD4516D2A13400CEE67E /* TMFError.m */,
+				02A5FD4616D2A13400CEE67E /* TMFLog.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		02A5FCF016D2A13400CEE67E /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FCF116D2A13400CEE67E /* TMFImageCommand.h */,
+				02A5FCF216D2A13400CEE67E /* TMFImageCommand.m */,
+				02A5FCF316D2A13400CEE67E /* TMFKeyValueCommand.h */,
+				02A5FCF416D2A13400CEE67E /* TMFKeyValueCommand.m */,
+				02A5FCF516D2A13400CEE67E /* TMFLocationCommand.h */,
+				02A5FCF616D2A13400CEE67E /* TMFLocationCommand.m */,
+				02A5FCF716D2A13400CEE67E /* TMFMotionCommand.h */,
+				02A5FCF816D2A13400CEE67E /* TMFMotionCommand.m */,
+				02A5FCF916D2A13400CEE67E /* TMFMultiTouchCommand.h */,
+				02A5FCFA16D2A13400CEE67E /* TMFMultiTouchCommand.m */,
+				02A5FCFB16D2A13400CEE67E /* TMFMultiTouchView.h */,
+				02A5FCFC16D2A13400CEE67E /* TMFMultiTouchView.m */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		02A5FCFD16D2A13400CEE67E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FCFE16D2A13400CEE67E /* TMFServiceBrowserTableViewController.h */,
+				02A5FCFF16D2A13400CEE67E /* TMFServiceBrowserTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		02A5FD0016D2A13400CEE67E /* Dispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FD0116D2A13400CEE67E /* TMFAnnounceCommand.h */,
+				02A5FD0216D2A13400CEE67E /* TMFAnnounceCommand.m */,
+				02A5FD0316D2A13400CEE67E /* TMFArguments.h */,
+				02A5FD0416D2A13400CEE67E /* TMFArguments.m */,
+				02A5FD0516D2A13400CEE67E /* TMFCapabilityCommand.h */,
+				02A5FD0616D2A13400CEE67E /* TMFCapabilityCommand.m */,
+				02A5FD0716D2A13400CEE67E /* TMFCommand.h */,
+				02A5FD0816D2A13400CEE67E /* TMFCommand.m */,
+				02A5FD0916D2A13400CEE67E /* TMFCommandDispatcher.h */,
+				02A5FD0A16D2A13400CEE67E /* TMFCommandDispatcher.m */,
+				02A5FD0B16D2A13400CEE67E /* TMFConfiguration.h */,
+				02A5FD0C16D2A13400CEE67E /* TMFConfiguration.m */,
+				02A5FD0D16D2A13400CEE67E /* TMFDisconnectCommand.h */,
+				02A5FD0E16D2A13400CEE67E /* TMFDisconnectCommand.m */,
+				02A5FD0F16D2A13400CEE67E /* TMFHeartBeatCommand.h */,
+				02A5FD1016D2A13400CEE67E /* TMFHeartBeatCommand.m */,
+				02A5FD1116D2A13400CEE67E /* TMFPublishSubscribeCommand.h */,
+				02A5FD1216D2A13400CEE67E /* TMFPublishSubscribeCommand.m */,
+				02A5FD1316D2A13400CEE67E /* TMFRequestResponseCommand.h */,
+				02A5FD1416D2A13400CEE67E /* TMFRequestResponseCommand.m */,
+				02A5FD1516D2A13400CEE67E /* TMFSerializable.h */,
+				02A5FD1616D2A13400CEE67E /* TMFSerializableObject.h */,
+				02A5FD1716D2A13400CEE67E /* TMFSerializableObject.m */,
+				02A5FD1816D2A13400CEE67E /* TMFSubscribeCommand.h */,
+				02A5FD1916D2A13400CEE67E /* TMFSubscribeCommand.m */,
+				02A5FD1A16D2A13400CEE67E /* TMFUnsubscribeCommand.h */,
+				02A5FD1B16D2A13400CEE67E /* TMFUnsubscribeCommand.m */,
+				02A5FD1C16D2A13400CEE67E /* TMFView.h */,
+				02A5FD1D16D2A13400CEE67E /* TMFView.m */,
+				02A5FD1E16D2A13400CEE67E /* TMFViewCommand.h */,
+			);
+			path = Dispatcher;
+			sourceTree = "<group>";
+		};
+		02A5FD1F16D2A13400CEE67E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FD2016D2A13400CEE67E /* TMFChannel.h */,
+				02A5FD2116D2A13400CEE67E /* TMFChannel.m */,
+				02A5FD2216D2A13400CEE67E /* TMFChannelDelegate.h */,
+				02A5FD2316D2A13400CEE67E /* TMFDiscovery.h */,
+				02A5FD2416D2A13400CEE67E /* TMFDiscovery.m */,
+				02A5FD2516D2A13400CEE67E /* TMFDiscoveryDelegate.h */,
+				02A5FD2616D2A13400CEE67E /* TMFJsonRpcCoder.h */,
+				02A5FD2716D2A13400CEE67E /* TMFJsonRpcCoder.m */,
+				02A5FD2816D2A13400CEE67E /* TMFMsgPackRpcCoder.h */,
+				02A5FD2916D2A13400CEE67E /* TMFMsgPackRpcCoder.m */,
+				02A5FD2A16D2A13400CEE67E /* TMFPeer.h */,
+				02A5FD2B16D2A13400CEE67E /* TMFPeer.m */,
+				02A5FD2C16D2A13400CEE67E /* TMFProtocol.h */,
+				02A5FD2D16D2A13400CEE67E /* TMFProtocol.m */,
+				02A5FD2E16D2A13400CEE67E /* TMFProtocolCoder.h */,
+				02A5FD2F16D2A13400CEE67E /* TMFRequest.h */,
+				02A5FD3016D2A13400CEE67E /* TMFRequest.m */,
+				02A5FD3116D2A13400CEE67E /* TMFResponse.h */,
+				02A5FD3216D2A13400CEE67E /* TMFResponse.m */,
+				02A5FD3316D2A13400CEE67E /* TMFResponseCallback.h */,
+				02A5FD3416D2A13400CEE67E /* TMFResponseCallback.m */,
+				02A5FD3516D2A13400CEE67E /* TMFRpcCoder.h */,
+				02A5FD3616D2A13400CEE67E /* TMFRpcCoder.m */,
+				02A5FD3716D2A13400CEE67E /* TMFSubscription.h */,
+				02A5FD3816D2A13400CEE67E /* TMFSubscription.m */,
+				02A5FD3916D2A13400CEE67E /* TMFTcpChannel.h */,
+				02A5FD3A16D2A13400CEE67E /* TMFTcpChannel.m */,
+				02A5FD3B16D2A13400CEE67E /* TMFTcpChannelConnection.h */,
+				02A5FD3C16D2A13400CEE67E /* TMFTcpChannelConnection.m */,
+				02A5FD3D16D2A13400CEE67E /* TMFUdpChannel.h */,
+				02A5FD3E16D2A13400CEE67E /* TMFUdpChannel.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		02A5FD4816D2A13400CEE67E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FD4916D2A13400CEE67E /* CocoaAsyncSocket */,
+				02A5FD4F16D2A13400CEE67E /* ytoolkit */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		02A5FD4916D2A13400CEE67E /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FD4A16D2A13400CEE67E /* GCDAsyncSocket.h */,
+				02A5FD4B16D2A13400CEE67E /* GCDAsyncSocket.m */,
+				02A5FD4C16D2A13400CEE67E /* GCDAsyncUdpSocket.h */,
+				02A5FD4D16D2A13400CEE67E /* GCDAsyncUdpSocket.m */,
+				02A5FD4E16D2A13400CEE67E /* README.markdown */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		02A5FD4F16D2A13400CEE67E /* ytoolkit */ = {
+			isa = PBXGroup;
+			children = (
+				02A5FD5016D2A13400CEE67E /* COPYING.LESSER */,
+				02A5FD5116D2A13400CEE67E /* README.markdown */,
+				02A5FD5216D2A13400CEE67E /* ybase64.c */,
+				02A5FD5316D2A13400CEE67E /* ybase64.h */,
+				02A5FD5416D2A13400CEE67E /* ydefines.h */,
+			);
+			path = ytoolkit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		022A670D1674B14F00FE3959 /* MultiAirCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 022A67351674B14F00FE3959 /* Build configuration list for PBXNativeTarget "MultiAirCam" */;
+			buildPhases = (
+				022A670A1674B14F00FE3959 /* Sources */,
+				022A670B1674B14F00FE3959 /* Frameworks */,
+				022A670C1674B14F00FE3959 /* Resources */,
+				020EFF4316765B53007B80DE /* TODO */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiAirCam;
+			productName = MultiAirCam;
+			productReference = 022A670E1674B14F00FE3959 /* MultiAirCam.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		022A67051674B14F00FE3959 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MAC;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Martin Gratzer";
+			};
+			buildConfigurationList = 022A67081674B14F00FE3959 /* Build configuration list for PBXProject "MultiAirCam" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 022A67031674B14F00FE3959;
+			productRefGroup = 022A670F1674B14F00FE3959 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				022A670D1674B14F00FE3959 /* MultiAirCam */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		022A670C1674B14F00FE3959 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022A671D1674B14F00FE3959 /* InfoPlist.strings in Resources */,
+				022A67251674B14F00FE3959 /* Default.png in Resources */,
+				022A67271674B14F00FE3959 /* Default@2x.png in Resources */,
+				022A67291674B14F00FE3959 /* Default-568h@2x.png in Resources */,
+				022A67391674B1C500FE3959 /* Icon-72.png in Resources */,
+				022A673B1674B1C900FE3959 /* Icon-72@2x.png in Resources */,
+				022A673D1674B1E500FE3959 /* Icon.png in Resources */,
+				022A673F1674B1E800FE3959 /* Icon@2x.png in Resources */,
+				020EFF58167668B1007B80DE /* PLCameraFlashIcon_2only_.png in Resources */,
+				020EFF59167668B1007B80DE /* PLCameraFlashIcon_2only_@2x.png in Resources */,
+				020EFF5A167668B1007B80DE /* PLCameraButtonIcon.png in Resources */,
+				020EFF5B167668B1007B80DE /* PLCameraButtonIcon@2x.png in Resources */,
+				020EFF5C167668B1007B80DE /* PLCameraToggleIcon@2x.png in Resources */,
+				020EFF5D167668B1007B80DE /* PLCameraToggleIcon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		020EFF4316765B53007B80DE /* TODO */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = TODO;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\n#find \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		022A670A1674B14F00FE3959 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022A671F1674B14F00FE3959 /* main.m in Sources */,
+				022A67231674B14F00FE3959 /* MACAppDelegate.m in Sources */,
+				022A675E1674BA8200FE3959 /* MACCameraListViewController.m in Sources */,
+				022A67611674BA9300FE3959 /* MACCameraViewController.m in Sources */,
+				022A67641674BB4200FE3959 /* MACViewController.m in Sources */,
+				0278FCF71674C327009B8D34 /* MACCameraCollectionViewCell.m in Sources */,
+				020EFF6116770957007B80DE /* MACPreviewCommand.m in Sources */,
+				020EFF81167720E0007B80DE /* MACCamera.m in Sources */,
+				0262000B168474340069685A /* MACCameraActionCommand.m in Sources */,
+				0262000E168490230069685A /* UIImage+Scaling.m in Sources */,
+				02A5FD5516D2A13400CEE67E /* TMFImageCommand.m in Sources */,
+				02A5FD5616D2A13400CEE67E /* TMFKeyValueCommand.m in Sources */,
+				02A5FD5716D2A13400CEE67E /* TMFLocationCommand.m in Sources */,
+				02A5FD5816D2A13400CEE67E /* TMFMotionCommand.m in Sources */,
+				02A5FD5916D2A13400CEE67E /* TMFMultiTouchCommand.m in Sources */,
+				02A5FD5A16D2A13400CEE67E /* TMFMultiTouchView.m in Sources */,
+				02A5FD5B16D2A13400CEE67E /* TMFServiceBrowserTableViewController.m in Sources */,
+				02A5FD5C16D2A13400CEE67E /* TMFAnnounceCommand.m in Sources */,
+				02A5FD5D16D2A13400CEE67E /* TMFArguments.m in Sources */,
+				02A5FD5E16D2A13400CEE67E /* TMFCapabilityCommand.m in Sources */,
+				02A5FD5F16D2A13400CEE67E /* TMFCommand.m in Sources */,
+				02A5FD6016D2A13400CEE67E /* TMFCommandDispatcher.m in Sources */,
+				02A5FD6116D2A13400CEE67E /* TMFConfiguration.m in Sources */,
+				02A5FD6216D2A13400CEE67E /* TMFDisconnectCommand.m in Sources */,
+				02A5FD6316D2A13400CEE67E /* TMFHeartBeatCommand.m in Sources */,
+				02A5FD6416D2A13400CEE67E /* TMFPublishSubscribeCommand.m in Sources */,
+				02A5FD6516D2A13400CEE67E /* TMFRequestResponseCommand.m in Sources */,
+				02A5FD6616D2A13400CEE67E /* TMFSerializableObject.m in Sources */,
+				02A5FD6716D2A13400CEE67E /* TMFSubscribeCommand.m in Sources */,
+				02A5FD6816D2A13400CEE67E /* TMFUnsubscribeCommand.m in Sources */,
+				02A5FD6916D2A13400CEE67E /* TMFView.m in Sources */,
+				02A5FD6A16D2A13400CEE67E /* TMFChannel.m in Sources */,
+				02A5FD6B16D2A13400CEE67E /* TMFDiscovery.m in Sources */,
+				02A5FD6C16D2A13400CEE67E /* TMFJsonRpcCoder.m in Sources */,
+				02A5FD6D16D2A13400CEE67E /* TMFMsgPackRpcCoder.m in Sources */,
+				02A5FD6E16D2A13400CEE67E /* TMFPeer.m in Sources */,
+				02A5FD6F16D2A13400CEE67E /* TMFProtocol.m in Sources */,
+				02A5FD7016D2A13400CEE67E /* TMFRequest.m in Sources */,
+				02A5FD7116D2A13400CEE67E /* TMFResponse.m in Sources */,
+				02A5FD7216D2A13400CEE67E /* TMFResponseCallback.m in Sources */,
+				02A5FD7316D2A13400CEE67E /* TMFRpcCoder.m in Sources */,
+				02A5FD7416D2A13400CEE67E /* TMFSubscription.m in Sources */,
+				02A5FD7516D2A13400CEE67E /* TMFTcpChannel.m in Sources */,
+				02A5FD7616D2A13400CEE67E /* TMFTcpChannelConnection.m in Sources */,
+				02A5FD7716D2A13400CEE67E /* TMFUdpChannel.m in Sources */,
+				02A5FD7816D2A13400CEE67E /* TMFConnector.m in Sources */,
+				02A5FD7916D2A13400CEE67E /* TMFError.m in Sources */,
+				02A5FD7A16D2A13400CEE67E /* GCDAsyncSocket.m in Sources */,
+				02A5FD7B16D2A13400CEE67E /* GCDAsyncUdpSocket.m in Sources */,
+				02A5FD7F16D2A13400CEE67E /* ybase64.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		022A671B1674B14F00FE3959 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				022A671C1674B14F00FE3959 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		022A67331674B14F00FE3959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		022A67341674B14F00FE3959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		022A67361674B14F00FE3959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiAirCam/MultiAirCam-Prefix.pch";
+				INFOPLIST_FILE = "MultiAirCam/MultiAirCam-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		022A67371674B14F00FE3959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiAirCam/MultiAirCam-Prefix.pch";
+				INFOPLIST_FILE = "MultiAirCam/MultiAirCam-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		022A67081674B14F00FE3959 /* Build configuration list for PBXProject "MultiAirCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				022A67331674B14F00FE3959 /* Debug */,
+				022A67341674B14F00FE3959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		022A67351674B14F00FE3959 /* Build configuration list for PBXNativeTarget "MultiAirCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				022A67361674B14F00FE3959 /* Debug */,
+				022A67371674B14F00FE3959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 022A67051674B14F00FE3959 /* Project object */;
+}
