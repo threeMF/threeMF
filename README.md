@@ -42,7 +42,7 @@ Otherwise you can add threeMF as a [git submodule](http://schacon.github.com/git
 Visit the [Wiki](https://github.com/mgratzer/threeMF/wiki/) for more detailed information and [http://threemf.com/documentation/](http://threemf.com/documentation/) for code documentation.
 
 ## Author
-Developed by [Martin Gratzer](http://www.mgratzer.com) ([@mgratzer](http://twitter.com/mgratzer)) with supported by the [Interactive Systems research group](http://www.uni-klu.ac.at/tewi/inf/isys/ias/index.html) at the [University of Klagenfurt](http://www.uni-klu.ac.at).
+Developed by [Martin Gratzer](http://www.mgratzer.com) ([@mgratzer](http://twitter.com/mgratzer)) with supported by the [Interactive Systems research group](http://www.uni-klu.ac.at/tewi/inf/isys/ias/index.html) at the [University of Klagenfurt](http://www.uni-klu.ac.at) under the supervision of Bonifaz Kaufmann and Martin Hitz.
 
 ## Thanks
 3MF uses the great [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket) library for it's build-in [TCP](http://threemf.com/documentation/Classes/TMFTcpChannel.html) and [UDP](http://threemf.com/documentation/Classes/TMFUdpChannel.html) network channels and the Base64 encoding part from [ytoolkit](https://github.com/sprhawk/ytoolkit) to encode binary data. JSON-RPC is the default communication protocol, but there is also a [coding class](http://threemf.com/documentation/Classes/TMFMsgPackRpcCoder.html) using the [MsgPack-ObjectiveC](https://github.com/msgpack/msgpack-objectivec) for [MsgPack-RPC](https://github.com/mgratzer/threeMF/wiki/MsgPack-RPC).
