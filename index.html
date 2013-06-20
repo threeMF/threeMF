@@ -18,8 +18,8 @@
       <header>
         <img src="images/3mf.png" />
         <p>A framework for easy ad-hoc device discovery and RPC based communication.</p>
-        <p class="view"><a href="http://threemf.com/documentation/">View code documentaion <small>http://threemf.com/documentation</small></a></p>                
-        <p class="view"><a href="https://github.com/mgratzer/threeMF">View the Project on GitHub <small>mgratzer/threeMF</small></a></p>
+        <p class="view"><a href="http://threemf.com/documentation/">View code documentaion <small>http://threemf.com/documentation</small></a></p>
+        <p class="view"><a href="https://github.com/threeMF/threeMF">View the Project on GitHub <small>threeMF/threeMF</small></a></p>
       </header>
       <section>
       <h1>threeMF</h1>
@@ -28,15 +28,15 @@
       <p>3MF allows ad-hoc communication between devices, without the pain of handling <strong>service discovery and management</strong>, network <strong>socket</strong> and <strong>disconnection handling</strong> as well as <strong>data serialization</strong>. Data exchange is abstracted with simple patterns which reduce code complexity to a few lines. To fit a wide range of use cases the framework is very generic and extendable.</p>
 
       <h2>How does it work</h2>
-      <p>3MF creates a P2P network to share ad-hoc network services between devices. Discovery of remote 3MF instances, their management during visibility and disappearance is handled automatically. Each peer can publish <a href="http://en.wikipedia.org/wiki/Remote_procedure_call">remote procedures</a> (they are called commands in the context of 3MF) and execute them at each other. These commands are a semantic description defining <strong>which data</strong> gets shared on <strong>which network channel</strong> (TCP, UDP, &#8230;) following <strong>which pattern</strong> (<a href="https://github.com/mgratzer/threeMF/wiki/ResponseRequest">Response Request</a> or <a href="https://github.com/mgratzer/threeMF/wiki/PublishSubscribe">Publish Subscribe</a>).</p>
+      <p>3MF creates a P2P network to share ad-hoc network services between devices. Discovery of remote 3MF instances, their management during visibility and disappearance is handled automatically. Each peer can publish <a href="http://en.wikipedia.org/wiki/Remote_procedure_call">remote procedures</a> (they are called commands in the context of 3MF) and execute them at each other. These commands are a semantic description defining <strong>which data</strong> gets shared on <strong>which network channel</strong> (TCP, UDP, &#8230;) following <strong>which pattern</strong> (<a href="https://github.com/threeMF/threeMF/wiki/ResponseRequest">Response Request</a> or <a href="https://github.com/threeMF/threeMF/wiki/PublishSubscribe">Publish Subscribe</a>).</p>
 
       <p><strong>Response Request</strong> (RR) commands define remote procedures delivering a <strong>response</strong> for a list of defined parameters on <strong>request</strong>. An example would be a computer asking a mobile phone for it&#8217;s current GPS location.</p>
       <div class="img"><img src="images/request_response.png" /></div>
-      
+
       <p><strong>Publish Subscribe</strong> (PS) commands on the other hand get triggered by the <strong>publisher</strong> whenever a defined event occurs. Other peers can <strong>subscribe</strong> to PS commands and get payload <strong>pushed</strong>. Messages send to subscribers will not create responses, they are just notifications for subscribers. An example would be a mobile phone with motion sensors providing a command for real time accelerometer data sharing.</p>
       <div class="img"><img src="images/publish_subscribe.png" /></div>
 
-      <p>3MF comes with <a href="https://github.com/mgratzer/threeMF/wiki/BuildInCommands">build-in commands</a> --- but it's real power lies in it's extendability. You are able to customize nearby every part, starting at <a href="https://github.com/mgratzer/threeMF/wiki/CustomCommands">custom commands</a> over to <a href="https://github.com/mgratzer/threeMF/wiki/CustomNewtorkChannels">network channels</a> and <a href="https://github.com/mgratzer/threeMF/wiki/CustomProtocols">communication protocols</a>.</p>
+      <p>3MF comes with <a href="https://github.com/threeMF/threeMF/wiki/BuildInCommands">build-in commands</a> --- but it's real power lies in it's extendability. You are able to customize nearby every part, starting at <a href="https://github.com/threeMF/threeMF/wiki/CustomCommands">custom commands</a> over to <a href="https://github.com/threeMF/threeMF/wiki/CustomNewtorkChannels">network channels</a> and <a href="https://github.com/trheeMF/threeMF/wiki/CustomProtocols">communication protocols</a>.</p>
 
       <p>The framework communicates <strong>ad-hoc</strong>, which means it is sending network messages directly between peers using their local network without a central instance.</p>
       <h2>Examlples</h2>
@@ -83,7 +83,7 @@ self.tmf = [TMFConnector new];</code></pre>
 kvArguments.key = @"msg";
 kvArguments.value = @"Hello World!";
 [self.kvCmd sendWithArguments:kvArguments];</code></pre>
-			
+
 			<h3>Request Response Example</h3>
 
 			<p>Request Response commands are a bit simpler. Setup, providing and discovery are equal to the Publish Subscribe scenario and the subscribe step is not available. The execution differs because the requester executes the command. This sends all parameters (may be optional) to the provider where request get processed followed by a result returned as response (asynchronously).
@@ -96,42 +96,22 @@ kvArguments.value = @"Hello World!";
  response:^(id response, NSError *error){
  // handle response or error
  }];
-</code></pre>		
-			
+</code></pre>
+
       <h2>Platform</h2>
       <p>3MF is currently implemented in <a href="https://developer.apple.com/cocoa/">Cocoa</a> running on iOS and OSX. The bigger vision is to have a system also spread across other platforms like Android, Windows Phone, ... you name it. Feel free to contact <a href="http://twitter.com/mgratzer">me</a>, if you'r interested in porting 3MF --- I'm glad to provide help if needed.</p>
 
-      <h2>Requirements</h2>
-      <p>The current implementation is using <strong>ARC</strong> with minimum deployment targets of <strong>Mac OSX 10.7</strong> and <strong>iOS 5.0</strong>.</p>
-          
-      <h2>Adding 3MF to your Xcode project</h2>
-      <p>You may use <a href="http://cocoapods.org">CocoaPods</a> instead of adding the source files directly to your project. Follow the instructions on the CocoaPods site for installation, and specify threeMF in your Podfile with <code>pod 'threeMF', '0.1'</code>.</p>      
-      
-      <p>Otherwise you can add threeMF as a <a href="(http://schacon.github.com/git/user-manual.html#submodules)">git submodule</a> or <a href="https://github.com/mgratzer/threeMF/archive/master.zip">download</a> the source code and manually copy it to your project.</p>      
-      
-      <ol>
-        <li>
-        <p>Add the framework as a <a href="http://schacon.github.com/git/user-manual.html#submodules">git submodule</a>. Go to the root folder of your project and execute the following commands.</p>
-
-        <pre><code>$ git submodule add <a href="https://github.com/mgratzer/threeMF.git">https://github.com/mgratzer/threeMF.git</a> Vendor/threeMF
-$ git submodule update --init --recursive </code></pre>
-        </li>
-        <li><p>Add (simply drag &amp; drop) <code>Vendor/threeMF/threeMF</code> to your Xcode project.</p></li>
-        <li><p>Make sure the following frameworks are linked to your project's target: <code>CFNetworking.framework</code>, <code>Security.framework</code>, <code>SystemConfiguration.framework</code>. </p></li>
-        <li><p>You need to add <code>CoreMotion.framework</code> and <code>CoreLocation.framework</code> to your -Prefix.pch file, if you want to use <code>TMFLocationCommand</code> and <code>TMFMotionCommand</code>.</p></li>
-      </ol><p>Visit <a href="http://threemf.com/documentation/">http://threemf.com/documentation/</a> for code documentation.</p>
-
       <h2>Thanks</h2>
-      <p>3MF uses the great <a href="https://github.com/robbiehanson/CocoaAsyncSocket">CocoaAsyncSocket</a> library for it's build-in <a href="http://threemf.com/documentation/Classes/TMFTcpChannel.html">TCP</a> and <a href="http://threemf.com/documentation/Classes/TMFUdpChannel.html">UDP</a> network channels and the Base64 encoding part from <a href="https://github.com/sprhawk/ytoolkit">ytoolkit</a> to encode binary data. JSON-RPC is the default communication protocol, but there is also a <a href="http://threemf.com/documentation/Classes/TMFMsgPackRpcCoder.html">coding class</a> using the <a href="https://github.com/msgpack/msgpack-objectivec">MsgPack-ObjectiveC</a> for <a href="https://github.com/mgratzer/threeMF/wiki/MsgPack-RPC">MsgPack-RPC</a>.</p>
+      <p>3MF uses the great <a href="https://github.com/robbiehanson/CocoaAsyncSocket">CocoaAsyncSocket</a> library for it's build-in <a href="http://threemf.com/documentation/Classes/TMFTcpChannel.html">TCP</a> and <a href="http://threemf.com/documentation/Classes/TMFUdpChannel.html">UDP</a> network channels and the Base64 encoding part from <a href="https://github.com/sprhawk/ytoolkit">ytoolkit</a> to encode binary data. JSON-RPC is the default communication protocol, but there is also a <a href="http://threemf.com/documentation/Classes/TMFMsgPackRpcCoder.html">coding class</a> using the <a href="https://github.com/msgpack/msgpack-objectivec">MsgPack-ObjectiveC</a> for <a href="https://github.com/threeMF/threeMF/wiki/MsgPack-RPC">MsgPack-RPC</a>.</p>
 
       </section>
       <footer>
-	      <p><small>threeMF is available under the MIT license.</small></p>      
-        <p><small>This project is maintained by <a href="http://www.mgratzer.com">mgratzer</a>.<br/>Development supported by the <a href="http://www.uni-klu.ac.at/tewi/inf/isys/ias/index.html">Interactive Systems research group</a> at the University of Klagenfurt.</small></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>.</small></p>        
+	      <p><small>threeMF is available under the MIT license.</small></p>
+        <p><small>This project is maintained by <a href="http://www.mgratzer.com">mgratzer</a>.<br/>Development supported by the <a href="http://www.uni-klu.ac.at/tewi/inf/isys/ias/index.html">Interactive Systems research group</a> at the University of Klagenfurt under the supervision of <a href="http://www.bonifazkaufmann.com">Bonifaz Kaufmann</a> and Martin Hitz.</small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>.</small></p>
       </footer>
     </div>
-    
+
     <script type="text/javascript" src="/js/retina.js"></script>
     <script src="javascripts/scale.fix.js"></script>
     <script type="text/javascript">
