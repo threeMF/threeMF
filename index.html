@@ -61,12 +61,12 @@ self.tmf = [TMFConnector new];</code></pre>
       <pre><code>self.kvCmd = [TMFKeyValueCommand new];[self.tmf publishCommand:self.kvCmd];</code></pre>
 
       <h4>Step 2: Discover (Peer B)</h4>
-      <pre><code>[self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];</code></pre>
+      <pre><code>[self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand class] ] delegate:self];</code></pre>
 
       <h4>Step 3: Subscribe (Peer B)</h4>
       <pre><code>- (void)threeMF:(TMFConnector *)tmf didChangeDiscoveringPeer:(TMFPeer *)peer forChangeType:(TMFPeerChangeType)type {
             if(type == TMFPeerChangeFound) {
-                 [self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){
+                 [self.tmf subscribe:[TMFKeyValueCommand class] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){
                  // do awesome things
                  NSLog(@"%@: %@", arguments.key, arguments.value);
             }
@@ -93,7 +93,7 @@ kvArguments.value = @"Hello World!";
  args.color = _color;
 
 [self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer
- response:^(id response, NSError *error){
+ response:^(id response, TMFPeer *peer, NSError *error){
  // handle response or error
  }];
 </code></pre>

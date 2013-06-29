@@ -230,7 +230,7 @@ discovery and command management.</p>
 
 <h3>Discovery (Peer B)</h3>
 
-<pre><code>[self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
+<pre><code>[self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand class] ] delegate:self];
 </code></pre>
 
 <h3>Subscription (Peer B)</h3>
@@ -278,7 +278,7 @@ kvArguments.value = @"Hello World!";
 <pre><code>CADAnnounceCommandArguments *args = [CADAnnounceCommandArguments new];
 args.name = @"Zaphod";
 
-[self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer response:^(id response, NSError *error) {
+[self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer response:^(id response, TMFPeer *peer, NSError *error) {
     // do something with your response
 }];
 </code></pre>
@@ -373,14 +373,16 @@ published NSNetService will get updated in order to notify other <a href="#//api
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/startDiscoveryWithCapabilities:delegate:">&ndash;&nbsp;startDiscoveryWithCapabilities:delegate:</a></code>
-		<span class="tooltip"><p>Starts discovery of <a href="#//api/name/peers">peers</a> capable of a given set of commands for the given <a href="#//api/name/delegate">delegate</a>. Delegates will get retained.</p></span>
+		<span class="tooltip"><p>Starts discovery of <a href="#//api/name/peers">peers</a> capable of a given set of commands for the given <a href="#//api/name/delegate">delegate</a>. Delegates will get retained.
+e.g. [<em>tmf startDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:</em>serviceBrowser]</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/stopDiscoveryWithCapabilities:delegate:">&ndash;&nbsp;stopDiscoveryWithCapabilities:delegate:</a></code>
-		<span class="tooltip"><p>Stops the discovery of <a href="#//api/name/peers">peers</a> capable of the given set of commands for the given <a href="#//api/name/delegate">delegate</a>.</p></span>
+		<span class="tooltip"><p>Stops the discovery of <a href="#//api/name/peers">peers</a> capable of the given set of commands for the given <a href="#//api/name/delegate">delegate</a>.
+e.g. [<em>tmf stopDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:</em>serviceBrowser];</p></span>
 	</span>
 	
 	
@@ -649,7 +651,7 @@ Command provider call this message to remove a subscriber from all commands.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
-			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed.</p></dd>
+			<dd><p>a completion block which is triggered after the subscription has been confirmed or failed.</p></dd>
 		</dl>
 		
 	</div>
@@ -706,7 +708,7 @@ Command provider call this message to remove a subscriber from a specific comman
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
-			<dd><p>A completion block which gets triggered after the disconnect has been confirmed or failed.</p></dd>
+			<dd><p>A completion block which is triggered after the disconnect has been confirmed or failed.</p></dd>
 		</dl>
 		
 	</div>
@@ -809,7 +811,7 @@ published NSNetService will get updated in order to notify other <a href="#//api
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>command</em></dt>
-			<dd><p>The command which should get published for the current peer.</p></dd>
+			<dd><p>The command which should be published for the current peer.</p></dd>
 		</dl>
 		
 	</div>
@@ -858,7 +860,7 @@ published NSNetService will get updated in order to notify other <a href="#//api
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>commands</em></dt>
-			<dd><p>A list of commands which should get published for the current peer.</p></dd>
+			<dd><p>A list of commands which should be published for the current peer.</p></dd>
 		</dl>
 		
 	</div>
@@ -896,7 +898,7 @@ got received or an error occurred.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)sendCommand:(Class)<em>commandClass</em> arguments:(TMFArguments *)<em>arguments</em> destination:(TMFPeer *)<em>peer</em> response:(responseBlock_t)<em>response</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)sendCommand:(Class)<em>commandClass</em> arguments:(TMFArguments *)<em>arguments</em> destination:(TMFPeer *)<em>peer</em> response:(answerBlock_t)<em>response</em></code></div>
 
     
 	
@@ -920,7 +922,7 @@ got received or an error occurred.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>response</em></dt>
-			<dd><p>a response which gets triggered after a response is received.</p></dd>
+			<dd><p>an answer block which is triggered after a response is received.</p></dd>
 		</dl>
 		
 	</div>
@@ -952,7 +954,8 @@ got received or an error occurred.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Starts discovery of <a href="#//api/name/peers">peers</a> capable of a given set of commands for the given <a href="#//api/name/delegate">delegate</a>. Delegates will get retained.</p>
+		<p>Starts discovery of <a href="#//api/name/peers">peers</a> capable of a given set of commands for the given <a href="#//api/name/delegate">delegate</a>. Delegates will get retained.
+e.g. [<em>tmf startDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:</em>serviceBrowser]</p>
 	</div>
 	
     
@@ -966,7 +969,7 @@ got received or an error occurred.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>listOfCommands</em></dt>
-			<dd><p>a list of command names representing the minimal set of services each discovered <a href="#//api/name/peers">peers</a> must support.</p></dd>
+			<dd><p>a list of command classes representing the minimal set of services each discovered <a href="#//api/name/peers">peers</a> must support.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1003,7 +1006,8 @@ got received or an error occurred.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Stops the discovery of <a href="#//api/name/peers">peers</a> capable of the given set of commands for the given <a href="#//api/name/delegate">delegate</a>.</p>
+		<p>Stops the discovery of <a href="#//api/name/peers">peers</a> capable of the given set of commands for the given <a href="#//api/name/delegate">delegate</a>.
+e.g. [<em>tmf stopDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:</em>serviceBrowser];</p>
 	</div>
 	
     
@@ -1088,7 +1092,7 @@ got received or an error occurred.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
-			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed</p></dd>
+			<dd><p>a completion block which is triggered after the subscription has been confirmed or failed</p></dd>
 		</dl>
 		
 	</div>
@@ -1149,7 +1153,7 @@ got received or an error occurred.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
-			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed</p></dd>
+			<dd><p>a completion block which is triggered after the subscription has been confirmed or failed</p></dd>
 		</dl>
 		
 	</div>
@@ -1254,7 +1258,7 @@ Subscribers call this message if they are not interested int a specific command 
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
-			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed.</p></dd>
+			<dd><p>a completion block which is triggered after the subscription has been confirmed or failed.</p></dd>
 		</dl>
 		
 	</div>
@@ -1306,7 +1310,7 @@ Subscribers call this message if they are not interested in any commands from a 
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
-			<dd><p>a completion block which gets triggered after the subscription has been confirmed or failed.</p></dd>
+			<dd><p>a completion block which is triggered after the subscription has been confirmed or failed.</p></dd>
 		</dl>
 		
 	</div>
@@ -1344,7 +1348,7 @@ Subscribers call this message if they are not interested in any commands from a 
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-03-13)</span><br />
+						<p><span class="copyright">&copy; 2013 Martin Gratzer. All rights reserved. (Last updated: 2013-06-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
