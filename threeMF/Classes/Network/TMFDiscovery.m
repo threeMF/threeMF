@@ -63,9 +63,11 @@ static TMFPeer *__localPeer;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __bonjourQueue = dispatch_queue_create("tmf.bonjour", DISPATCH_QUEUE_SERIAL);
-        CFUUIDRef uuid = CFUUIDCreate(NULL);
-        __uuid = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
-        CFRelease(uuid);
+        CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+        NSString *uuid = [[NSUserDefaults standardUserDefaults] objectForKey:@"_tmf.peer.uuid"];
+        __uuid = uuid ?: (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuidRef);
+        [[NSUserDefaults standardUserDefaults] setObject:__uuid forKey:@"_tmf.peer.uuid"];
+        CFRelease(uuidRef);
     });
 }
 
