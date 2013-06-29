@@ -234,7 +234,12 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@ %@ %@", _hostName, self.UUID, self.protocolIdentifier];
+    NSMutableString *addresses = [NSMutableString new];
+    for(NSData *address in self.addresses) {
+        [addresses appendFormat:@"%@, ", [TMFPeer stringFromAddressData:address]];
+    }
+
+    return [NSString stringWithFormat:@"<%p> %@ %@ %@ (addresses: %@)", self, _hostName, self.UUID, self.protocolIdentifier, addresses];
 }
 
 //............................................................................
