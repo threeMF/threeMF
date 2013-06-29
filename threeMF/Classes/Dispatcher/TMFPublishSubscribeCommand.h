@@ -48,7 +48,7 @@ typedef void (^pubSubArgumentsReceivedBlock_t)(id arguments, TMFPeer *peer);
      [self.tmf publishCommand:self.kvCmd];
 
  ### Discovery (Peer B)
-     [self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
+     [self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand class] ] delegate:self];
 
  ### Subscription (Peer B)
      [self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){

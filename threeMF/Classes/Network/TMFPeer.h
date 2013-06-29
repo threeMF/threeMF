@@ -89,6 +89,14 @@
 - (id)initWithNetService:(NSNetService *)netService;
 
 /**
+ Creates a new TMFPeer instance based on a resolved NSNetService
+ @param netService The newly resolved NSNetService of the discovered peer.
+ @return A new peer instance
+ @warning The NSNetService must be resolved and have the same UUID as the client.
+ */
+- (void)updateWithService:(NSNetService *)netService;
+
+/**
  Sets the port used for a specific command.
  The ports are defined by the command's corresponding TMFChannel.
  @param port The port used for the given command.

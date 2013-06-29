@@ -66,12 +66,7 @@
     NSParameterAssert(netService!=nil);
     self = [self init];
     if(self) {
-        _service = netService;
-        _domain = [[netService domain] copy];
-        _name = [[netService name] copy];
-        _hostName = [[netService hostName] copy];
-        _addresses = [[NSMutableArray alloc] initWithArray:[netService addresses] copyItems:YES];
-        [self updateWithTXTRecordData:netService.TXTRecordData];
+        [self updateWithService:netService];
     }
     return self;
 }
@@ -92,6 +87,20 @@
 #pragma mark -
 #pragma mark Public
 //............................................................................
+- (void)updateWithService:(NSNetService *)netService {
+
+    if([self.UUID length] > 0) {
+        NSParameterAssert([[TMFPeer UUIDFromTXTRecordData:netService.TXTRecordData] isEqualToString:self.UUID]);
+    }
+
+    _service = netService;
+    _domain = [[netService domain] copy];
+    _name = [[netService name] copy];
+    _hostName = [[netService hostName] copy];
+    _addresses = [[NSMutableArray alloc] initWithArray:[netService addresses] copyItems:YES];
+    [self updateWithTXTRecordData:netService.TXTRecordData];
+}
+
 - (void)setPort:(NSUInteger)port {
     NSMutableArray *newAddresses = [NSMutableArray arrayWithCapacity:[_addresses count]];
     for(NSData *address in [_addresses copy]) {
@@ -234,7 +243,12 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@ %@ %@", _hostName, self.UUID, self.protocolIdentifier];
+    NSMutableString *addresses = [NSMutableString new];
+    for(NSData *address in self.addresses) {
+        [addresses appendFormat:@"%@, ", [TMFPeer stringFromAddressData:address]];
+    }
+
+    return [NSString stringWithFormat:@"<%p> %@ %@ %@ (addresses: %@)", self, _hostName, self.UUID, self.protocolIdentifier, addresses];
 }
 
 //............................................................................

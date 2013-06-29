@@ -172,11 +172,12 @@
     CADAnnounceCommandArguments *args = [CADAnnounceCommandArguments new];
     args.name = self.nameLabel.text;
     args.color = _color;
-    
+
+    __weak __typeof(&*self)weakSelf = self;
     [_tmf sendCommand:[CADAnnounceCommand class]
             arguments:args
           destination:peer
-             response:^(id response, NSError *error){
+             response:^(id response, TMFPeer *peer, NSError *error){
                  if(error) {
                      NSLog(@"%@", [error localizedDescription]);
                      [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
@@ -186,9 +187,9 @@
                                        otherButtonTitles:nil] show];
                  }
                  else {
-                     [self closeServiceBrowser];
-                     self.host = peer;
-                     [self broadcastMetaInfo];
+                     [weakSelf closeServiceBrowser];
+                     weakSelf.host = peer;
+                     [weakSelf broadcastMetaInfo];
                  }
              }];
 }
@@ -331,12 +332,12 @@
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:_serviceBrowser];
     navi.navigationBar.tintColor = _color;
     [self presentViewController:navi animated:YES completion:NULL];
-    [_tmf startDiscoveryWithCapabilities:@[ [CADAnnounceCommand name] ] delegate:_serviceBrowser];
+    [_tmf startDiscoveryWithCapabilities:@[ [CADAnnounceCommand class] ] delegate:_serviceBrowser];
 }
 
 - (void)closeServiceBrowser {
     [self dismissViewControllerAnimated:YES completion:^{
-        [_tmf stopDiscoveryWithCapabilities:@[ [CADAnnounceCommand name] ] delegate:_serviceBrowser];
+        [_tmf stopDiscoveryWithCapabilities:@[ [CADAnnounceCommand class] ] delegate:_serviceBrowser];
         _serviceBrowser = nil;
     }];
 }

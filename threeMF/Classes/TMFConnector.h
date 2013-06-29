@@ -53,7 +53,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
     [self.tmf publishCommand:self.kvCmd];
 
  ### Discovery (Peer B)
-    [self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
+    [self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand class] ] delegate:self];
 
  ### Subscription (Peer B)
     [self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){
@@ -90,7 +90,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
     CADAnnounceCommandArguments *args = [CADAnnounceCommandArguments new];
     args.name = @"Zaphod";
 
-    [self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer response:^(id response, NSError *error) {
+    [self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer response:^(id response, TMFPeer *peer, NSError *error) {
         // do something with your response
     }];
 
@@ -134,7 +134,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  The command will get registered with the internal dispatcher and all delegates and references
  will be set up for publishing. In addition the txtRectord of each
  published NSNetService will get updated in order to notify other peers about the state change.
- @param command The command which should get published for the current peer.
+ @param command The command which should be published for the current peer.
  */
 - (void)publishCommand:(TMFCommand *)command;
 
@@ -143,7 +143,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  These commands will get registered with the internal dispatcher and all delegates and references
  will be set up for publishing. In addition the txtRectord of each
  published NSNetService will get updated in order to notify other peers about the state change.
- @param commands A list of commands which should get published for the current peer.
+ @param commands A list of commands which should be published for the current peer.
  */
 - (void)publishCommands:(NSArray *)commands;
 
@@ -157,13 +157,15 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
 
 /**
  Starts discovery of peers capable of a given set of commands for the given delegate. Delegates will get retained.
- @param listOfCommands a list of command names representing the minimal set of services each discovered peers must support.
+ e.g. [_tmf startDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:_serviceBrowser]
+ @param listOfCommands a list of command classes representing the minimal set of services each discovered peers must support.
  @param delegate the delegate being notified on discovery state changes like new domains or peers.
  */
 - (void)startDiscoveryWithCapabilities:(NSArray *)listOfCommands delegate:(NSObject<TMFConnectorDelegate> *)delegate;
 
 /**
  Stops the discovery of peers capable of the given set of commands for the given delegate.
+ e.g. [_tmf stopDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:_serviceBrowser];
  @param listOfCommands a list of command names representing the minimal set of services each discovered peers must support.
  @param delegate the delegate being notified on discovery state changes like new domains or peers.
  */
@@ -176,7 +178,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  @param commandClass The TMFPublishSubscribeCommand class to subscribe.
  @param peer the remote peer providing the command
  @param receive a receive block which gets trigged whenever the specific peer is publishing data for the subscribed service
- @param completion a completion block which gets triggered after the subscription has been confirmed or failed
+ @param completion a completion block which is triggered after the subscription has been confirmed or failed
  */
 - (void)subscribe:(Class)commandClass peer:(TMFPeer *)peer receive:(pubSubArgumentsReceivedBlock_t)receive completion:(tmfCompletionBlock_t)completion;
 
@@ -186,7 +188,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  @param configuration a configuration instance containing setup parameters for the remote command
  @param peer the remote peer providing the command
  @param receive a receive block which gets trigged whenever the specific peer is publishing data for the subscribed service
- @param completion a completion block which gets triggered after the subscription has been confirmed or failed
+ @param completion a completion block which is triggered after the subscription has been confirmed or failed
  */
 - (void)subscribe:(Class)commandClass configuration:(TMFConfiguration *)configuration peer:(TMFPeer *)peer receive:(pubSubArgumentsReceivedBlock_t)receive completion:(tmfCompletionBlock_t)completion;
 
@@ -195,7 +197,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  Subscribers call this message if they are not interested int a specific command anymore.
  @param commandClass The TMFPublishSubscribeCommand to unsubscribe from.
  @param peer the remote peer providing the command
- @param completion a completion block which gets triggered after the subscription has been confirmed or failed.
+ @param completion a completion block which is triggered after the subscription has been confirmed or failed.
  */
 - (void)unsubscribe:(Class)commandClass fromPeer:(TMFPeer *)peer completion:(tmfCompletionBlock_t)completion;
 
@@ -203,7 +205,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  Unsubscribes from all publish subscribe commands at a given peer.
  Subscribers call this message if they are not interested in any commands from a peer anymore.
  @param peer The remote peer to unsubscribe from.
- @param completion a completion block which gets triggered after the subscription has been confirmed or failed.
+ @param completion a completion block which is triggered after the subscription has been confirmed or failed.
  */
 - (void)unsubscribeFromPeer:(TMFPeer *)peer completion:(tmfCompletionBlock_t)completion;
 
@@ -212,7 +214,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  Command provider call this message to remove a subscriber from a specific command.
  @param commandClass The TMFPublishSubscribeCommand to disconnect from.
  @param peer The remote peer to disconnect from the given command.
- @param completion A completion block which gets triggered after the disconnect has been confirmed or failed.
+ @param completion A completion block which is triggered after the disconnect has been confirmed or failed.
  */
 - (void)disconnect:(Class)commandClass fromPeer:(TMFPeer *)peer completion:(tmfCompletionBlock_t)completion;
 
@@ -220,7 +222,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  Disconnects a connected peer from all commands
  Command provider call this message to remove a subscriber from all commands.
  @param peer The remote peer to disconnect from.
- @param completion a completion block which gets triggered after the subscription has been confirmed or failed.
+ @param completion a completion block which is triggered after the subscription has been confirmed or failed.
  */
 - (void)disconnect:(TMFPeer *)peer completion:(tmfCompletionBlock_t)completion;
 
@@ -232,8 +234,8 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
  @param commandClass TMFPublishSubscribeCommand to send.
  @param arguments The corresponding arguments to send.
  @param peer The destination peer.
- @param response a response which gets triggered after a response is received.
+ @param response an answer block which is triggered after a response is received.
  */
-- (void)sendCommand:(Class)commandClass arguments:(TMFArguments *)arguments destination:(TMFPeer *)peer response:(responseBlock_t)response;
+- (void)sendCommand:(Class)commandClass arguments:(TMFArguments *)arguments destination:(TMFPeer *)peer response:(answerBlock_t)response;
 
 @end
