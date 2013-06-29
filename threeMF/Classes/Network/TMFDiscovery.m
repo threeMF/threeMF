@@ -133,6 +133,7 @@ static TMFPeer *__localPeer;
     if([self isRunning]) {
         TMFLogVerbose(@"Stopping peer browser.");
         [_browser stop];
+        [self unpublishBonjourService:_netService];        
     }
 }
 
@@ -337,7 +338,6 @@ static TMFPeer *__localPeer;
 - (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)aNetServiceBrowser {
     if(_browser == aNetServiceBrowser) {
         TMFLogVerbose(@"Shutting down local service.");
-        [self unpublishBonjourService:_netService];
 
         _browser.delegate = nil;
         [_browser stop];
