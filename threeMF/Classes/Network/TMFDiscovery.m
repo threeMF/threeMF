@@ -203,6 +203,8 @@ static TMFPeer *__localPeer;
 - (void)netServiceDidResolveAddress:(NSNetService *)sender {
     if([sender.addresses count] > 0) {
         TMFPeer *peer = [self peerForService:sender];
+        [peer updateWithService:sender];
+        
         if(!peer) {
             peer = [[TMFPeer alloc] initWithNetService:sender];
             if([peer.UUID isEqualToString:__uuid]) {
@@ -223,9 +225,6 @@ static TMFPeer *__localPeer;
                     TMFLogInfo(@"Ignoring %@ with wrong communication protocol '%@'.", peer, peer.protocolIdentifier);
                 }
             }
-        }
-        else {
-            [peer updateWithService:sender];
         }
     }
 }
