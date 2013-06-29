@@ -161,7 +161,8 @@
 #pragma mark TMFServiceBrowserTableViewControllerDelegate
 //............................................................................
 - (void)serviceBrowser:(TMFServiceBrowserTableViewController *)browser didSelectPeer:(TMFPeer *)host {
-    [_tmf sendCommand:[SFAnnounceCommand class] arguments:nil destination:host response:^(NSDictionary *result, NSError *error){
+    __weak __typeof(&*self)weakSelf = self;
+    [_tmf sendCommand:[SFAnnounceCommand class] arguments:nil destination:host response:^(NSDictionary *result, TMFPeer *peer, NSError *error){
         if(error) {
             NSLog(@"%@", [error localizedDescription]);
             [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
@@ -171,23 +172,27 @@
                               otherButtonTitles:nil] show];
         }
         else {
-            [self closeServiceBrowser];
-            _host = host;
-
-            [_tmf subscribe:[TMFImageCommand class] peer:host receive:^(TMFImageCommandArguments *arguments, TMFPeer *peer) {
-                        [_screenPortion setImage:[UIImage imageWithData:arguments.data]];
-                    }
-                 completion:^(NSError *error){
-                     if(error) {
-                         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
-                                                     message:[error localizedDescription]
-                                                    delegate:nil
-                                           cancelButtonTitle:NSLocalizedString(@"Ok", nil)
-                                           otherButtonTitles:nil] show];
-                     }
-                 }];
+            [weakSelf closeServiceBrowser];            
+            [weakSelf subsribe:peer];
         }
     }];
+}
+
+- (void)subsribe:(TMFPeer *)peer {
+    _host = peer;
+
+    [_tmf subscribe:[TMFImageCommand class] peer:peer receive:^(TMFImageCommandArguments *arguments, TMFPeer *peer) {
+        [_screenPortion setImage:[UIImage imageWithData:arguments.data]];
+    }
+         completion:^(NSError *error){
+             if(error) {
+                 [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
+                                             message:[error localizedDescription]
+                                            delegate:nil
+                                   cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                                   otherButtonTitles:nil] show];
+             }
+         }];
 }
 
 //............................................................................

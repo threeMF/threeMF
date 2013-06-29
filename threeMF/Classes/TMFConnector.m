@@ -306,17 +306,21 @@
 //............................................................................
 #pragma mark sending request response commands
 //............................................................................
-- (void)sendCommand:(Class)commandClass arguments:(TMFArguments *)arguments destination:(TMFPeer *)peer response:(responseBlock_t)response {
+- (void)sendCommand:(Class)commandClass arguments:(TMFArguments *)arguments destination:(TMFPeer *)peer response:(answerBlock_t)responseBlock {
     NSParameterAssert(commandClass!=nil);
     NSParameterAssert([commandClass isSubclassOfClass:[TMFCommand class]]);    
     NSParameterAssert(peer!=nil);
-    NSParameterAssert(response!=nil);
+    NSParameterAssert(responseBlock!=nil);
 
     TMFRequestResponseCommand *command = [commandClass new];
     command.delegate = _dispatcher;
     NSParameterAssert(command!=nil);
     NSParameterAssert([command isKindOfClass:[TMFRequestResponseCommand class]]);
-    [command sendWithArguments:arguments destination:peer response:response];
+
+    __weak __typeof(&*peer)weakPeer = peer;
+    [command sendWithArguments:arguments destination:peer response:^(id response, NSError *error) {
+        responseBlock(response, weakPeer, error);
+    }];
 }
 
 //............................................................................

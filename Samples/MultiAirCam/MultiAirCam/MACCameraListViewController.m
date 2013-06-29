@@ -162,7 +162,7 @@
     }
 
     MACCameraActionCommandArguments *args = [[MACCameraActionCommandArguments alloc] initWithAction:action];
-    [self.tmf sendCommand:[MACCameraActionCommand class] arguments:args destination:cell.camera response:^(NSDictionary *response, NSError *error) {
+    [self.tmf sendCommand:[MACCameraActionCommand class] arguments:args destination:cell.camera response:^(NSDictionary *response, TMFPeer *peer, NSError *error) {
         if(error) {
             [self actionError:error camera:cell.camera];
         }
