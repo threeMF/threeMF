@@ -403,8 +403,7 @@ static TMFPeer *__localPeer;
 - (void)awakePeer:(TMFPeer *)peer {
     TMFLogInfo(@"%@ discovered (%@).", peer, [peer.capabilities componentsJoinedByString:@","]);
     [_livingPeers addObject:peer];
-    [_deadPeers removeObjectForKey:peer.UUID];
-    [_heartBeats removeObject:peer.UUID];
+    [self cleanupHeartBeatStateForPeer:peer];
 
     if([self.delegate respondsToSelector:@selector(discovery:didAddPeer:)]) {
         [self.delegate discovery:self didAddPeer:peer];
@@ -425,17 +424,18 @@ static TMFPeer *__localPeer;
 - (void)removePeer:(TMFPeer *)peer {
     NSArray *keys = [_peersByAddress allKeysForObject:peer];
     [_peersByAddress removeObjectsForKeys:keys];
-
-    if(peer.UUID) {
-        [_deadPeers removeObjectForKey:peer.UUID];
-        while([_heartBeats containsObject:peer.UUID]) {
-            [_heartBeats removeObject:peer.UUID];
-        }
-    }
+    [self cleanupHeartBeatStateForPeer:peer];
 
     if([_livingPeers containsObject:peer]) {
         [_livingPeers removeObject:peer];
         TMFLogInfo(@"Did remove %@", peer);
+    }
+}
+
+- (void)cleanupHeartBeatStateForPeer:(TMFPeer *)peer {
+    [_deadPeers removeObjectForKey:peer.UUID];
+    while([_heartBeats containsObject:peer.UUID]) {
+        [_heartBeats removeObject:peer.UUID];
     }
 }
 
