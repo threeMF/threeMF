@@ -37,12 +37,13 @@ static TMFPeer *__localPeer;
 @interface TMFDiscovery() <NSNetServiceDelegate, NSNetServiceBrowserDelegate> {
     dispatch_queue_t _resolve_queue;    
 
+    NSMutableArray *_peersDiscoveredBeforeLocalPeer;
     NSMutableArray *_discoveredServices;
     NSMutableDictionary *_peersByAddress;
     NSMutableArray *_livingPeers;
 
     NSMutableDictionary *_deadPeers;
-    NSMutableArray *_heartBeats;
+    NSCountedSet *_heartBeats;
 
     NSMutableArray *_capabilities;
 
@@ -63,9 +64,11 @@ static TMFPeer *__localPeer;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __bonjourQueue = dispatch_queue_create("tmf.bonjour", DISPATCH_QUEUE_SERIAL);
-        CFUUIDRef uuid = CFUUIDCreate(NULL);
-        __uuid = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
-        CFRelease(uuid);
+        CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+        NSString *uuid = [[NSUserDefaults standardUserDefaults] objectForKey:@"_tmf.peer.uuid"];
+        __uuid = uuid ?: (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuidRef);
+        [[NSUserDefaults standardUserDefaults] setObject:__uuid forKey:@"_tmf.peer.uuid"];
+        CFRelease(uuidRef);
     });
 }
 
@@ -73,8 +76,9 @@ static TMFPeer *__localPeer;
     if((self = [super init])!=nil) {
         _discoveredServices = [NSMutableArray new];
         _deadPeers = [NSMutableDictionary new];
-        _heartBeats = [NSMutableArray new];
+        _heartBeats = [NSCountedSet new];
         _livingPeers = [NSMutableArray new];
+        _peersDiscoveredBeforeLocalPeer = [NSMutableArray new];
         
         _capabilities = [NSMutableArray new];
         _resolve_queue = dispatch_queue_create("com.threemf.resolve_serivce_queue", DISPATCH_QUEUE_SERIAL);
@@ -185,6 +189,17 @@ static TMFPeer *__localPeer;
 #pragma mark -
 #pragma mark NSNetServiceDelegate
 //............................................................................
+- (void)handleResolvedPeer:(TMFPeer *)peer {
+    if(![_deadPeers objectForKey:peer.UUID]) {
+        [_deadPeers setObject:peer forKey:peer.UUID];
+        [self sendHeartBeatToPeer:peer];
+    }
+    else {
+        // check if the peer is alive
+        [self checkForLivingPeer:peer.UUID];
+    }
+}
+
 - (void)netServiceDidResolveAddress:(NSNetService *)sender {
     if([sender.addresses count] > 0) {
         TMFPeer *peer = [self peerForService:sender];
@@ -192,39 +207,25 @@ static TMFPeer *__localPeer;
             peer = [[TMFPeer alloc] initWithNetService:sender];
             if([peer.UUID isEqualToString:__uuid]) {
                 if(__localPeer == nil) {
-                    __localPeer = peer;
-                    TMFLogVerbose(@"set local peer to: %@", peer);
-                    if([self.delegate respondsToSelector:@selector(discoveryDidStart:)]) {
-                        [self.delegate discoveryDidStart:self];
-                    }
-                    _running = YES;
-                    TMFLogInfo(@"Started P2P components.");
+                    [self setLocalPeer:peer];
                 }
             }
             else {
                 if([peer.protocolIdentifier isEqualToString:self.delegate.protocolIdentifier]) {
-                    // we did already get a heartbeat from this peer
-                    if([_heartBeats containsObject:peer.UUID]) {
-                        [self awakePeer:peer];
+                    if(!__localPeer) {
+                        [_peersDiscoveredBeforeLocalPeer addObject:peer];                        
                     }
-                    // we need to wait for a heartbeat
                     else {
-                        [_deadPeers setObject:peer forKey:peer.UUID];
+                        [self handleResolvedPeer:peer];
                     }
-
-                    TMFHeartBeatCommandArguments *args = [TMFHeartBeatCommandArguments new];
-                    args.UUID = __uuid;
-                    [_heartBeatCommand sendWithArguments:args destination:peer response:^(__unused id response, NSError *error) {
-                        if(error) {
-                            TMFLogError(@"Ignoring %@, could not send heart beat (%@).", peer, [error localizedDescription]);
-                            [_deadPeers removeObjectForKey:peer.UUID];
-                        }
-                    }];
                 }
                 else {
                     TMFLogInfo(@"Ignoring %@ with wrong communication protocol '%@'.", peer, peer.protocolIdentifier);
                 }
             }
+        }
+        else {
+            [peer updateWithService:sender];
         }
     }
 }
@@ -359,18 +360,43 @@ static TMFPeer *__localPeer;
 #pragma mark -
 #pragma mark Private
 //............................................................................
+- (void)setLocalPeer:(TMFPeer *)peer {
+    __localPeer = peer;
+    TMFLogVerbose(@"set local peer to: %@", peer);
+    if([self.delegate respondsToSelector:@selector(discoveryDidStart:)]) {
+        [self.delegate discoveryDidStart:self];
+    }
+    _running = YES;
+    TMFLogInfo(@"Started P2P components.");
+
+    for(TMFPeer *peer in _peersDiscoveredBeforeLocalPeer) {
+        [self handleResolvedPeer:peer];
+    }
+    [_peersDiscoveredBeforeLocalPeer removeAllObjects];
+}
 /**
  Confirms the reception of a heart beat and updates waiting peers.
  */
 - (void)pulse:(NSString *)UUID {
     TMFLogVerbose(@"Received pulse %@", UUID);
+    [_heartBeats addObject:UUID];
+    [self checkForLivingPeer:UUID];
+}
+
+- (void)checkForLivingPeer:(NSString *)UUID {
+    NSUInteger beats = [_heartBeats countForObject:UUID];
     TMFPeer *deadPeer = [_deadPeers objectForKey:UUID];
-    if(deadPeer) { // we have already seen this peer -> awake it
+
+    TMFLogInfo(@"Heart Beat Info: %@ - %@", @(beats), deadPeer);
+    if(beats == 1 && deadPeer) {
+        [self sendHeartBeatToPeer:deadPeer];
+    }
+    else if(beats >= 2 && deadPeer) {
+        [self sendHeartBeatToPeer:deadPeer];
         [self awakePeer:deadPeer];
     }
     else { // we have to wait for bonjour to discover this peer
-        TMFLogInfo(@"Waiting for heart beat of %@", UUID);
-        [_heartBeats addObject:UUID];
+        TMFLogInfo(@"Waiting for %@ heart beats of %@", @(2-beats), UUID);
     }
 }
 
@@ -379,10 +405,21 @@ static TMFPeer *__localPeer;
     [_livingPeers addObject:peer];
     [_deadPeers removeObjectForKey:peer.UUID];
     [_heartBeats removeObject:peer.UUID];
-    
+
     if([self.delegate respondsToSelector:@selector(discovery:didAddPeer:)]) {
         [self.delegate discovery:self didAddPeer:peer];
     }
+}
+
+- (void)sendHeartBeatToPeer:(TMFPeer *)peer {
+    TMFHeartBeatCommandArguments *args = [TMFHeartBeatCommandArguments new];
+    args.UUID = __uuid;
+    [_heartBeatCommand sendWithArguments:args destination:peer response:^(__unused id response, NSError *error) {
+        if(error) {
+            TMFLogError(@"Ignoring %@, could not send heart beat (%@).", peer, [error localizedDescription]);
+            [_deadPeers removeObjectForKey:peer.UUID];
+        }
+    }];
 }
 
 - (void)removePeer:(TMFPeer *)peer {
@@ -391,7 +428,9 @@ static TMFPeer *__localPeer;
 
     if(peer.UUID) {
         [_deadPeers removeObjectForKey:peer.UUID];
-        [_heartBeats removeObject:peer.UUID];
+        while([_heartBeats containsObject:peer.UUID]) {
+            [_heartBeats removeObject:peer.UUID];
+        }
     }
 
     if([_livingPeers containsObject:peer]) {
