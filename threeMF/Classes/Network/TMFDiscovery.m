@@ -432,9 +432,11 @@ static TMFPeer *__localPeer;
 }
 
 - (void)cleanupHeartBeatStateForPeer:(TMFPeer *)peer {
-    [_deadPeers removeObjectForKey:peer.UUID];
-    while([_heartBeats containsObject:peer.UUID]) {
-        [_heartBeats removeObject:peer.UUID];
+    if(peer.UUID) {
+        [_deadPeers removeObjectForKey:peer.UUID];
+        while([_heartBeats containsObject:peer.UUID]) {
+            [_heartBeats removeObject:peer.UUID];
+        }
     }
 }
 
