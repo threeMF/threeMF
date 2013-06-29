@@ -81,7 +81,7 @@ static TMFPeer *__localPeer;
         _peersDiscoveredBeforeLocalPeer = [NSMutableArray new];
         
         _capabilities = [NSMutableArray new];
-        _resolve_queue = dispatch_queue_create("com.threemf.resolve_serivce_queue", DISPATCH_QUEUE_SERIAL);
+        _resolve_queue = __bonjourQueue;//dispatch_queue_create("com.threemf.resolve_serivce_queue", DISPATCH_QUEUE_SERIAL);
         _peersByAddress = [NSMutableDictionary new];
 
         _heartBeatCommand = [[TMFHeartBeatCommand alloc] initWithRequestReceivedBlock:^(TMFHeartBeatCommandArguments *arguments, __unused TMFPeer *peer, responseBlock_t responseBlock) {
