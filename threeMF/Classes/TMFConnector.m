@@ -173,7 +173,7 @@
 
     [_discoveryLock lock];
     
-    NSSet *capabilities = [NSSet setWithArray:listOfCommands];
+    NSSet *capabilities = [NSSet setWithArray:[listOfCommands valueForKey:@"name"]];
     NSMutableArray *delegates = [_discoveries objectForKey:capabilities];
     if(!delegates) {
         delegates = [NSMutableArray arrayWithObject:delegate];
@@ -203,7 +203,7 @@
 
     [_discoveryLock lock];
 
-    NSSet *capabilities = [NSSet setWithArray:listOfCommands];
+    NSSet *capabilities = [NSSet setWithArray:[listOfCommands valueForKey:@"name"]];
     NSMutableArray *delegates = [_discoveries objectForKey:capabilities];
     if(delegates) {
         [delegates removeObject:delegate];

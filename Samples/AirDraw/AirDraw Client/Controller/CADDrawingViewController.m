@@ -332,12 +332,12 @@
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:_serviceBrowser];
     navi.navigationBar.tintColor = _color;
     [self presentViewController:navi animated:YES completion:NULL];
-    [_tmf startDiscoveryWithCapabilities:@[ [CADAnnounceCommand name] ] delegate:_serviceBrowser];
+    [_tmf startDiscoveryWithCapabilities:@[ [CADAnnounceCommand class] ] delegate:_serviceBrowser];
 }
 
 - (void)closeServiceBrowser {
     [self dismissViewControllerAnimated:YES completion:^{
-        [_tmf stopDiscoveryWithCapabilities:@[ [CADAnnounceCommand name] ] delegate:_serviceBrowser];
+        [_tmf stopDiscoveryWithCapabilities:@[ [CADAnnounceCommand class] ] delegate:_serviceBrowser];
         _serviceBrowser = nil;
     }];
 }

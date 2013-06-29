@@ -53,7 +53,7 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
     [self.tmf publishCommand:self.kvCmd];
 
  ### Discovery (Peer B)
-    [self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand name] ] delegate:self];
+    [self.tmf startDiscoveryWithCapabilities:@[ [TMFKeyValueCommand class] ] delegate:self];
 
  ### Subscription (Peer B)
     [self.tmf subscribe:[TMFKeyValueCommand name] peer:peer receive:^(TMFKeyValueCommandArguments *arguments){
@@ -157,13 +157,15 @@ typedef void (^tmfCompletionBlock_t)(NSError *error);
 
 /**
  Starts discovery of peers capable of a given set of commands for the given delegate. Delegates will get retained.
- @param listOfCommands a list of command names representing the minimal set of services each discovered peers must support.
+ e.g. [_tmf startDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:_serviceBrowser]
+ @param listOfCommands a list of command classes representing the minimal set of services each discovered peers must support.
  @param delegate the delegate being notified on discovery state changes like new domains or peers.
  */
 - (void)startDiscoveryWithCapabilities:(NSArray *)listOfCommands delegate:(NSObject<TMFConnectorDelegate> *)delegate;
 
 /**
  Stops the discovery of peers capable of the given set of commands for the given delegate.
+ e.g. [_tmf stopDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:_serviceBrowser];
  @param listOfCommands a list of command names representing the minimal set of services each discovered peers must support.
  @param delegate the delegate being notified on discovery state changes like new domains or peers.
  */

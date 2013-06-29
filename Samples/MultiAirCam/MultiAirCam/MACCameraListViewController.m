@@ -59,7 +59,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tmf startDiscoveryWithCapabilities:@[ [MACPreviewCommand name], [MACCameraActionCommand name] ] delegate:self];
+    [self.tmf startDiscoveryWithCapabilities:@[ [MACPreviewCommand class], [MACCameraActionCommand class] ] delegate:self];
 }
 
 //............................................................................

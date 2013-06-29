@@ -239,12 +239,12 @@
     _serviceBrowser = [SFServiceBrowserViewController controllerWithDelgate:self];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:_serviceBrowser];
     [self presentModalViewController:navi animated:YES];
-    [_tmf startDiscoveryWithCapabilities:@[ [TMFImageCommand name], [SFAnnounceCommand name] ] delegate:_serviceBrowser];
+    [_tmf startDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:_serviceBrowser];
 }
 
 - (void)closeServiceBrowser {
     [self dismissViewControllerAnimated:YES completion:^{
-        [_tmf stopDiscoveryWithCapabilities:@[ [TMFImageCommand name], [SFAnnounceCommand name] ] delegate:_serviceBrowser];
+        [_tmf stopDiscoveryWithCapabilities:@[ [TMFImageCommand class], [SFAnnounceCommand class] ] delegate:_serviceBrowser];
         _serviceBrowser = nil;
     }];
 }
