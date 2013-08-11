@@ -89,8 +89,8 @@ kvArguments.value = @"Hello World!";
 			<p>Request Response commands are a bit simpler. Setup, providing and discovery are equal to the Publish Subscribe scenario and the subscribe step is not available. The execution differs because the requester executes the command. This sends all parameters (may be optional) to the provider where request get processed followed by a result returned as response (asynchronously).
 
 			<pre><code>CADAnnounceCommandArguments *args = [CADAnnounceCommandArguments new];
- args.name = self.nameLabel.text;
- args.color = _color;
+ args.name = @"Arthur Dent";
+ args.color = @"#424242";
 
 [self.tmf sendCommand:[CADAnnounceCommand class] arguments:args destination:peer
  response:^(id response, TMFPeer *peer, NSError *error){
@@ -107,7 +107,7 @@ kvArguments.value = @"Hello World!";
       </section>
       <footer>
 	      <p><small>threeMF is available under the MIT license.</small></p>
-        <p><small>This project is maintained by <a href="http://www.mgratzer.com">mgratzer</a>.<br/>Development supported by the <a href="http://www.uni-klu.ac.at/tewi/inf/isys/ias/index.html">Interactive Systems research group</a> at the University of Klagenfurt under the supervision of <a href="http://www.bonifazkaufmann.com">Bonifaz Kaufmann</a> and Martin Hitz.</small></p>
+        <p><small>This project is maintained by <a href="http://www.mgratzer.com">mgratzer</a>.<br/>Development supported by the <a href="http://www.uni-klu.ac.at/tewi/inf/isys/ias/index.html">Interactive Systems research group</a> at the University of Klagenfurt under the supervision of <a href="http://www.bonifazkaufmann.com">Bonifaz Kaufmann</a> and <a href="http://martin.hitz-koenigsbauer.net">Martin Hitz</a>.</small></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>.</small></p>
       </footer>
     </div>
